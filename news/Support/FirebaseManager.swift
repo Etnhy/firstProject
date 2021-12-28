@@ -25,7 +25,6 @@ class FirebaseManager {
                 self.saveOtherDataToFirestore(data)
             }else {
                 print("nil")
-
             }
         }
     }
@@ -37,8 +36,6 @@ class FirebaseManager {
         Firestore.firestore().collection("newss").document(id).setData(copyData)
     }
     
-    
-
     private func saveOtherDataToFirestore(_ data: [String:Any] = [:]) {
         var ref: DocumentReference? = nil
         guard let _ = data["name"],

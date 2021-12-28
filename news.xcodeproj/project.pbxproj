@@ -123,8 +123,8 @@
 			children = (
 				60893E2227787E8800072576 /* RegistrationViewController.swift */,
 				60462746277A3DF7004FFAAD /* HomePageVC.swift */,
-				6046274B277A4066004FFAAD /* ProfileVC.swift */,
 				6046274D277A408A004FFAAD /* FavoritesVC.swift */,
+				6046274B277A4066004FFAAD /* ProfileVC.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";

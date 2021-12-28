@@ -22,6 +22,12 @@ extension HomePageVC: UITableViewDelegate, UITableViewDataSource {
         return cell
     }
     
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        let title = "fresh"
+        return title
+        
+    }
+    
     
     
     

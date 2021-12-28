@@ -8,15 +8,27 @@
 import UIKit
 
 class ProfileVC: UIViewController {
+    
+    
+    lazy var buttonRegistration:UIButton = {
+       var but = UIButton()
+        return but
+    }()
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        lazy var buttonRegistration:UIButton = {
-           var but = UIButton()
-            
-        }()
+        
+        settingsVC()
 
+        
+
+
+    }
+    
+    private func settingsVC() {
+        
+        self.view.backgroundColor = .cyan
     }
     
 

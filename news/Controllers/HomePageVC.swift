@@ -24,20 +24,21 @@ class HomePageVC: UIViewController {
     //layout subviews
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
+        
         settingsTableView()
         
     }
     
-    
-    private func settingsView() {
+    //MARK: settings
+    private func settingsView() { // settings vc
         self.view.backgroundColor = .red
     }
     
-    private func addSubviews() {
+    private func addSubviews() { // add subviews
         self.view.addSubview(tableView)
     }
     
-    private func settingsTableView () {
+    private func settingsTableView () { // settings table view
         tableView.delegate = self
         tableView.dataSource = self
         
