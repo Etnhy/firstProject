@@ -157,6 +157,7 @@ class RegistrationViewController: UIViewController { // поле ввода им
     
     @objc func registration() {
         signUpUser()
+        
 
     }
     
