@@ -167,8 +167,9 @@ class RegistrationViewController: UIViewController { // поле ввода им
             CustomAI.showAI()
             FirebaseManager.shared.createUserWith(data.data) { error in
                 CustomAI.hide()
-                if error != nil {
-                    self.showError("ERROR")
+                if let error = error {
+                    //self.showError("ERROR")
+                    self.present(ErrorViewController(message: error.localizedDescription), animated: true, completion: nil)
                 } else {
                     self.showSuccess()
                 }

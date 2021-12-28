@@ -38,9 +38,9 @@ class FirebaseManager {
     
     private func saveOtherDataToFirestore(_ data: [String:Any] = [:]) {
         var ref: DocumentReference? = nil
-        guard let _ = data["name"],
-              let _ = data["surname"],
-              let _ = data["birthday"] else { return }
+        guard let _ = data["name"] as? String,
+              let _ = data["surname"] as? String,
+              let _ = data["birthday"] as? String else { return }
         ref = db.collection("newss").addDocument(data: data, completion: { error in
             if let error = error {
                 print("Error adding document: \(error)")

@@ -9,8 +9,8 @@ import Foundation
 
 
 struct RegistrationModel: Codable {
-    var data: [String:String] = ["email" : "", "password" : "","name": "","surname" : "","birthday" :""]
-    //var otherData: [String:String] = ["name": "","surname" : "","birthday" :""]
+    var data: [String:String] = ["email" : "", "password" : "","name": "",
+                                 "surname" : "","birthday" :""]
     
     var name:String = ""
     var surname:String = ""
