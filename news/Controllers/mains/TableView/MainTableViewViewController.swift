@@ -37,7 +37,7 @@ class MainTableViewViewController: UIViewController {
         tableView.delegate = self
         tableView.dataSource = self
         
-        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
+        tableView.register(TableViewCell.self, forCellReuseIdentifier: "cell")
         //tableView.frame = view.safeAreaLayoutGuide.layoutFrame
     }
     
