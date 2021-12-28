@@ -8,23 +8,21 @@
 import Foundation
 import UIKit
 import Firebase
+import FirebaseFirestore
 
 class FirebaseManager {
     
     static let shared = FirebaseManager()
-    
     let db = Firestore.firestore()
-    
     
     func createUserWith(_ data: [String: Any], completion: @escaping (_ error: Error?) -> Void) {
         guard let email = data["email"] as? String,
-              let password = data["password"] as? String else {
-            return
-        }
+              let password = data["password"] as? String else { return }
         Auth.auth().createUser(withEmail: email, password: password) { authDataResult, error in
             completion(error)
             if authDataResult != nil {
                 self.saveUserToFirestoreWith(data)
+                self.saveOtherDataToFirestore(data)
             }else {
                 print("nil")
 
@@ -40,42 +38,18 @@ class FirebaseManager {
     }
     
     
-//    private func saveOtherDataToFirestore(_ data: [String:Any] = [:]) {
-//        var ref: DocumentReference? = nil
-//        //var other = otherdata
-//
-//
-//        guard var _ = data["name"] as? String,
-//              var _ = data["surname"] as? String,
-//              var _ = data["birthday"] as? String else { return }
-//
-//        ref = db.collection("newss").addDocument(data: data, completion: { error in
-//            if let error = error {
-//                print("Error adding document: \(error)")
-//
-//            } else {
-//                print("Document added with ID: \(ref!.documentID)")
-//
-//            }
-//        })
-//    }
-    private func saveOtherDataToFirestore(_ otherdata: [String:Any] = [:]) {
+
+    private func saveOtherDataToFirestore(_ data: [String:Any] = [:]) {
         var ref: DocumentReference? = nil
-        var other = otherdata
-        
-        guard let name = other["name"] as? String,
-              let lastname = other["surname"] as? String,
-              let birthdays = other["birthday"] as? String else { return }
-        
-        ref = db.collection("ProjectNews_UserStorage").addDocument(data: other, completion: { error in
+        guard let _ = data["name"],
+              let _ = data["surname"],
+              let _ = data["birthday"] else { return }
+        ref = db.collection("newss").addDocument(data: data, completion: { error in
             if let error = error {
                 print("Error adding document: \(error)")
-
             } else {
                 print("Document added with ID: \(ref!.documentID)")
-
             }
         })
     }
-    
 }

@@ -13,13 +13,13 @@ extension RegistrationViewController: UITextFieldDelegate {
     
     func textFieldDidEndEditing(_ textField: UITextField) {
         if textField == nameTextField {
-            data.otherData["name"] = textField.text ?? "error"
+            data.data["name"] = textField.text ?? "error"
             data.name = textField.text ?? "error"
         } else if textField == surnameTextField {
-            data.otherData["surname"] = textField.text ?? "error"
+            data.data["surname"] = textField.text ?? "error"
             data.surname = textField.text ?? "error"
         }else if textField == birthdayTextField {
-            data.otherData["birthday"] = textField.text ?? "error"
+            data.data["birthday"] = textField.text ?? "error"
             data.birthday = textField.text ?? "error"
         }else if textField == emailTextField {
             data.data["email"] = textField.text ?? "error"
