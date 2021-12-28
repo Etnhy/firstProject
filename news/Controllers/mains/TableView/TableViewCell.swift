@@ -8,11 +8,14 @@
 import UIKit
 
 class TableViewCell: UITableViewCell {
+    static let identifier = "TableViewCell"
     
     lazy var image:UIImageView = {
        var image = UIImageView()
         image.translatesAutoresizingMaskIntoConstraints = false
         image.contentMode = .scaleToFill
+        image.clipsToBounds = true
+        image.backgroundColor = .black
         return image
     }()
 
@@ -21,12 +24,26 @@ class TableViewCell: UITableViewCell {
         // Initialization code
 
     }
-
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
+    
+    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
+        super.init(style: style, reuseIdentifier: "cell")
+        selectionStyle = .none
+        
+        
+        contentView.addSubview(image)
+    }
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        contentView.addSubview(image)
+        setImageConstraints()
         
     }
+    
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
 
     
     func setImageConstraints() {

@@ -13,7 +13,6 @@
 		60462741277A19F3004FFAAD /* FirebaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60462740277A19F3004FFAAD /* FirebaseManager.swift */; };
 		60462743277A1D3D004FFAAD /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 60462742277A1D3D004FFAAD /* GoogleService-Info.plist */; };
 		60462747277A3DF7004FFAAD /* HomePageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60462746277A3DF7004FFAAD /* HomePageVC.swift */; };
-		6046274A277A3FFD004FFAAD /* tabbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60462749277A3FFD004FFAAD /* tabbar.swift */; };
 		6046274C277A4066004FFAAD /* ProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6046274B277A4066004FFAAD /* ProfileVC.swift */; };
 		6046274E277A408A004FFAAD /* FavoritesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6046274D277A408A004FFAAD /* FavoritesVC.swift */; };
 		608037FA277B905F006D931D /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 608037F9277B905F006D931D /* TabBarViewController.swift */; };
@@ -39,7 +38,6 @@
 		60462740277A19F3004FFAAD /* FirebaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseManager.swift; sourceTree = "<group>"; };
 		60462742277A1D3D004FFAAD /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		60462746277A3DF7004FFAAD /* HomePageVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePageVC.swift; sourceTree = "<group>"; };
-		60462749277A3FFD004FFAAD /* tabbar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = tabbar.swift; sourceTree = "<group>"; };
 		6046274B277A4066004FFAAD /* ProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileVC.swift; sourceTree = "<group>"; };
 		6046274D277A408A004FFAAD /* FavoritesVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesVC.swift; sourceTree = "<group>"; };
 		608037F9277B905F006D931D /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
@@ -143,7 +141,6 @@
 			isa = PBXGroup;
 			children = (
 				60BF62E92779C1DD00ABD962 /* RegistrationModel.swift */,
-				60462749277A3FFD004FFAAD /* tabbar.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -324,7 +321,6 @@
 				604432CC277B6D670076EBD9 /* ErrorViewController.swift in Sources */,
 				608037FD277B9444006D931D /* MainTableViewViewController.swift in Sources */,
 				60893E0B2778796000072576 /* SceneDelegate.swift in Sources */,
-				6046274A277A3FFD004FFAAD /* tabbar.swift in Sources */,
 				60BF62F12779C50B00ABD962 /* CustomAI.swift in Sources */,
 				6046274C277A4066004FFAAD /* ProfileVC.swift in Sources */,
 				60893E2327787E8800072576 /* RegistrationViewController.swift in Sources */,
