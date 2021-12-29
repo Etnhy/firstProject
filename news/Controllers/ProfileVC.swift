@@ -12,6 +12,13 @@ class ProfileVC: UIViewController {
     
     lazy var buttonRegistration:UIButton = {
        var but = UIButton()
+        but.translatesAutoresizingMaskIntoConstraints = false
+        but.backgroundColor = .black
+        but.layer.cornerRadius = 8
+        but.setTitle("Регистрация", for: .normal)
+        but.setTitleColor(.red, for: .normal)
+        but.addTarget(self, action: #selector(buttonTarget), for: .touchUpInside)
+        
         return but
     }()
 
@@ -20,17 +27,30 @@ class ProfileVC: UIViewController {
         
         
         settingsVC()
+        addSubviews()
+        setConstraints()
 
         
 
 
     }
-    
     private func settingsVC() {
-        
         self.view.backgroundColor = .cyan
     }
     
-
+    func addSubviews() {
+        self.view.addSubview(buttonRegistration)
+    }
+    func setConstraints() {
+        NSLayoutConstraint.activate([
+            buttonRegistration.topAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.topAnchor,constant: 50),
+            buttonRegistration.centerXAnchor.constraint(equalTo: self.view.centerXAnchor)
+        ])
+    }
+    
+  @objc  func buttonTarget() {
+        let regVC = RegistrationViewController()
+      present(regVC, animated: true, completion: nil)
+    }
 
 }

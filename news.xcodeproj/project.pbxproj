@@ -19,6 +19,9 @@
 		608037FD277B9444006D931D /* MainTableViewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 608037FC277B9444006D931D /* MainTableViewViewController.swift */; };
 		608037FF277B9634006D931D /* CustomTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 608037FE277B9634006D931D /* CustomTabBarViewController.swift */; };
 		60803802277BB131006D931D /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60803801277BB130006D931D /* TableViewCell.swift */; };
+		60877D38277C97E000852793 /* NewsAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60877D37277C97E000852793 /* NewsAPI.swift */; };
+		60877D3B277C987400852793 /* NewsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60877D3A277C987400852793 /* NewsModel.swift */; };
+		60877D3D277C99A800852793 /* GetNews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60877D3C277C99A800852793 /* GetNews.swift */; };
 		60893E092778796000072576 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60893E082778796000072576 /* AppDelegate.swift */; };
 		60893E0B2778796000072576 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60893E0A2778796000072576 /* SceneDelegate.swift */; };
 		60893E0D2778796000072576 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60893E0C2778796000072576 /* MainViewController.swift */; };
@@ -44,6 +47,9 @@
 		608037FC277B9444006D931D /* MainTableViewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTableViewViewController.swift; sourceTree = "<group>"; };
 		608037FE277B9634006D931D /* CustomTabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabBarViewController.swift; sourceTree = "<group>"; };
 		60803801277BB130006D931D /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
+		60877D37277C97E000852793 /* NewsAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsAPI.swift; sourceTree = "<group>"; };
+		60877D3A277C987400852793 /* NewsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsModel.swift; sourceTree = "<group>"; };
+		60877D3C277C99A800852793 /* GetNews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetNews.swift; sourceTree = "<group>"; };
 		60893E052778796000072576 /* news.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = news.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		60893E082778796000072576 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		60893E0A2778796000072576 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -91,6 +97,30 @@
 			path = TableView;
 			sourceTree = "<group>";
 		};
+		60877D35277C974900852793 /* network */ = {
+			isa = PBXGroup;
+			children = (
+				60462740277A19F3004FFAAD /* FirebaseManager.swift */,
+				60877D3C277C99A800852793 /* GetNews.swift */,
+			);
+			path = network;
+			sourceTree = "<group>";
+		};
+		60877D36277C975900852793 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
+		60877D39277C984F00852793 /* Config */ = {
+			isa = PBXGroup;
+			children = (
+				60877D37277C97E000852793 /* NewsAPI.swift */,
+			);
+			path = Config;
+			sourceTree = "<group>";
+		};
 		60893DFC2778796000072576 = {
 			isa = PBXGroup;
 			children = (
@@ -112,13 +142,15 @@
 		60893E072778796000072576 /* news */ = {
 			isa = PBXGroup;
 			children = (
-				60BF62ED2779C2AC00ABD962 /* Support */,
+				60877D35277C974900852793 /* network */,
+				60BF62ED2779C2AC00ABD962 /* Support Files */,
 				60893E2127787AB200072576 /* Extensions */,
 				60893E1D2778797000072576 /* Models */,
 				60893E1E2778797B00072576 /* Controllers */,
 				60893E1C2778796A00072576 /* Views */,
 				60893E082778796000072576 /* AppDelegate.swift */,
 				60893E0A2778796000072576 /* SceneDelegate.swift */,
+				60BF62F02779C50B00ABD962 /* CustomAI.swift */,
 				60893E0C2778796000072576 /* MainViewController.swift */,
 				604432CB277B6D670076EBD9 /* ErrorViewController.swift */,
 				60893E112778796100072576 /* Assets.xcassets */,
@@ -141,6 +173,7 @@
 			isa = PBXGroup;
 			children = (
 				60BF62E92779C1DD00ABD962 /* RegistrationModel.swift */,
+				60877D3A277C987400852793 /* NewsModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -166,13 +199,13 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
-		60BF62ED2779C2AC00ABD962 /* Support */ = {
+		60BF62ED2779C2AC00ABD962 /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				60BF62F02779C50B00ABD962 /* CustomAI.swift */,
-				60462740277A19F3004FFAAD /* FirebaseManager.swift */,
+				60877D39277C984F00852793 /* Config */,
+				60877D36277C975900852793 /* Fonts */,
 			);
-			path = Support;
+			path = "Support Files";
 			sourceTree = "<group>";
 		};
 		9DC85EA25CDB99991636C4C2 /* Frameworks */ = {
@@ -309,6 +342,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				60893E0D2778796000072576 /* MainViewController.swift in Sources */,
+				60877D3D277C99A800852793 /* GetNews.swift in Sources */,
 				60BF62EA2779C1DD00ABD962 /* RegistrationModel.swift in Sources */,
 				6046274E277A408A004FFAAD /* FavoritesVC.swift in Sources */,
 				60803802277BB131006D931D /* TableViewCell.swift in Sources */,
@@ -316,10 +350,12 @@
 				608037FF277B9634006D931D /* CustomTabBarViewController.swift in Sources */,
 				60462747277A3DF7004FFAAD /* HomePageVC.swift in Sources */,
 				60462741277A19F3004FFAAD /* FirebaseManager.swift in Sources */,
+				60877D3B277C987400852793 /* NewsModel.swift in Sources */,
 				60E586E3277A111400C6DA2F /* TextFieldExtension.swift in Sources */,
 				60893E092778796000072576 /* AppDelegate.swift in Sources */,
 				604432CC277B6D670076EBD9 /* ErrorViewController.swift in Sources */,
 				608037FD277B9444006D931D /* MainTableViewViewController.swift in Sources */,
+				60877D38277C97E000852793 /* NewsAPI.swift in Sources */,
 				60893E0B2778796000072576 /* SceneDelegate.swift in Sources */,
 				60BF62F12779C50B00ABD962 /* CustomAI.swift in Sources */,
 				6046274C277A4066004FFAAD /* ProfileVC.swift in Sources */,
