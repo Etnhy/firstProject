@@ -21,7 +21,7 @@ class ErrorViewController: UIViewController {
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textAlignment = .center
         label.numberOfLines = 0
-        label.font = .systemFont(ofSize: 14)
+        label.font = .systemFont(ofSize: 16)
         label.textColor = UIColor(red: 0.212, green: 0.212, blue: 0.212, alpha: 1)
         label.backgroundColor = .clear
         label.text = "newss"
