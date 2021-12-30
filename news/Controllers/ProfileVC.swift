@@ -8,6 +8,7 @@
 import UIKit
 
 class ProfileVC: UIViewController {
+    let colors = MyColors()
     
     
     lazy var buttonRegistration:UIButton = {
@@ -35,7 +36,7 @@ class ProfileVC: UIViewController {
 
     }
     private func settingsVC() {
-        self.view.backgroundColor = .cyan
+        self.view.backgroundColor = colors.color1Dark
     }
     
     func addSubviews() {

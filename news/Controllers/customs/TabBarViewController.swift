@@ -8,6 +8,8 @@
 import UIKit
 
 class MainTabBarViewController: UITabBarController {
+    let colors = MyColors()
+
  
     
     let home = HomePageVC()
@@ -26,7 +28,7 @@ class MainTabBarViewController: UITabBarController {
         self.tabBar.backgroundColor = .black
         self.tabBar.isTranslucent = false
         self.tabBar.barTintColor = UIColor.white
-        UITabBar.appearance().barTintColor = .black
+        UITabBar.appearance().barTintColor = colors.color2leastDark
         }
      
      //MARK: creating

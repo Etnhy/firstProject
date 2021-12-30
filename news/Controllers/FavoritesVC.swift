@@ -8,6 +8,7 @@
 import UIKit
 
 class FavoritesVC: UIViewController {
+    let colors = MyColors()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -18,7 +19,7 @@ class FavoritesVC: UIViewController {
     
     private func settingsVC() {
         
-        self.view.backgroundColor = .red
+        self.view.backgroundColor = colors.color1Dark
     }
 
 

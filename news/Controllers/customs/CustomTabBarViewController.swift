@@ -8,6 +8,7 @@
 import UIKit
 
 class CustomTabBarViewController: UIViewController {
+    let colors = MyColors()
     
     lazy var backView:UIView = {
        var view = UIView()
@@ -20,8 +21,7 @@ class CustomTabBarViewController: UIViewController {
         view.layer.shadowColor = UIColor.black.cgColor
         view.layer.shadowOpacity = 0.5
         view.layer.shadowRadius = 15
-        //view.layer.shadowOffset = CGSize(width: 3, height: 3)
-        //view.frame = CGRect(x: 10, y: 10, width: 0, height: 0)
+
         return view
     }()
     
