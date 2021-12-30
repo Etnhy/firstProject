@@ -15,6 +15,8 @@
 		60462747277A3DF7004FFAAD /* HomePageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60462746277A3DF7004FFAAD /* HomePageVC.swift */; };
 		6046274C277A4066004FFAAD /* ProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6046274B277A4066004FFAAD /* ProfileVC.swift */; };
 		6046274E277A408A004FFAAD /* FavoritesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6046274D277A408A004FFAAD /* FavoritesVC.swift */; };
+		605B77E1277CF35400CC11C8 /* getReady.swift in Sources */ = {isa = PBXBuildFile; fileRef = 605B77E0277CF35400CC11C8 /* getReady.swift */; };
+		605B77E3277DF22600CC11C8 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 605B77E2277DF22600CC11C8 /* Colors.swift */; };
 		608037FA277B905F006D931D /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 608037F9277B905F006D931D /* TabBarViewController.swift */; };
 		608037FD277B9444006D931D /* MainTableViewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 608037FC277B9444006D931D /* MainTableViewViewController.swift */; };
 		608037FF277B9634006D931D /* CustomTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 608037FE277B9634006D931D /* CustomTabBarViewController.swift */; };
@@ -44,6 +46,8 @@
 		60462746277A3DF7004FFAAD /* HomePageVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePageVC.swift; sourceTree = "<group>"; };
 		6046274B277A4066004FFAAD /* ProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileVC.swift; sourceTree = "<group>"; };
 		6046274D277A408A004FFAAD /* FavoritesVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesVC.swift; sourceTree = "<group>"; };
+		605B77E0277CF35400CC11C8 /* getReady.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = getReady.swift; sourceTree = "<group>"; };
+		605B77E2277DF22600CC11C8 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		608037F9277B905F006D931D /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
 		608037FC277B9444006D931D /* MainTableViewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTableViewViewController.swift; sourceTree = "<group>"; };
 		608037FE277B9634006D931D /* CustomTabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabBarViewController.swift; sourceTree = "<group>"; };
@@ -80,7 +84,7 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		608037FB277B9424006D931D /* mains */ = {
+		608037FB277B9424006D931D /* customs */ = {
 			isa = PBXGroup;
 			children = (
 				60877D40277CA2CB00852793 /* CollectionView */,
@@ -88,7 +92,7 @@
 				608037F9277B905F006D931D /* TabBarViewController.swift */,
 				608037FE277B9634006D931D /* CustomTabBarViewController.swift */,
 			);
-			path = mains;
+			path = customs;
 			sourceTree = "<group>";
 		};
 		60803800277BB10A006D931D /* TableView */ = {
@@ -184,6 +188,7 @@
 			children = (
 				60893E0E2778796000072576 /* Main.storyboard */,
 				60893E132778796100072576 /* LaunchScreen.storyboard */,
+				605B77E0277CF35400CC11C8 /* getReady.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -199,7 +204,7 @@
 		60893E1E2778797B00072576 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				608037FB277B9424006D931D /* mains */,
+				608037FB277B9424006D931D /* customs */,
 				60893E2227787E8800072576 /* RegistrationViewController.swift */,
 				60462746277A3DF7004FFAAD /* HomePageVC.swift */,
 				6046274D277A408A004FFAAD /* FavoritesVC.swift */,
@@ -220,6 +225,7 @@
 		60BF62ED2779C2AC00ABD962 /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
+				605B77E2277DF22600CC11C8 /* Colors.swift */,
 				60877D45277CA4DA00852793 /* imageError */,
 				60877D39277C984F00852793 /* Config */,
 				60877D36277C975900852793 /* Fonts */,
@@ -362,6 +368,7 @@
 			files = (
 				60893E0D2778796000072576 /* MainViewController.swift in Sources */,
 				60877D3D277C99A800852793 /* NewsManager.swift in Sources */,
+				605B77E1277CF35400CC11C8 /* getReady.swift in Sources */,
 				60BF62EA2779C1DD00ABD962 /* RegistrationModel.swift in Sources */,
 				6046274E277A408A004FFAAD /* FavoritesVC.swift in Sources */,
 				60803802277BB131006D931D /* TableViewCell.swift in Sources */,
@@ -372,6 +379,7 @@
 				60462741277A19F3004FFAAD /* FirebaseManager.swift in Sources */,
 				60E586E3277A111400C6DA2F /* TextFieldExtension.swift in Sources */,
 				60893E092778796000072576 /* AppDelegate.swift in Sources */,
+				605B77E3277DF22600CC11C8 /* Colors.swift in Sources */,
 				604432CC277B6D670076EBD9 /* ErrorViewController.swift in Sources */,
 				60877D3F277CA2C500852793 /* MainCollectionViewController.swift in Sources */,
 				608037FD277B9444006D931D /* MainTableViewViewController.swift in Sources */,

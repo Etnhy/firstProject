@@ -9,6 +9,8 @@ target 'news' do
 
 pod 'Firebase/Auth'
 pod 'Firebase/Firestore'
+pod 'NewsAPISwift'
+pod 'PMSuperButton'
 
 
 end

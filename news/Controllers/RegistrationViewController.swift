@@ -7,10 +7,14 @@
 
 import UIKit
 import Firebase
+import PMSuperButton
 
 class RegistrationViewController: UIViewController { // поле ввода имени
+    let colors = myColors()
     
     var data = RegistrationModel()
+    
+
     
     
     lazy var nameTextField:UITextField = {
@@ -18,8 +22,9 @@ class RegistrationViewController: UIViewController { // поле ввода им
         n.translatesAutoresizingMaskIntoConstraints = false
         n.delegate = self
         n.layer.borderColor = UIColor.black.cgColor
-        n.placeholder = "Имя"
-        n.layer.cornerRadius = 1
+        n.attributedPlaceholder = NSAttributedString(string: "Name",
+                                                     attributes: [NSAttributedString.Key.foregroundColor : colors.color1Dark.withAlphaComponent(0.5)])
+        n.layer.cornerRadius = 4
         n.layer.borderWidth = 1
         n.keyboardType = .default
        return n
@@ -30,9 +35,10 @@ class RegistrationViewController: UIViewController { // поле ввода им
         s.translatesAutoresizingMaskIntoConstraints = false
         s.delegate = self
         s.layer.borderColor = UIColor.black.cgColor
-        s.placeholder = "Фамилия"
+        s.attributedPlaceholder = NSAttributedString(string: "Lastname",
+                                                     attributes: [NSAttributedString.Key.foregroundColor : colors.color1Dark.withAlphaComponent(0.5)])
         s.layer.borderWidth = 1
-        s.layer.cornerRadius = 1
+        s.layer.cornerRadius = 4
         s.keyboardType = .default
         return s
     }()
@@ -42,8 +48,9 @@ class RegistrationViewController: UIViewController { // поле ввода им
         b.translatesAutoresizingMaskIntoConstraints = false
         b.delegate = self
         b.layer.borderColor = UIColor.black.cgColor
-        b.placeholder = "Дата рождения"
-        b.layer.cornerRadius = 1
+        b.attributedPlaceholder = NSAttributedString(string: "Your Birthday date",
+                                                     attributes: [NSAttributedString.Key.foregroundColor : colors.color1Dark.withAlphaComponent(0.5)])
+        b.layer.cornerRadius = 4
         b.layer.borderWidth = 1
         b.keyboardType = .default
         return b
@@ -54,9 +61,10 @@ class RegistrationViewController: UIViewController { // поле ввода им
         e.translatesAutoresizingMaskIntoConstraints = false
         e.delegate = self
         e.layer.borderColor = UIColor.black.cgColor
-        e.placeholder = "e-mail"
+        e.attributedPlaceholder = NSAttributedString(string: "E-mail",
+                                                     attributes: [NSAttributedString.Key.foregroundColor : colors.color1Dark.withAlphaComponent(0.5)])
         e.layer.borderWidth = 1
-        e.layer.cornerRadius = 1
+        e.layer.cornerRadius = 4
         e.keyboardType = .default
         
         return e
@@ -68,21 +76,28 @@ class RegistrationViewController: UIViewController { // поле ввода им
         p.delegate = self
         p.isSecureTextEntry = false
         p.layer.borderColor = UIColor.black.cgColor
-        p.placeholder = "password"
+        p.attributedPlaceholder = NSAttributedString(string: "Password",
+                                           attributes: [NSAttributedString.Key.foregroundColor : colors.color1Dark.withAlphaComponent(0.5)])
         p.layer.borderWidth = 1
-        p.layer.cornerRadius = 1
+        p.layer.cornerRadius = 4
         p.keyboardType = .default
         return p
     }()
     
-    lazy var continueButton: UIButton = {
-        var button = UIButton()
+    lazy var continueButton: PMSuperButton = {
+        var button = PMSuperButton()
         button.translatesAutoresizingMaskIntoConstraints = false
-        button.layer.borderWidth = 3
-        button.backgroundColor = .white
-        button.setTitle("Reg", for: .normal)
-        button.setTitleColor(.black, for: .normal)
-        button.addTarget(self, action: #selector(registration), for: .touchUpInside)
+        button.setTitle("OK", for: .normal)
+        button.setTitleColor(colors.coldColor, for: .normal)
+        button.gradientStartColor = colors.color1Dark
+        button.gradientEndColor = colors.color2leastDark
+        button.gradientEnabled = true
+        button.gradientHorizontal = true
+        button.backgroundColor = .gray
+        button.layer.cornerRadius = 8
+        button.rippleColor = colors.color3light
+        button.ripple = true
+        
         return button
         
     }()
@@ -100,7 +115,7 @@ class RegistrationViewController: UIViewController { // поле ввода им
     }
     
     private func settings() {
-        self.view.backgroundColor = .white
+        self.view.backgroundColor = colors.color4easyLight
         
     }
     
@@ -148,8 +163,8 @@ class RegistrationViewController: UIViewController { // поле ввода им
         NSLayoutConstraint.activate([ // кнопочка регистрации - продолжения
             continueButton.topAnchor.constraint(equalTo: passwordTextField.bottomAnchor, constant: 20),
             continueButton.centerXAnchor.constraint(equalTo: passwordTextField.centerXAnchor),
-            continueButton.widthAnchor.constraint(equalToConstant: 64),
-            continueButton.heightAnchor.constraint(equalToConstant: 34),
+            continueButton.widthAnchor.constraint(equalToConstant: 94),
+            continueButton.heightAnchor.constraint(equalToConstant: 44),
         ])
 
     }
