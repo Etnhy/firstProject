@@ -11,7 +11,7 @@ class MainTableViewViewController: UIViewController {
     
     let tableView = UITableView()
     
-    
+ 
     
     // did load
     override func viewDidLoad() {
@@ -38,7 +38,6 @@ class MainTableViewViewController: UIViewController {
         tableView.dataSource = self
         
         tableView.register(TableViewCell.self, forCellReuseIdentifier: "cell")
-        //tableView.frame = view.safeAreaLayoutGuide.layoutFrame
     }
     
 

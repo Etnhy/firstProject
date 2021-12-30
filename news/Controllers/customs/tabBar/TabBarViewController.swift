@@ -25,7 +25,7 @@ class MainTabBarViewController: UITabBarController {
     func configs() {
         setNavControllers()
         UINavigationBar.appearance().prefersLargeTitles = true
-        self.tabBar.backgroundColor = .black
+        self.tabBar.backgroundColor = colors.color2leastDark
         self.tabBar.isTranslucent = false
         self.tabBar.barTintColor = UIColor.white
         UITabBar.appearance().barTintColor = colors.color2leastDark

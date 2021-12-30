@@ -9,16 +9,16 @@ import Foundation
 import UIKit
 
 
-
 extension MainTableViewViewController: UITableViewDelegate, UITableViewDataSource {
+
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 7
+        return 10
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
         
-        cell.textLabel?.text = "ячейка номер \(indexPath.row)"
+        cell.textLabel?.text = "Какая то новость - \(indexPath.row)"
         return cell
     }
     

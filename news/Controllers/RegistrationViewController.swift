@@ -87,6 +87,7 @@ class RegistrationViewController: UIViewController { // поле ввода им
     lazy var continueButton: PMSuperButton = {
         var button = PMSuperButton()
         button.translatesAutoresizingMaskIntoConstraints = false
+        button.addTarget(self, action: #selector(registration), for: .touchUpInside)
         button.setTitle("OK", for: .normal)
         button.layer.borderWidth = 1
         button.layer.borderColor = colors.coldColor.withAlphaComponent(0.1).cgColor
