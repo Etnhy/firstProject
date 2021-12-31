@@ -6,18 +6,26 @@
 //
 
 import UIKit
+import PMSuperButton
 
 class ProfileVC: UIViewController {
     let colors = MyColors()
     
     
     lazy var buttonRegistration:UIButton = {
-       var but = UIButton()
+       var but = PMSuperButton()
         but.translatesAutoresizingMaskIntoConstraints = false
-        but.backgroundColor = .black
         but.layer.cornerRadius = 8
+        but.gradientEnabled = true
+        but.ripple = true
+        but.gradientStartColor = colors.color1Dark
+        but.gradientEndColor = colors.color2leastDark
+        but.gradientHorizontal = true
+        but.rippleColor = colors.color3light
+        but.layer.borderWidth = 1
+        but.layer.borderColor = colors.coldColor.withAlphaComponent(0.1).cgColor
         but.setTitle("Регистрация", for: .normal)
-        but.setTitleColor(.red, for: .normal)
+        but.setTitleColor(colors.coldColor, for: .normal)
         but.addTarget(self, action: #selector(buttonTarget), for: .touchUpInside)
         
         return but

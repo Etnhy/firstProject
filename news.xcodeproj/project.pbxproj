@@ -225,12 +225,12 @@
 		60893E1E2778797B00072576 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				60893E2227787E8800072576 /* RegistrationViewController.swift */,
+				60DF288D277F39E100EB055E /* HomePage */,
+				60DF288E277F39EA00EB055E /* FavoritePage */,
+				60DF288F277F39FA00EB055E /* ProfilePage */,
 				605B77E7277E03BB00CC11C8 /* News */,
 				608037FB277B9424006D931D /* customs */,
-				60893E2227787E8800072576 /* RegistrationViewController.swift */,
-				60462746277A3DF7004FFAAD /* HomePageVC.swift */,
-				6046274D277A408A004FFAAD /* FavoritesVC.swift */,
-				6046274B277A4066004FFAAD /* ProfileVC.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -253,6 +253,30 @@
 				60877D36277C975900852793 /* Fonts */,
 			);
 			path = "Support Files";
+			sourceTree = "<group>";
+		};
+		60DF288D277F39E100EB055E /* HomePage */ = {
+			isa = PBXGroup;
+			children = (
+				60462746277A3DF7004FFAAD /* HomePageVC.swift */,
+			);
+			path = HomePage;
+			sourceTree = "<group>";
+		};
+		60DF288E277F39EA00EB055E /* FavoritePage */ = {
+			isa = PBXGroup;
+			children = (
+				6046274D277A408A004FFAAD /* FavoritesVC.swift */,
+			);
+			path = FavoritePage;
+			sourceTree = "<group>";
+		};
+		60DF288F277F39FA00EB055E /* ProfilePage */ = {
+			isa = PBXGroup;
+			children = (
+				6046274B277A4066004FFAAD /* ProfileVC.swift */,
+			);
+			path = ProfilePage;
 			sourceTree = "<group>";
 		};
 		9DC85EA25CDB99991636C4C2 /* Frameworks */ = {
