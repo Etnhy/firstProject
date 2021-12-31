@@ -18,7 +18,8 @@ extension MainTableViewViewController: UITableViewDelegate, UITableViewDataSourc
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
         
-        cell.textLabel?.text = "Какая то новость - \(indexPath.row)"
+        cell.textLabel?.text =  "Какая то новость - \(indexPath.row)"
+
         return cell
     }
     

@@ -10,6 +10,8 @@ import UIKit
 class TableViewCell: UITableViewCell {
     
     static let identifier = "TableViewCell"
+    let data = NewsArticles()
+
     
     let imageNews = UIImageView()
     let articlesNews = UILabel()
@@ -58,7 +60,7 @@ class TableViewCell: UITableViewCell {
         articlesNews.translatesAutoresizingMaskIntoConstraints = false
         articlesNews.backgroundColor = .white
         articlesNews.numberOfLines = 0
-        articlesNews.text = "пропал дог позвоните сюда пропал дог позвоните сюда пропал дог позвоните сюда пропал дог позвоните сюда  "
+        articlesNews.text = "пропал дог позвоните сюда пропал дог позвоните сюда пропал дог позвоните сюда пропал дог позвоните сюда пропал дог позвоните сюда пропал дог позвоните сюда пропал дог позвоните сюда пропал дог позвоните сюда"
     }
     func setupDateNews() {
         contentView.addSubview(dateNews)
@@ -86,7 +88,8 @@ class TableViewCell: UITableViewCell {
             dateNews.topAnchor.constraint(equalTo: articlesNews.bottomAnchor),
             dateNews.leadingAnchor.constraint(equalTo: self.contentView.leadingAnchor,constant: 8),
             dateNews.trailingAnchor.constraint(equalTo: self.contentView.trailingAnchor, constant: -140),
-            dateNews.heightAnchor.constraint(equalToConstant: 20)
+            dateNews.heightAnchor.constraint(equalToConstant: 20),
+            dateNews.bottomAnchor.constraint(equalTo: self.contentView.bottomAnchor, constant: -4)
         ])
 //
     }
@@ -96,10 +99,3 @@ class TableViewCell: UITableViewCell {
 }
 
 
-
-//override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
-//    super.init(style: style, reuseIdentifier: "cell")
-//
-//    selectionStyle = .none
-//
-//}

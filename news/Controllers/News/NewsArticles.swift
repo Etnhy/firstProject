@@ -9,6 +9,7 @@ import UIKit
 import NewsAPISwift
 
 class NewsArticles: MainTableViewViewController {
+    
     static let newsSet = NewsArticles()
     
     var newsAPI: NewsAPI!
