@@ -9,6 +9,7 @@ import UIKit
 import NewsAPISwift
 
 class NewsArticles: MainTableViewViewController {
+    static let newsSet = NewsArticles()
     
     var newsAPI: NewsAPI!
     var source: NewsSource!
@@ -24,14 +25,19 @@ class NewsArticles: MainTableViewViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        config()
-         
+
+        
     }
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
         navigationItem.title = source.name
         
+
+        
+        
+    }
+    func getArticles() {
         newsAPI.getTopHeadlines(sources: [source.id]){ result in
             switch result {
                 case .success(let articles):
@@ -40,14 +46,9 @@ class NewsArticles: MainTableViewViewController {
                     fatalError("\(error)")
             }
         }
-        
-        
     }
     
-    func config() {
-        
-        tableView.estimatedRowHeight = 44.0
-    }
+
     
 
 

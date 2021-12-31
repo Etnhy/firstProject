@@ -16,14 +16,17 @@ class MainTableViewViewController: UIViewController {
     // did load
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        tableView.estimatedRowHeight = tableView.rowHeight
+
         addSubviews()
         settingsTableView()
+        
 
     }
     //layout subviews
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
+        
         tableView.frame = view.bounds
     }
     
@@ -36,7 +39,6 @@ class MainTableViewViewController: UIViewController {
     func settingsTableView () { // settings table view
         tableView.delegate = self
         tableView.dataSource = self
-        
         tableView.register(TableViewCell.self, forCellReuseIdentifier: "cell")
     }
     

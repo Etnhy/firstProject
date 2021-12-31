@@ -36,6 +36,7 @@
 		60893E2327787E8800072576 /* RegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60893E2227787E8800072576 /* RegistrationViewController.swift */; };
 		60BF62EA2779C1DD00ABD962 /* RegistrationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60BF62E92779C1DD00ABD962 /* RegistrationModel.swift */; };
 		60BF62F12779C50B00ABD962 /* CustomAI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60BF62F02779C50B00ABD962 /* CustomAI.swift */; };
+		60DF2894277F4BDE00EB055E /* dog.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 60DF2893277F4BDE00EB055E /* dog.jpg */; };
 		60E586E3277A111400C6DA2F /* TextFieldExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60E586E2277A111400C6DA2F /* TextFieldExtension.swift */; };
 /* End PBXBuildFile section */
 
@@ -71,6 +72,7 @@
 		60893E2227787E8800072576 /* RegistrationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewController.swift; sourceTree = "<group>"; };
 		60BF62E92779C1DD00ABD962 /* RegistrationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationModel.swift; sourceTree = "<group>"; };
 		60BF62F02779C50B00ABD962 /* CustomAI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomAI.swift; sourceTree = "<group>"; };
+		60DF2893277F4BDE00EB055E /* dog.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = dog.jpg; sourceTree = "<group>"; };
 		60E586E2277A111400C6DA2F /* TextFieldExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldExtension.swift; sourceTree = "<group>"; };
 		81C74C794EFD426C3A5BBF01 /* Pods_news.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_news.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A5FB1D53C369DD016CFE430C /* Pods-news.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-news.release.xcconfig"; path = "Target Support Files/Pods-news/Pods-news.release.xcconfig"; sourceTree = "<group>"; };
@@ -225,7 +227,7 @@
 		60893E1E2778797B00072576 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				60893E2227787E8800072576 /* RegistrationViewController.swift */,
+				60DF2890277F3E1E00EB055E /* RegitrationLogin */,
 				60DF288D277F39E100EB055E /* HomePage */,
 				60DF288E277F39EA00EB055E /* FavoritePage */,
 				60DF288F277F39FA00EB055E /* ProfilePage */,
@@ -248,6 +250,7 @@
 			isa = PBXGroup;
 			children = (
 				605B77E2277DF22600CC11C8 /* Colors.swift */,
+				60DF2893277F4BDE00EB055E /* dog.jpg */,
 				60877D45277CA4DA00852793 /* imageError */,
 				60877D39277C984F00852793 /* Config */,
 				60877D36277C975900852793 /* Fonts */,
@@ -277,6 +280,14 @@
 				6046274B277A4066004FFAAD /* ProfileVC.swift */,
 			);
 			path = ProfilePage;
+			sourceTree = "<group>";
+		};
+		60DF2890277F3E1E00EB055E /* RegitrationLogin */ = {
+			isa = PBXGroup;
+			children = (
+				60893E2227787E8800072576 /* RegistrationViewController.swift */,
+			);
+			path = RegitrationLogin;
 			sourceTree = "<group>";
 		};
 		9DC85EA25CDB99991636C4C2 /* Frameworks */ = {
@@ -357,6 +368,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				60893E152778796100072576 /* LaunchScreen.storyboard in Resources */,
+				60DF2894277F4BDE00EB055E /* dog.jpg in Resources */,
 				60462743277A1D3D004FFAAD /* GoogleService-Info.plist in Resources */,
 				60893E122778796100072576 /* Assets.xcassets in Resources */,
 				60893E102778796000072576 /* Main.storyboard in Resources */,
