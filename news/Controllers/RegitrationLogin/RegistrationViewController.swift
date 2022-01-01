@@ -9,7 +9,7 @@ import UIKit
 import Firebase
 import PMSuperButton
 
-class RegistrationViewController: UIViewController { // поле ввода имени
+class RegistrationViewController: UIViewController {
     let colors = MyColors()
     
     var data = RegistrationModel()
@@ -17,7 +17,7 @@ class RegistrationViewController: UIViewController { // поле ввода им
 
     
     
-    lazy var nameTextField:UITextField = {
+    lazy var nameTextField:UITextField = {   // поле ввода имени
         var n = UITextField()
         n.translatesAutoresizingMaskIntoConstraints = false
         n.delegate = self

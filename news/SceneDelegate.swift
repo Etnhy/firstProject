@@ -21,7 +21,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let windowScreen = (scene as? UIWindowScene) else { return }
         window = UIWindow(windowScene: windowScreen)
         let reg = RegistrationViewController()
-        window?.rootViewController = MainTabBarViewController()
+        window?.rootViewController = getNewsViewController()//MainTabBarViewController()
         window?.makeKeyAndVisible()
         
         guard let _ = (scene as? UIWindowScene) else { return }

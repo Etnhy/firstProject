@@ -12,5 +12,4 @@ pod 'Firebase/Firestore'
 pod 'NewsAPISwift'
 pod 'PMSuperButton'
 
-
 end

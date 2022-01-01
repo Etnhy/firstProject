@@ -10,7 +10,7 @@ import UIKit
 class TableViewCell: UITableViewCell {
     
     static let identifier = "TableViewCell"
-    let data = NewsArticles()
+    //let data = NewsArticles()
 
     
     let imageNews = UIImageView()
@@ -60,6 +60,7 @@ class TableViewCell: UITableViewCell {
         articlesNews.translatesAutoresizingMaskIntoConstraints = false
         articlesNews.backgroundColor = .white
         articlesNews.numberOfLines = 0
+        articlesNews.textColor = .black
         articlesNews.text = "пропал дог позвоните сюда пропал дог позвоните сюда пропал дог позвоните сюда пропал дог позвоните сюда пропал дог позвоните сюда пропал дог позвоните сюда пропал дог позвоните сюда пропал дог позвоните сюда"
     }
     func setupDateNews() {
