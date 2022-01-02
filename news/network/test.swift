@@ -6,12 +6,18 @@
 //
 
 import Foundation
+import Alamofire
+import UIKit
 
+class NetWorkingClient {
+    
+    let nerton = "https://newsapi.org/v2/everything?q=tesla&from=2021-12-02&sortBy=publishedAt&apiKey=3b7a57f2d0e3400e9193cd86f1ba0fb5"
+    
+    
 
-import NewsAPISwift
-
-var newsAPI = NewsAPI(apiKey: "3b7a57f2d0e3400e9193cd86f1ba0fb5")
-
+    
+    
+}
 
 
 

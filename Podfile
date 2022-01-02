@@ -11,5 +11,6 @@ pod 'Firebase/Auth'
 pod 'Firebase/Firestore'
 pod 'NewsAPISwift'
 pod 'PMSuperButton'
+pod 'Alamofire', '~> 5.5'
 
 end

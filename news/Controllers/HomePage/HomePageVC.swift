@@ -15,6 +15,9 @@ class HomePageVC: MainTableViewViewController {
         
         
         self.configure()
+        
+        
+
     }
 
 

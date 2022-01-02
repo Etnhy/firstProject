@@ -12,8 +12,8 @@ class getNewsViewController: UIViewController {
     
     
     let imageCache = NSCache<NSString, NSData>()
+    
     static let shared = getNewsViewController()
-    //private init() { }
     
     let urlBase = "https://newsapi.org/v2"
     let urlMiddle = "/top-headlines?country=us"

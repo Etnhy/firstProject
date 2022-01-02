@@ -13,8 +13,10 @@ class ErrorViewController: UIViewController {
     private lazy var conteinerView: UIView = {
         let view = UIView()
         view.translatesAutoresizingMaskIntoConstraints = false
-        view.backgroundColor = colors.coldColor
+        view.backgroundColor = colors.color3light
         view.layer.cornerRadius = 8
+        view.layer.borderColor = colors.color4easyLight.cgColor
+        view.layer.borderWidth = 2
         return view
     }()
     
@@ -23,10 +25,10 @@ class ErrorViewController: UIViewController {
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textAlignment = .center
         label.numberOfLines = 0
-        label.font = .systemFont(ofSize: 16)
-        label.textColor = UIColor(red: 0.212, green: 0.212, blue: 0.212, alpha: 1)
+        label.font = .systemFont(ofSize: 22)
+        label.textColor = colors.color1Dark
         label.backgroundColor = .clear
-        label.text = "newss"
+        label.text = "Newss"
         return label
     }()
     
@@ -36,7 +38,7 @@ class ErrorViewController: UIViewController {
         label.textAlignment = .center
         label.numberOfLines = 0
         label.font = .systemFont(ofSize: 14)
-        label.textColor = UIColor(red: 0.212, green: 0.212, blue: 0.212, alpha: 1)
+        label.textColor = colors.coldColor
         label.backgroundColor = .clear
         label.text = message
         return label
@@ -46,6 +48,7 @@ class ErrorViewController: UIViewController {
         let button = UIButton()
         button.translatesAutoresizingMaskIntoConstraints = false
         button.setTitle("OK", for: .normal)
+        button.setTitleColor(colors.color1Dark, for: .normal)
         button.addTarget(self, action: #selector(didTapButton), for: .touchUpInside)
         return button
     }()

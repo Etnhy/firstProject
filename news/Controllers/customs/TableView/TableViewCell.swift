@@ -82,17 +82,15 @@ class TableViewCell: UITableViewCell {
             imageNews.heightAnchor.constraint(equalToConstant: 140)
         ])
         NSLayoutConstraint.activate([
-            articlesNews.topAnchor.constraint(equalTo: self.imageNews.bottomAnchor, constant: 2),
+            articlesNews.topAnchor.constraint(equalTo: self.imageNews.bottomAnchor, constant: -20),
             articlesNews.leadingAnchor.constraint(equalTo: self.contentView.leadingAnchor),
             articlesNews.trailingAnchor.constraint(equalTo: self.contentView.trailingAnchor),
             articlesNews.bottomAnchor.constraint(equalTo: self.contentView.bottomAnchor,constant: -20)
         ])
         NSLayoutConstraint.activate([
-            dateNews.topAnchor.constraint(equalTo: articlesNews.bottomAnchor),
+            dateNews.topAnchor.constraint(equalTo: articlesNews.bottomAnchor,constant: -10),
             dateNews.leadingAnchor.constraint(equalTo: self.contentView.leadingAnchor,constant: 8),
-            dateNews.trailingAnchor.constraint(equalTo: self.contentView.trailingAnchor, constant: -140),
-            dateNews.heightAnchor.constraint(equalToConstant: 20),
-            dateNews.bottomAnchor.constraint(equalTo: self.contentView.bottomAnchor, constant: -4)
+
         ])
 //
     }

@@ -63,19 +63,8 @@ class MainTableViewViewController: UIViewController {
     }
     
     
-    //MARK: news
     
-    func getSources() {
-        newsAPI.getSources { result in
-            switch result {
-            case .success(let sourceList):
-                self.sources = sourceList
-                    print(sourceList)
-            case .failure(let error):
-                fatalError("\(error)")
-            }
-        }
-    }
+ 
 
     
 }
