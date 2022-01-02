@@ -6,10 +6,19 @@
 //
 
 import UIKit
+import NewsAPISwift
 
 class MainTableViewViewController: UIViewController {
     
     let tableView = UITableView()
+    
+    var sources = [NewsSource]() {
+        didSet {
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
+            }
+        }
+    }
     
  
     
@@ -23,6 +32,15 @@ class MainTableViewViewController: UIViewController {
         
 
     }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        getSources()
+        
+    }
+    
+    
+    
     //layout subviews
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
@@ -42,5 +60,19 @@ class MainTableViewViewController: UIViewController {
         tableView.register(TableViewCell.self, forCellReuseIdentifier: "cell")
     }
     
-
+    
+    //MARK: news
+    
+    func getSources() {
+        newsAPI.getSources { result in
+            switch result {
+            case .success(let sourceList):
+                self.sources = sourceList
+            case .failure(let error):
+                fatalError("\(error)")
+            }
+        }
+    }
+    
+    
 }

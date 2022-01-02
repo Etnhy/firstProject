@@ -8,10 +8,12 @@
 import UIKit
 
 class ErrorViewController: UIViewController {
+    let colors = MyColors()
+    
     private lazy var conteinerView: UIView = {
         let view = UIView()
         view.translatesAutoresizingMaskIntoConstraints = false
-        view.backgroundColor = .white
+        view.backgroundColor = colors.coldColor
         view.layer.cornerRadius = 8
         return view
     }()

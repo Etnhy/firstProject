@@ -12,13 +12,14 @@ import UIKit
 extension MainTableViewViewController: UITableViewDelegate, UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 6
+        return sources.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
         
-        cell.textLabel?.text =  "Какая то новость - \(indexPath.row)"
+        cell.textLabel?.text =  sources[indexPath.row].name
+        
 
         return cell
     }
@@ -41,3 +42,6 @@ extension MainTableViewViewController: UITableViewDelegate, UITableViewDataSourc
     
     
 }
+
+
+extension TableViewCell: UITableViewCell
