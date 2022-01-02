@@ -12,13 +12,13 @@ import UIKit
 extension MainTableViewViewController: UITableViewDelegate, UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return sources.count
+        return 4
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "TableViewCell", for: indexPath)
         
-        cell.textLabel?.text =  sources[indexPath.row].name
+        cell.textLabel?.text =  "новостная ячейка \(indexPath.row)"
         
 
         return cell

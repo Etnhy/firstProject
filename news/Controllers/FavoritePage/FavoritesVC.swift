@@ -13,6 +13,11 @@ class FavoritesVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         settingsVC()
+        
+        getNewsViewController.shared.getNews { (news) in
+            guard let news = news else {return}
+            //print(news[0].author)
+        }
 
     }
     

@@ -11,33 +11,57 @@ import NewsAPISwift
 class getNewsViewController: UIViewController {
     
     
-//    let newsAPI = NewsAPI(apiKey: "3b7a57f2d0e3400e9193cd86f1ba0fb5")
-//
-//    var sources = [NewsSource]() {
-//        didSet {
-//            DispatchQueue.main.async {
-//                self.tableView.reloadData()
-//            }
-//        }
-//    }
-//
-//
-//
-//
-//    override func viewDidLoad() {
-//        super.viewDidLoad()
-//
-//    }
-//
-//    func getData() {
-//
-//        newsAPI.getTopHeadlines(category: .all, language: .en, country: .ae) { Result<[NewsArticle], NewsAPIError> in
-//            switch Result {
-//                case .success(let headlines):
-//                    print(headlines)
-//                case .failure(let error):
-//                    print(error)
-//            }
-//        }
+    let imageCache = NSCache<NSString, NSData>()
+    static let shared = getNewsViewController()
+    //private init() { }
+    
+    let urlBase = "https://newsapi.org/v2"
+    let urlMiddle = "/top-headlines?country=us"
+    
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        
+        
+    }
+    
+    func getNews(completion: @escaping([News]?) -> Void) {
+        let urlString = "\(urlBase)\(urlMiddle)&apiKey=\(APIkey.key)"
+        guard let url = URL(string: urlString) else {
+            return
+        }
+        URLSession.shared.dataTask(with: url) { data, response, error in
+            guard error == nil, let data = data else {
+                completion(nil)
+                return
+            }
+            let newsEnvelope = try? JSONDecoder().decode(ResultNews.self, from: data)
+            newsEnvelope == nil ? completion(nil) : completion(newsEnvelope!.article)
+        }.resume()
+        
+        
+    }
+    
+    func getImageNews(urlString: String, completion: @escaping(Data?) -> Void) {
+        guard let url = URL(string: urlString) else {
+            completion(nil)
+            return
+        }
+        if let cachedImage = imageCache.object(forKey: NSString(string:urlString)) {
+            completion(cachedImage as Data)
+        } else {
+            URLSession.shared.dataTask(with: url) { data, response, error in
+                guard error == nil, let data = data else {
+                    completion(nil)
+                    return
+                }
+                self.imageCache.setObject(data as NSData, forKey: NSString(string: urlString))
+                completion(data)
+            }.resume()
+        }
+        
+    }
+    
 
 }

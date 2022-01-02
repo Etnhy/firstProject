@@ -21,6 +21,6 @@ struct News: Codable {
     
 }
 
-struct result: Codable {
+struct ResultNews: Codable {
     var article:[News] = []
 }

@@ -19,13 +19,14 @@
 		605B77E5277DFABE00CC11C8 /* test.swift in Sources */ = {isa = PBXBuildFile; fileRef = 605B77E4277DFABE00CC11C8 /* test.swift */; };
 		60795C1C2780887100520F9D /* newsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60795C1B2780887100520F9D /* newsModel.swift */; };
 		60795C1E2780893F00520F9D /* getNewsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60795C1D2780893F00520F9D /* getNewsViewController.swift */; };
+		60795C202781D28600520F9D /* CollectionViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60795C1F2781D28600520F9D /* CollectionViewDelegate.swift */; };
+		60795C222781D36800520F9D /* mainCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60795C212781D36800520F9D /* mainCollectionViewCell.swift */; };
 		608037FA277B905F006D931D /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 608037F9277B905F006D931D /* TabBarViewController.swift */; };
 		608037FD277B9444006D931D /* MainTableViewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 608037FC277B9444006D931D /* MainTableViewViewController.swift */; };
 		608037FF277B9634006D931D /* CustomTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 608037FE277B9634006D931D /* CustomTabBarViewController.swift */; };
 		60803802277BB131006D931D /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60803801277BB130006D931D /* TableViewCell.swift */; };
 		60877D38277C97E000852793 /* NewsAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60877D37277C97E000852793 /* NewsAPI.swift */; };
 		60877D3F277CA2C500852793 /* MainCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60877D3E277CA2C500852793 /* MainCollectionViewController.swift */; };
-		60877D42277CA2EB00852793 /* MainCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60877D41277CA2EB00852793 /* MainCollectionViewCell.swift */; };
 		60893E092778796000072576 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60893E082778796000072576 /* AppDelegate.swift */; };
 		60893E0B2778796000072576 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60893E0A2778796000072576 /* SceneDelegate.swift */; };
 		60893E0D2778796000072576 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60893E0C2778796000072576 /* MainViewController.swift */; };
@@ -52,13 +53,14 @@
 		605B77E4277DFABE00CC11C8 /* test.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = test.swift; sourceTree = "<group>"; };
 		60795C1B2780887100520F9D /* newsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = newsModel.swift; sourceTree = "<group>"; };
 		60795C1D2780893F00520F9D /* getNewsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = getNewsViewController.swift; sourceTree = "<group>"; };
+		60795C1F2781D28600520F9D /* CollectionViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewDelegate.swift; sourceTree = "<group>"; };
+		60795C212781D36800520F9D /* mainCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mainCollectionViewCell.swift; sourceTree = "<group>"; };
 		608037F9277B905F006D931D /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
 		608037FC277B9444006D931D /* MainTableViewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTableViewViewController.swift; sourceTree = "<group>"; };
 		608037FE277B9634006D931D /* CustomTabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabBarViewController.swift; sourceTree = "<group>"; };
 		60803801277BB130006D931D /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
 		60877D37277C97E000852793 /* NewsAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsAPI.swift; sourceTree = "<group>"; };
 		60877D3E277CA2C500852793 /* MainCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCollectionViewController.swift; sourceTree = "<group>"; };
-		60877D41277CA2EB00852793 /* MainCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCollectionViewCell.swift; sourceTree = "<group>"; };
 		60893E052778796000072576 /* news.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = news.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		60893E082778796000072576 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		60893E0A2778796000072576 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -153,7 +155,7 @@
 			isa = PBXGroup;
 			children = (
 				60877D3E277CA2C500852793 /* MainCollectionViewController.swift */,
-				60877D41277CA2EB00852793 /* MainCollectionViewCell.swift */,
+				60795C212781D36800520F9D /* mainCollectionViewCell.swift */,
 			);
 			path = CollectionView;
 			sourceTree = "<group>";
@@ -239,6 +241,7 @@
 			children = (
 				60E586E2277A111400C6DA2F /* TextFieldExtension.swift */,
 				602E2009277B423500D5AC1F /* ExtensionTableView.swift */,
+				60795C1F2781D28600520F9D /* CollectionViewDelegate.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -428,9 +431,10 @@
 				608037FA277B905F006D931D /* TabBarViewController.swift in Sources */,
 				608037FF277B9634006D931D /* CustomTabBarViewController.swift in Sources */,
 				60795C1C2780887100520F9D /* newsModel.swift in Sources */,
-				60877D42277CA2EB00852793 /* MainCollectionViewCell.swift in Sources */,
+				60795C202781D28600520F9D /* CollectionViewDelegate.swift in Sources */,
 				60462747277A3DF7004FFAAD /* HomePageVC.swift in Sources */,
 				60462741277A19F3004FFAAD /* FirebaseManager.swift in Sources */,
+				60795C222781D36800520F9D /* mainCollectionViewCell.swift in Sources */,
 				60E586E3277A111400C6DA2F /* TextFieldExtension.swift in Sources */,
 				60893E092778796000072576 /* AppDelegate.swift in Sources */,
 				605B77E5277DFABE00CC11C8 /* test.swift in Sources */,
