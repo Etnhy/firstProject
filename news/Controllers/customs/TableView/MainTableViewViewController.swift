@@ -35,7 +35,9 @@ class MainTableViewViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
+        
         getSources()
+        
         
     }
     
@@ -57,7 +59,7 @@ class MainTableViewViewController: UIViewController {
     func settingsTableView () { // settings table view
         tableView.delegate = self
         tableView.dataSource = self
-        tableView.register(TableViewCell.self, forCellReuseIdentifier: "cell")
+        tableView.register(TableViewCell.self, forCellReuseIdentifier: "TableViewCell")
     }
     
     
@@ -68,11 +70,12 @@ class MainTableViewViewController: UIViewController {
             switch result {
             case .success(let sourceList):
                 self.sources = sourceList
+                    print(sourceList)
             case .failure(let error):
                 fatalError("\(error)")
             }
         }
     }
-    
+
     
 }

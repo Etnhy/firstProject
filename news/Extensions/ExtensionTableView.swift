@@ -16,7 +16,7 @@ extension MainTableViewViewController: UITableViewDelegate, UITableViewDataSourc
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "TableViewCell", for: indexPath)
         
         cell.textLabel?.text =  sources[indexPath.row].name
         
@@ -44,4 +44,4 @@ extension MainTableViewViewController: UITableViewDelegate, UITableViewDataSourc
 }
 
 
-extension TableViewCell: UITableViewCell
+//extension TableViewCell: UITableViewCell

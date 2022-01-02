@@ -6,11 +6,19 @@
 //
 
 import UIKit
+import NewsAPISwift
 
 class TableViewCell: UITableViewCell {
     
     static let identifier = "TableViewCell"
     //let data = NewsArticles()
+    var sources = [NewsSource]() {
+        didSet {
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
+            }
+        }
+    }
 
     
     let imageNews = UIImageView()
