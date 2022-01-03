@@ -7,6 +7,7 @@
 
 import Foundation
 import UIKit
+import SafariServices
 
 
 extension MainTableViewViewController: UITableViewDelegate, UITableViewDataSource {
@@ -32,7 +33,13 @@ extension MainTableViewViewController: UITableViewDelegate, UITableViewDataSourc
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-        print("cell tapped")
+        let articles = articles[indexPath.row]
+        
+        guard let url = URL(string: articles.url ?? " ") else {
+            return
+        }
+        let vc = SFSafariViewController(url: url)
+        present(vc, animated: true)
     }
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {

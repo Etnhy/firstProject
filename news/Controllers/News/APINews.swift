@@ -12,7 +12,8 @@ class APINews {
     
     let urlBase = "https://newsapi.org/v2"
     let urlMiddle = "/top-headlines?country=us"
-    let urlTwo = "https://newsapi.org/v2/everything?q=tesla&from=2021-12-03&sortBy=publishedAt&apiKey=3b7a57f2d0e3400e9193cd86f1ba0fb5"
+    let urlTwo = "https://newsapi.org/v2/top-headlines?country=ua&apiKey=3b7a57f2d0e3400e9193cd86f1ba0fb5"
+    //"https://newsapi.org/v2/everything?q=tesla&from=2021-12-03&sortBy=publishedAt&apiKey=3b7a57f2d0e3400e9193cd86f1ba0fb5"
     
     static let share = APINews()
     

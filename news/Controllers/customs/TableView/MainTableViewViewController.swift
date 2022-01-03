@@ -13,6 +13,7 @@ class MainTableViewViewController: UIViewController {
     let tableView = UITableView()
     
      var viewModels = [TableViewCellmodel]()
+    var articles = [Article]()
 
     // did load
     override func viewDidLoad() {

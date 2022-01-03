@@ -17,33 +17,56 @@ class HomePageVC: MainTableViewViewController {
         
         self.configure()
         
-        downloadData()
+        fetchTop()
         
     }
     func configure() {
         tableView.backgroundColor = colors.color1Dark
     }
+    
+    func fetchTop() {
+            data = []
+            APINews.share.getNews { [weak self] result in
+                switch result {
+                    case .success(let article):
+                        self?.articles = article
+                        self?.viewModels = article.compactMap({
+                            TableViewCellmodel(
+                                title: $0.title ?? " no title",
+                                subtitle: $0.description ?? " no descrtiption",
+                                imageURL: URL(string: $0.urlToImage ?? "no urlToImage")
+                            )
+                        })
+                        DispatchQueue.main.async {
+                            self?.tableView.reloadData()
+                        }
+                    case .failure(let error):
+                        print(error.localizedDescription)
+                }
+            }
+    }
 }
 //MARK: - FETCH
 extension HomePageVC {
-    func downloadData() {
-        data = []
-        APINews.share.getNews { [weak self] result in
-            switch result {
-                case .success(let article):
-                    self?.viewModels = article.compactMap({
-                        TableViewCellmodel(
-                            title: $0.title ?? " no title",
-                            subtitle: $0.description ?? " no descrtiption",
-                            imageURL: URL(string: $0.urlToImage ?? "no urlToImage")
-                        )
-                    })
-                    DispatchQueue.main.async {
-                        self?.tableView.reloadData()
-                    }
-                case .failure(let error):
-                    print(error.localizedDescription)
-            }
-        }
-}
+//    func downloadData() {
+//        data = []
+//        APINews.share.getNews { [weak self] result in
+//            switch result {
+//                case .success(let article):
+//                    self?.articles = article
+//                    self?.viewModels = article.compactMap({
+//                        TableViewCellmodel(
+//                            title: $0.title ?? " no title",
+//                            subtitle: $0.description ?? " no descrtiption",
+//                            imageURL: URL(string: $0.urlToImage ?? "no urlToImage")
+//                        )
+//                    })
+//                    DispatchQueue.main.async {
+//                        self?.tableView.reloadData()
+//                    }
+//                case .failure(let error):
+//                    print(error.localizedDescription)
+//            }
+//        }
+//}
 }

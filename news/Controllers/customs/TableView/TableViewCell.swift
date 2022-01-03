@@ -13,7 +13,7 @@ class TableViewCell: UITableViewCell {
     
     lazy var titleLabel: UILabel = {
         var label = UILabel()
-        label.font = .systemFont(ofSize: 20, weight: .heavy)
+        label.font = .systemFont(ofSize: 22, weight: .semibold)
         label.numberOfLines = 2
         return label
     }()
@@ -24,8 +24,8 @@ class TableViewCell: UITableViewCell {
         var subTitle = UILabel()
         subTitle.translatesAutoresizingMaskIntoConstraints = false
         subTitle.numberOfLines = 0
-        subTitle.font = .systemFont(ofSize: 12, weight: .bold)
-        subTitle.textColor = .black
+        subTitle.font = .systemFont(ofSize: 15, weight: .light)
+        //subTitle.textColor = .black
         return subTitle
         
     }()
@@ -33,9 +33,10 @@ class TableViewCell: UITableViewCell {
     lazy var newsImageView: UIImageView = {
         let image = UIImageView()
         image.translatesAutoresizingMaskIntoConstraints = false
-        image.backgroundColor = .black
+        image.layer.cornerRadius = 8
+        image.layer.masksToBounds = true
+        image.clipsToBounds = true
         image.contentMode = .scaleAspectFill
-        //image.image = UIImage(named: "dog.jpg")
         
         return image
     }()
@@ -69,12 +70,15 @@ class TableViewCell: UITableViewCell {
                                   height: 70)
         newsImageView.frame = CGRect(x: contentView.frame.size.width - 150,
                                      y: 20,
-                                  width: 300,
+                                  width: 150,
                                   height: contentView.frame.size.height - 20)
         
     }
     override func prepareForReuse() {
         super.prepareForReuse()
+        titleLabel.text = nil
+        subTitleLabel.text = nil
+        newsImageView.image = nil
     }
     
     func configure(with viewModel: TableViewCellmodel) {
@@ -90,6 +94,7 @@ class TableViewCell: UITableViewCell {
                 guard let data = data, error == nil  else {
                     return
                 }
+                viewModel.imageData = data
                 DispatchQueue.main.async {
                     self?.newsImageView.image = UIImage(data: data)
                 }

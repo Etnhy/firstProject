@@ -12,7 +12,7 @@ class TableViewCellmodel {
     let title: String
     let subtitle: String
     let imageURL: URL?
-    let imageData: Data? = nil
+    var imageData: Data? = nil
     
     
     init(title:String, subtitle: String, imageURL: URL?) {
