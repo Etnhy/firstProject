@@ -6,97 +6,145 @@
 //
 
 import UIKit
-import NewsAPISwift
 
 class TableViewCell: UITableViewCell {
     
     static let identifier = "TableViewCell"
-    //let data = NewsArticles()
+    
+    lazy var titleLabel: UILabel = {
+        var label = UILabel()
+        label.font = .systemFont(ofSize: 20, weight: .heavy)
+        label.numberOfLines = 2
+        return label
+    }()
+    
+    
+    lazy var subTitleLabel: UILabel = {
+        
+        var subTitle = UILabel()
+        subTitle.translatesAutoresizingMaskIntoConstraints = false
+        subTitle.numberOfLines = 0
+        subTitle.font = .systemFont(ofSize: 12, weight: .bold)
+        subTitle.textColor = .black
+        return subTitle
+        
+    }()
+    
+    lazy var newsImageView: UIImageView = {
+        let image = UIImageView()
+        image.translatesAutoresizingMaskIntoConstraints = false
+        image.backgroundColor = .black
+        image.contentMode = .scaleAspectFill
+        //image.image = UIImage(named: "dog.jpg")
+        
+        return image
+    }()
  
-
     
-    let imageNews = UIImageView()
-    let articlesNews = UILabel()
-    let dateNews = UILabel()
-    
-    
-    
-    
-
     override func awakeFromNib() {
         super.awakeFromNib()
-        
-        setupImage()
-        setupArticlesNews()
-        setupDateNews()
-        setConstraints()
-  
-    }
 
+    }
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: .default, reuseIdentifier: "TableViewCell")
-        
-        setupImage()
-        setupArticlesNews()
-        setupDateNews()
-        setConstraints()
-        
-        
+        contentView.addSubview(titleLabel)
+        contentView.addSubview(subTitleLabel)
+        contentView.addSubview(newsImageView)
+
     }
     
     required init?(coder: NSCoder) {
-        super.init(coder: coder)
-
+        fatalError()
     }
     
-    //MARK: Settings
-    func setupImage() {
-        contentView.addSubview(imageNews)
-        imageNews.translatesAutoresizingMaskIntoConstraints = false
-        imageNews.backgroundColor = .black
-        imageNews.contentMode = .scaleAspectFit
-        imageNews.image = UIImage(named: "dog.jpg")
-    }
-    func setupArticlesNews() {
-        contentView.addSubview(articlesNews)
-        articlesNews.translatesAutoresizingMaskIntoConstraints = false
-        articlesNews.backgroundColor = .white
-        articlesNews.numberOfLines = 0
-        articlesNews.textColor = .black
-        articlesNews.text = "пропал дог позвоните сюда пропал дог позвоните сюда пропал дог позвоните сюда пропал дог позвоните сюда пропал дог позвоните сюда пропал дог позвоните сюда пропал дог позвоните сюда пропал дог позвоните сюда"
-    }
-    func setupDateNews() {
-        contentView.addSubview(dateNews)
-        dateNews.translatesAutoresizingMaskIntoConstraints = false
-        dateNews.backgroundColor = .gray
-        dateNews.text = "Дата публикации: 21.12.21"
-        dateNews.textAlignment = .center
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        titleLabel.frame = CGRect(x: 10,
+                                  y: 0,
+                                  width: contentView.frame.size.width - 170,
+                                  height: contentView.frame.size.height/2)
+        subTitleLabel.frame = CGRect(x: 10,
+                                     y: 70,
+                                  width: contentView.frame.size.width - 170,
+                                  height: 70)
+        newsImageView.frame = CGRect(x: contentView.frame.size.width - 150,
+                                     y: 20,
+                                  width: 300,
+                                  height: contentView.frame.size.height - 20)
         
     }
+    override func prepareForReuse() {
+        super.prepareForReuse()
+    }
+    
+    func configure(with viewModel: TableViewCellmodel) {
+        titleLabel.text = viewModel.title
+        subTitleLabel.text = viewModel.subtitle
+        
+        //image
+        if let data = viewModel.imageData {
+            newsImageView.image = UIImage(data: data)
+        } else if let url = viewModel.imageURL {
+            //fetch
+            URLSession.shared.dataTask(with: url) {[weak self] data, _, error in
+                guard let data = data, error == nil  else {
+                    return
+                }
+                DispatchQueue.main.async {
+                    self?.newsImageView.image = UIImage(data: data)
+                }
+            }.resume()
+            
+        }
+    }
+        
+    
+    //MARK: Settings
+//    func setupImage() {
+//        contentView.addSubview(imageNews)
+//        imageNews.translatesAutoresizingMaskIntoConstraints = false
+//        imageNews.backgroundColor = .black
+//        imageNews.contentMode = .scaleAspectFit
+//        imageNews.image = UIImage(named: "dog.jpg")
+//    }
+//    func setupArticlesNews() {
+//        contentView.addSubview(articlesNews)
+//        articlesNews.translatesAutoresizingMaskIntoConstraints = false
+//        articlesNews.backgroundColor = .white
+//        articlesNews.numberOfLines = 0
+//        articlesNews.textColor = .black
+//        articlesNews.text = "пропал дог позвоните сюда пропал дог позвоните сюда пропал дог позвоните сюда пропал дог позвоните сюда пропал дог позвоните сюда пропал дог позвоните сюда пропал дог позвоните сюда пропал дог позвоните сюда"
+//    }
+//    func setupDateNews() {
+//        contentView.addSubview(dateNews)
+//        dateNews.translatesAutoresizingMaskIntoConstraints = false
+//        dateNews.backgroundColor = .gray
+//        dateNews.text = "Дата публикации: 21.12.21"
+//        dateNews.textAlignment = .center
+//
+//    }
     
     func setConstraints() {
         NSLayoutConstraint.activate([ // image news
-            imageNews.topAnchor.constraint(equalTo: contentView.topAnchor),
-            imageNews.leadingAnchor.constraint(equalTo: self.contentView.leadingAnchor),
-            imageNews.trailingAnchor.constraint(equalTo: self.contentView.trailingAnchor),
-            imageNews.heightAnchor.constraint(equalToConstant: 140)
+            newsImageView.topAnchor.constraint(equalTo: contentView.topAnchor),
+            newsImageView.leadingAnchor.constraint(equalTo: self.contentView.leadingAnchor),
+            newsImageView.trailingAnchor.constraint(equalTo: self.contentView.trailingAnchor),
+            newsImageView.heightAnchor.constraint(equalToConstant: 140)
         ])
-        NSLayoutConstraint.activate([
-            articlesNews.topAnchor.constraint(equalTo: self.imageNews.bottomAnchor, constant: -20),
-            articlesNews.leadingAnchor.constraint(equalTo: self.contentView.leadingAnchor),
-            articlesNews.trailingAnchor.constraint(equalTo: self.contentView.trailingAnchor),
-            articlesNews.bottomAnchor.constraint(equalTo: self.contentView.bottomAnchor,constant: -20)
-        ])
-        NSLayoutConstraint.activate([
-            dateNews.topAnchor.constraint(equalTo: articlesNews.bottomAnchor,constant: -10),
-            dateNews.leadingAnchor.constraint(equalTo: self.contentView.leadingAnchor,constant: 8),
-
-        ])
+//        NSLayoutConstraint.activate([
+//            articlesNews.topAnchor.constraint(equalTo: self.imageNews.bottomAnchor, constant: -20),
+//            articlesNews.leadingAnchor.constraint(equalTo: self.contentView.leadingAnchor),
+//            articlesNews.trailingAnchor.constraint(equalTo: self.contentView.trailingAnchor),
+//            articlesNews.bottomAnchor.constraint(equalTo: self.contentView.bottomAnchor,constant: -20)
+//        ])
+//        NSLayoutConstraint.activate([
+//            dateNews.topAnchor.constraint(equalTo: articlesNews.bottomAnchor,constant: -10),
+//            dateNews.leadingAnchor.constraint(equalTo: self.contentView.leadingAnchor,constant: 8),
 //
+//        ])
     }
     
 
 
 }
-
 

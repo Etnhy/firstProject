@@ -12,16 +12,8 @@ class MainTableViewViewController: UIViewController {
     
     let tableView = UITableView()
     
-    var sources = [NewsSource]() {
-        didSet {
-            DispatchQueue.main.async {
-                self.tableView.reloadData()
-            }
-        }
-    }
-    
- 
-    
+     var viewModels = [TableViewCellmodel]()
+
     // did load
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -59,7 +51,7 @@ class MainTableViewViewController: UIViewController {
     func settingsTableView () { // settings table view
         tableView.delegate = self
         tableView.dataSource = self
-        tableView.register(TableViewCell.self, forCellReuseIdentifier: "TableViewCell")
+        tableView.register(TableViewCell.self, forCellReuseIdentifier: TableViewCell.identifier)
     }
     
     

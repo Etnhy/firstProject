@@ -14,15 +14,8 @@ class FavoritesVC: UIViewController {
         super.viewDidLoad()
         settingsVC()
         
-        getNewsViewController.shared.getNews { (news) in
-            guard let news = news else {return}
-            print(news)
-        }
-//        getNewsViewController.shared.getNews { (news) in
-//            guard let news = news else {return}
-//            print(news[0].title)
-//
-//        }
+
+
 
     }
     
