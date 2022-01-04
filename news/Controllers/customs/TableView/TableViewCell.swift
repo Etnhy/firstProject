@@ -8,6 +8,7 @@
 import UIKit
 
 class TableViewCell: UITableViewCell {
+    let colors = MyColors()
     
     static let identifier = "TableViewCell"
     
@@ -51,6 +52,7 @@ class TableViewCell: UITableViewCell {
         contentView.addSubview(titleLabel)
         contentView.addSubview(subTitleLabel)
         contentView.addSubview(newsImageView)
+        contentView.backgroundColor = colors.color3light.withAlphaComponent(0.7)
 
     }
     

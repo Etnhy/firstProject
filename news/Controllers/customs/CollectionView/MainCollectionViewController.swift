@@ -13,6 +13,7 @@ class MainCollectionViewController: UICollectionViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         self.collectionView!.register(mainCollectionViewCell.self, forCellWithReuseIdentifier: "mainCollectionViewCell")
         
         settings()

@@ -13,10 +13,7 @@ class RegistrationViewController: UIViewController {
     let colors = MyColors()
     
     var data = RegistrationModel()
-    
 
-    
-    
     lazy var nameTextField:UITextField = {   // поле ввода имени
         var n = UITextField()
         n.translatesAutoresizingMaskIntoConstraints = false
@@ -186,7 +183,6 @@ class RegistrationViewController: UIViewController {
             FirebaseManager.shared.createUserWith(data.data) { error in
                 CustomAI.hide()
                 if let error = error {
-                    //self.showError("ERROR")
                     self.present(ErrorViewController(message: error.localizedDescription), animated: true, completion: nil)
                 } else {
                     self.showSuccess()
@@ -196,7 +192,7 @@ class RegistrationViewController: UIViewController {
     }
     
     func showSuccess() {
-        let alert = UIAlertController(title: "Поздравляем", message: "пользователь зарегистрирован!", preferredStyle: .alert)
+        let alert = UIAlertController(title: "Поздравляем", message: "Пользователь зарегистрирован!", preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
         self.present(alert, animated: true, completion: nil)
     }

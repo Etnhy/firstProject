@@ -17,7 +17,6 @@
 		6046274C277A4066004FFAAD /* ProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6046274B277A4066004FFAAD /* ProfileVC.swift */; };
 		6046274E277A408A004FFAAD /* FavoritesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6046274D277A408A004FFAAD /* FavoritesVC.swift */; };
 		605B77E3277DF22600CC11C8 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 605B77E2277DF22600CC11C8 /* Colors.swift */; };
-		605B77E5277DFABE00CC11C8 /* test.swift in Sources */ = {isa = PBXBuildFile; fileRef = 605B77E4277DFABE00CC11C8 /* test.swift */; };
 		60795C1C2780887100520F9D /* newsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60795C1B2780887100520F9D /* newsModel.swift */; };
 		60795C202781D28600520F9D /* CollectionViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60795C1F2781D28600520F9D /* CollectionViewDelegate.swift */; };
 		60795C222781D36800520F9D /* mainCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60795C212781D36800520F9D /* mainCollectionViewCell.swift */; };
@@ -37,7 +36,6 @@
 		6090083627836272007514A0 /* TableViewCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6090083527836272007514A0 /* TableViewCellModel.swift */; };
 		60BF62EA2779C1DD00ABD962 /* RegistrationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60BF62E92779C1DD00ABD962 /* RegistrationModel.swift */; };
 		60BF62F12779C50B00ABD962 /* CustomAI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60BF62F02779C50B00ABD962 /* CustomAI.swift */; };
-		60DF2894277F4BDE00EB055E /* dog.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 60DF2893277F4BDE00EB055E /* dog.jpg */; };
 		60E586E3277A111400C6DA2F /* TextFieldExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60E586E2277A111400C6DA2F /* TextFieldExtension.swift */; };
 		60FB70C827820EBA00570C98 /* gt-walsheim-bold.woff in Resources */ = {isa = PBXBuildFile; fileRef = 60FB70C327820EB900570C98 /* gt-walsheim-bold.woff */; };
 		60FB70C927820EBA00570C98 /* gt-walsheim-medium.woff in Resources */ = {isa = PBXBuildFile; fileRef = 60FB70C427820EBA00570C98 /* gt-walsheim-medium.woff */; };
@@ -57,7 +55,6 @@
 		6046274B277A4066004FFAAD /* ProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileVC.swift; sourceTree = "<group>"; };
 		6046274D277A408A004FFAAD /* FavoritesVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesVC.swift; sourceTree = "<group>"; };
 		605B77E2277DF22600CC11C8 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
-		605B77E4277DFABE00CC11C8 /* test.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = test.swift; sourceTree = "<group>"; };
 		60795C1B2780887100520F9D /* newsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = newsModel.swift; sourceTree = "<group>"; };
 		60795C1F2781D28600520F9D /* CollectionViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewDelegate.swift; sourceTree = "<group>"; };
 		60795C212781D36800520F9D /* mainCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mainCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -79,7 +76,6 @@
 		6090083527836272007514A0 /* TableViewCellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCellModel.swift; sourceTree = "<group>"; };
 		60BF62E92779C1DD00ABD962 /* RegistrationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationModel.swift; sourceTree = "<group>"; };
 		60BF62F02779C50B00ABD962 /* CustomAI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomAI.swift; sourceTree = "<group>"; };
-		60DF2893277F4BDE00EB055E /* dog.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = dog.jpg; sourceTree = "<group>"; };
 		60E586E2277A111400C6DA2F /* TextFieldExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldExtension.swift; sourceTree = "<group>"; };
 		60FB70C327820EB900570C98 /* gt-walsheim-bold.woff */ = {isa = PBXFileReference; lastKnownFileType = file; path = "gt-walsheim-bold.woff"; sourceTree = "<group>"; };
 		60FB70C427820EBA00570C98 /* gt-walsheim-medium.woff */ = {isa = PBXFileReference; lastKnownFileType = file; path = "gt-walsheim-medium.woff"; sourceTree = "<group>"; };
@@ -144,7 +140,6 @@
 			isa = PBXGroup;
 			children = (
 				60462740277A19F3004FFAAD /* FirebaseManager.swift */,
-				605B77E4277DFABE00CC11C8 /* test.swift */,
 			);
 			path = network;
 			sourceTree = "<group>";
@@ -176,13 +171,6 @@
 				60795C212781D36800520F9D /* mainCollectionViewCell.swift */,
 			);
 			path = CollectionView;
-			sourceTree = "<group>";
-		};
-		60877D45277CA4DA00852793 /* imageError */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = imageError;
 			sourceTree = "<group>";
 		};
 		60893DFC2778796000072576 = {
@@ -268,8 +256,6 @@
 			isa = PBXGroup;
 			children = (
 				605B77E2277DF22600CC11C8 /* Colors.swift */,
-				60DF2893277F4BDE00EB055E /* dog.jpg */,
-				60877D45277CA4DA00852793 /* imageError */,
 				60877D39277C984F00852793 /* Config */,
 				60877D36277C975900852793 /* Fonts */,
 			);
@@ -387,7 +373,6 @@
 			files = (
 				60893E152778796100072576 /* LaunchScreen.storyboard in Resources */,
 				60FB70C927820EBA00570C98 /* gt-walsheim-medium.woff in Resources */,
-				60DF2894277F4BDE00EB055E /* dog.jpg in Resources */,
 				60462743277A1D3D004FFAAD /* GoogleService-Info.plist in Resources */,
 				60FB70C827820EBA00570C98 /* gt-walsheim-bold.woff in Resources */,
 				60FB70CA27820EBA00570C98 /* gt-walsheim-light.woff in Resources */,
@@ -461,7 +446,6 @@
 				6005DCBC27833D9F00490E61 /* APINews.swift in Sources */,
 				60E586E3277A111400C6DA2F /* TextFieldExtension.swift in Sources */,
 				60893E092778796000072576 /* AppDelegate.swift in Sources */,
-				605B77E5277DFABE00CC11C8 /* test.swift in Sources */,
 				6090083627836272007514A0 /* TableViewCellModel.swift in Sources */,
 				605B77E3277DF22600CC11C8 /* Colors.swift in Sources */,
 				604432CC277B6D670076EBD9 /* ErrorViewController.swift in Sources */,
