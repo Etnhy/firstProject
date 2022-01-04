@@ -11,7 +11,7 @@ class TableViewCell: UITableViewCell {
     
     static let identifier = "TableViewCell"
     
-    lazy var titleLabel: UILabel = {
+    lazy var titleLabel: UILabel = { // title
         var label = UILabel()
         label.font = .systemFont(ofSize: 22, weight: .semibold)
         label.numberOfLines = 2
@@ -19,7 +19,7 @@ class TableViewCell: UITableViewCell {
     }()
     
     
-    lazy var subTitleLabel: UILabel = {
+    lazy var subTitleLabel: UILabel = { // subtitle
         
         var subTitle = UILabel()
         subTitle.translatesAutoresizingMaskIntoConstraints = false
@@ -30,7 +30,7 @@ class TableViewCell: UITableViewCell {
         
     }()
     
-    lazy var newsImageView: UIImageView = {
+    lazy var newsImageView: UIImageView = { // image view
         let image = UIImageView()
         image.translatesAutoresizingMaskIntoConstraints = false
         image.layer.cornerRadius = 8
@@ -60,6 +60,23 @@ class TableViewCell: UITableViewCell {
     
     override func layoutSubviews() {
         super.layoutSubviews()
+        
+        setLayoutSubviews()
+        
+        
+    }
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        titleLabel.text = nil
+        subTitleLabel.text = nil
+        newsImageView.image = nil
+    }
+    
+
+        
+    
+    //MARK: Settings
+    func setLayoutSubviews() {
         titleLabel.frame = CGRect(x: 10,
                                   y: 0,
                                   width: contentView.frame.size.width - 170,
@@ -74,13 +91,7 @@ class TableViewCell: UITableViewCell {
                                   height: contentView.frame.size.height - 20)
         
     }
-    override func prepareForReuse() {
-        super.prepareForReuse()
-        titleLabel.text = nil
-        subTitleLabel.text = nil
-        newsImageView.image = nil
-    }
-    
+//MARK: confing and fetch? image
     func configure(with viewModel: TableViewCellmodel) {
         titleLabel.text = viewModel.title
         subTitleLabel.text = viewModel.subtitle
@@ -102,52 +113,7 @@ class TableViewCell: UITableViewCell {
             
         }
     }
-        
-    
-    //MARK: Settings
-//    func setupImage() {
-//        contentView.addSubview(imageNews)
-//        imageNews.translatesAutoresizingMaskIntoConstraints = false
-//        imageNews.backgroundColor = .black
-//        imageNews.contentMode = .scaleAspectFit
-//        imageNews.image = UIImage(named: "dog.jpg")
-//    }
-//    func setupArticlesNews() {
-//        contentView.addSubview(articlesNews)
-//        articlesNews.translatesAutoresizingMaskIntoConstraints = false
-//        articlesNews.backgroundColor = .white
-//        articlesNews.numberOfLines = 0
-//        articlesNews.textColor = .black
-//        articlesNews.text = "пропал дог позвоните сюда пропал дог позвоните сюда пропал дог позвоните сюда пропал дог позвоните сюда пропал дог позвоните сюда пропал дог позвоните сюда пропал дог позвоните сюда пропал дог позвоните сюда"
-//    }
-//    func setupDateNews() {
-//        contentView.addSubview(dateNews)
-//        dateNews.translatesAutoresizingMaskIntoConstraints = false
-//        dateNews.backgroundColor = .gray
-//        dateNews.text = "Дата публикации: 21.12.21"
-//        dateNews.textAlignment = .center
-//
-//    }
-    
-    func setConstraints() {
-        NSLayoutConstraint.activate([ // image news
-            newsImageView.topAnchor.constraint(equalTo: contentView.topAnchor),
-            newsImageView.leadingAnchor.constraint(equalTo: self.contentView.leadingAnchor),
-            newsImageView.trailingAnchor.constraint(equalTo: self.contentView.trailingAnchor),
-            newsImageView.heightAnchor.constraint(equalToConstant: 140)
-        ])
-//        NSLayoutConstraint.activate([
-//            articlesNews.topAnchor.constraint(equalTo: self.imageNews.bottomAnchor, constant: -20),
-//            articlesNews.leadingAnchor.constraint(equalTo: self.contentView.leadingAnchor),
-//            articlesNews.trailingAnchor.constraint(equalTo: self.contentView.trailingAnchor),
-//            articlesNews.bottomAnchor.constraint(equalTo: self.contentView.bottomAnchor,constant: -20)
-//        ])
-//        NSLayoutConstraint.activate([
-//            dateNews.topAnchor.constraint(equalTo: articlesNews.bottomAnchor,constant: -10),
-//            dateNews.leadingAnchor.constraint(equalTo: self.contentView.leadingAnchor,constant: 8),
-//
-//        ])
-    }
+
     
 
 
