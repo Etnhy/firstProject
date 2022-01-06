@@ -22,19 +22,11 @@ class MainTableViewViewController: UIViewController {
 
         addSubviews()
         settingsTableView()
-        
-
     }
-    
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        
-        
-        
+ 
     }
-    
-    
-    
     //layout subviews
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
@@ -47,16 +39,9 @@ class MainTableViewViewController: UIViewController {
     func addSubviews() { // add subviews
         self.view.addSubview(tableView)
     }
-    
     func settingsTableView () { // settings table view
         tableView.delegate = self
         tableView.dataSource = self
         tableView.register(TableViewCell.self, forCellReuseIdentifier: TableViewCell.identifier)
     }
-    
-    
-    
- 
-
-    
 }
