@@ -1,8 +1,6 @@
 //
 //  ErrorViewController.swift
-//  Sonic App
 //
-//  Created by Serhii Zhuravlov on 27.12.2021.
 //
 
 import UIKit
