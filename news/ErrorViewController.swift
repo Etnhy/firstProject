@@ -18,7 +18,7 @@ class ErrorViewController: UIViewController {
         return view
     }()
     
-    private lazy var titleLabel: UILabel = {
+    private lazy var titleLabel: UILabel = {// label1
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textAlignment = .center
