@@ -25,7 +25,7 @@ class ErrorViewController: UIViewController {
         label.numberOfLines = 0
         label.font = .systemFont(ofSize: 22)
         label.textColor = colors.color1Dark
-        label.backgroundColor = .clear
+        label.backgroundColor = .clear 
         label.text = "Newss"
         return label
     }()
