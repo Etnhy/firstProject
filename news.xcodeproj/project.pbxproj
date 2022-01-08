@@ -133,19 +133,19 @@
 			children = (
 				60108C08278A43DB00A90825 /* collectionNews */,
 				605B77E6277E030C00CC11C8 /* tabBar */,
-				60803800277BB10A006D931D /* TableView */,
+				60803800277BB10A006D931D /* TableView - not used */,
 			);
 			path = customs;
 			sourceTree = "<group>";
 		};
-		60803800277BB10A006D931D /* TableView */ = {
+		60803800277BB10A006D931D /* TableView - not used */ = {
 			isa = PBXGroup;
 			children = (
 				608037FC277B9444006D931D /* MainTableViewViewController.swift */,
 				60803801277BB130006D931D /* TableViewCell.swift */,
 				6090083527836272007514A0 /* TableViewCellModel.swift */,
 			);
-			path = TableView;
+			path = "TableView - not used";
 			sourceTree = "<group>";
 		};
 		60877D35277C974900852793 /* network */ = {

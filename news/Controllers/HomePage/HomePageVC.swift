@@ -16,7 +16,7 @@ class HomePageVC: CollectionNewsVC {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        self.view.backgroundColor = colors.color1Dark
        // self.configure()
         
         fetchTop()

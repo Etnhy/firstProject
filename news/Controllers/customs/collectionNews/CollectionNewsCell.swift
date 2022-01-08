@@ -15,16 +15,20 @@ class CollectionNewsCell: UICollectionViewCell {
     lazy var newsLabel: UILabel = { // lable
        var lable = UILabel()
         lable.translatesAutoresizingMaskIntoConstraints = false
-        lable.backgroundColor = .gray
-        lable.numberOfLines = 1
+        lable.font = .systemFont(ofSize: 16, weight: .bold)
+        lable.numberOfLines = 2
         return lable
         
     }()
     lazy var newsText: UILabel = {
         var  tex = UILabel()
         tex.translatesAutoresizingMaskIntoConstraints = false
-        tex.backgroundColor = .yellow
+        tex.font = .systemFont(ofSize: 14, weight: .medium)
         tex.numberOfLines = 0
+        tex.contentMode = .scaleAspectFill
+        tex.lineBreakMode = .byWordWrapping
+        tex.sizeToFit()
+ 
         return  tex
         
     }()
@@ -33,6 +37,7 @@ class CollectionNewsCell: UICollectionViewCell {
         var  image = UIImageView()
         image.translatesAutoresizingMaskIntoConstraints = false
         image.backgroundColor = .green
+        image.clipsToBounds = true
         return  image
         
     }()
@@ -56,6 +61,12 @@ class CollectionNewsCell: UICollectionViewCell {
         super.awakeFromNib()
         
     }
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        newsText.text = nil
+        newsLabel.text = nil
+        newsImage.image = nil
+    }
     
     //MARK: -  add subview
     func addSubviews() {
@@ -78,10 +89,11 @@ class CollectionNewsCell: UICollectionViewCell {
             
         ])
             NSLayoutConstraint.activate([ // article news
-            newsLabel.topAnchor.constraint(equalTo: newsImage.bottomAnchor),
+            newsLabel.topAnchor.constraint(equalTo: newsImage.bottomAnchor,constant: 0),
             newsLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
-            newsImage.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
-            newsLabel.heightAnchor.constraint(equalToConstant: 30)
+            newsLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
+            newsLabel.heightAnchor.constraint(equalToConstant: 24),
+            
         ])
         NSLayoutConstraint.activate([ // text news
             newsText.topAnchor.constraint(equalTo: newsLabel.bottomAnchor),
