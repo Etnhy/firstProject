@@ -18,8 +18,6 @@ class TableViewCell: UITableViewCell {
         label.numberOfLines = 2
         return label
     }()
-    
-    
     lazy var subTitleLabel: UILabel = { // subtitle
         
         var subTitle = UILabel()
@@ -30,7 +28,6 @@ class TableViewCell: UITableViewCell {
         return subTitle
         
     }()
-    
     lazy var newsImageView: UIImageView = { // image view
         let image = UIImageView()
         image.translatesAutoresizingMaskIntoConstraints = false
@@ -41,7 +38,7 @@ class TableViewCell: UITableViewCell {
         
         return image
     }()
- 
+    
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -93,7 +90,7 @@ class TableViewCell: UITableViewCell {
                                   height: contentView.frame.size.height - 20)
         
     }
-//MARK: confing and fetch? image
+    //MARK: confing and fetch? image
     func configure(with viewModel: TableViewCellmodel) {
         titleLabel.text = viewModel.title
         subTitleLabel.text = viewModel.subtitle
