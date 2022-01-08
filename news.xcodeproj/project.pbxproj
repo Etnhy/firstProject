@@ -100,6 +100,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		60108C08278A43DB00A90825 /* collectionNews */ = {
+			isa = PBXGroup;
+			children = (
+				60108C06278A2E3900A90825 /* CollectionNewsVC.swift */,
+				60108C02278A293800A90825 /* CollectionNewsCell.swift */,
+				60108C04278A294400A90825 /* ColletionNewsModel.swift */,
+			);
+			path = collectionNews;
+			sourceTree = "<group>";
+		};
 		605B77E6277E030C00CC11C8 /* tabBar */ = {
 			isa = PBXGroup;
 			children = (
@@ -121,6 +131,7 @@
 		608037FB277B9424006D931D /* customs */ = {
 			isa = PBXGroup;
 			children = (
+				60108C08278A43DB00A90825 /* collectionNews */,
 				605B77E6277E030C00CC11C8 /* tabBar */,
 				60803800277BB10A006D931D /* TableView */,
 			);
@@ -193,9 +204,6 @@
 				60893E1E2778797B00072576 /* Controllers */,
 				60893E1C2778796A00072576 /* Views */,
 				60893E082778796000072576 /* AppDelegate.swift */,
-				60108C06278A2E3900A90825 /* CollectionNewsVC.swift */,
-				60108C02278A293800A90825 /* CollectionNewsCell.swift */,
-				60108C04278A294400A90825 /* ColletionNewsModel.swift */,
 				60893E0A2778796000072576 /* SceneDelegate.swift */,
 				60BF62F02779C50B00ABD962 /* CustomAI.swift */,
 				60893E0C2778796000072576 /* MainViewController.swift */,
