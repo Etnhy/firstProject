@@ -8,6 +8,7 @@
 import UIKit
 
 class FavoriteTableViewCell: UITableViewCell {
+    let colors = MyColors()
     
     static let identifier = "FavoriteTableViewCell"
     
@@ -15,6 +16,7 @@ class FavoriteTableViewCell: UITableViewCell {
        var image = UIImageView()
         image.translatesAutoresizingMaskIntoConstraints = false
         image.clipsToBounds = true
+        image.layer.cornerRadius = 12
         image.backgroundColor = .black
         return image
     }()
@@ -26,6 +28,7 @@ class FavoriteTableViewCell: UITableViewCell {
         v.textAlignment = .left
         v.contentMode = .top
         v.font = .systemFont(ofSize: 16, weight: .medium)
+        v.textColor = colors.coldColor
         v.text = " тут будет какой то текст - это для теста"
         return v
     }()
@@ -46,11 +49,6 @@ class FavoriteTableViewCell: UITableViewCell {
     override func layoutSubviews() {
         super.layoutSubviews()
         setCons()
-        
-//        favImage.frame = CGRect(x: 150,
-//                                y: 10,
-//                                width: 25,
-//                                height: 25)
     }
     required init?(coder: NSCoder) {
         super.init(coder: coder)

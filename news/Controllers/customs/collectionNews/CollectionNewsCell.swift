@@ -8,6 +8,7 @@
 import UIKit
 
 class CollectionNewsCell: UICollectionViewCell {
+    let colors = MyColors()
     
     static let identifier = "CollectionNewsCell"
     
@@ -16,7 +17,8 @@ class CollectionNewsCell: UICollectionViewCell {
        var lable = UILabel()
         lable.translatesAutoresizingMaskIntoConstraints = false
         lable.font = .systemFont(ofSize: 16, weight: .bold)
-        lable.numberOfLines = 2
+        lable.textColor = colors.coldColor
+        lable.numberOfLines = 0
         return lable
         
     }()
@@ -24,6 +26,7 @@ class CollectionNewsCell: UICollectionViewCell {
         var  tex = UILabel()
         tex.translatesAutoresizingMaskIntoConstraints = false
         tex.font = .systemFont(ofSize: 14, weight: .medium)
+        tex.textColor = colors.coldColor
         tex.numberOfLines = 0
         tex.contentMode = .scaleAspectFill
         tex.lineBreakMode = .byWordWrapping

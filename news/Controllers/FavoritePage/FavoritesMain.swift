@@ -22,6 +22,16 @@ class FavoritesMain: UIViewController {
         return table
         
     }()
+    
+    lazy var titleFavorite: UILabel = {
+       var title = UILabel()
+        title.translatesAutoresizingMaskIntoConstraints = false
+        title.text = "Избранное:"
+        title.textColor = colors.color4easyLight
+        title.font = .systemFont(ofSize: 34, weight: .bold)
+        return title
+        
+    }()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -39,16 +49,24 @@ class FavoritesMain: UIViewController {
     //MARK: - add sub
     private func addSub() {
         view.addSubview(favoriteTableView)
+        view.addSubview(titleFavorite)
     }
 
     
     //MARK: - set constraints
     private func setupConstraints() {
         NSLayoutConstraint.activate([
-            favoriteTableView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
+            favoriteTableView.topAnchor.constraint(equalTo: view.topAnchor, constant: 120),
             favoriteTableView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             favoriteTableView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
             favoriteTableView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
+        ])
+        
+        NSLayoutConstraint.activate([
+            //titleFavorite.bottomAnchor.constraint(equalTo: favoriteTableView.topAnchor, constant: 24),
+            titleFavorite.leadingAnchor.constraint(equalTo: view.leadingAnchor,constant: 16),
+            titleFavorite.widthAnchor.constraint(equalToConstant: view.frame.width),
+            titleFavorite.topAnchor.constraint(equalTo: view.topAnchor, constant: 76)
         ])
         
     }

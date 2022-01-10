@@ -12,6 +12,7 @@ class FavoritesVC: FavoritesMain {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        navigationController?.isNavigationBarHidden = true
         settingsVC()
         
 

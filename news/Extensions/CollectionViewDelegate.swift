@@ -31,7 +31,7 @@ extension CollectionNewsVC: UICollectionViewDelegateFlowLayout, UICollectionView
             fatalError()
         }
         let color = MyColors()
-        cell.backgroundColor = color.coldColor
+        cell.backgroundColor = color.color1Dark
         cell.configure(with: viewModels[indexPath.item])
         
         

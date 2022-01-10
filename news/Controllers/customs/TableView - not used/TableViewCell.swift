@@ -15,7 +15,8 @@ class TableViewCell: UITableViewCell {
     lazy var titleLabel: UILabel = { // title
         var label = UILabel()
         label.font = .systemFont(ofSize: 22, weight: .semibold)
-        label.numberOfLines = 2
+        label.textColor = colors.coldColor
+        label.numberOfLines = 0
         return label
     }()
     lazy var subTitleLabel: UILabel = { // subtitle
@@ -24,7 +25,7 @@ class TableViewCell: UITableViewCell {
         subTitle.translatesAutoresizingMaskIntoConstraints = false
         subTitle.numberOfLines = 0
         subTitle.font = .systemFont(ofSize: 15, weight: .light)
-        //subTitle.textColor = .black
+        subTitle.textColor = colors.coldColor
         return subTitle
         
     }()
