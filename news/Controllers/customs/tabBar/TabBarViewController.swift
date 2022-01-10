@@ -20,6 +20,7 @@ class MainTabBarViewController: UITabBarController {
          super.viewDidLoad()
          
          configs()
+         navigationController?.isNavigationBarHidden = true
 
      }
     func configs() {

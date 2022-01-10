@@ -9,7 +9,7 @@ import UIKit
 
 class CollectionNewsVC: UIViewController {
    static let identifier = "CollectionNewsVC"
-    //let colors = MyColors()
+    let colors = MyColors()
 
     
     var viewModels = [CollectionCellModel]()
@@ -17,19 +17,25 @@ class CollectionNewsVC: UIViewController {
     
     
      let collectionNews: UICollectionView = {
-        let layout = UICollectionViewFlowLayout()
-        layout.scrollDirection = .vertical
-        let call = UICollectionView(frame: CGRect.zero, collectionViewLayout: layout)
-        call.translatesAutoresizingMaskIntoConstraints = false
-        call.register(CollectionNewsCell.self, forCellWithReuseIdentifier: CollectionNewsCell.identifier)
-        return call
-    }()
+         let layout = UICollectionViewFlowLayout()
+         layout.scrollDirection = .vertical
+         layout.minimumLineSpacing = 0
+         //layout.minimumInteritemSpacing = 220
+         //layout.sectionInset.top = 40
+         //layout.sectionInset.bottom = 320
+         let call = UICollectionView(frame: CGRect.zero, collectionViewLayout: layout)
+         call.translatesAutoresizingMaskIntoConstraints = false
+         call.register(CollectionNewsCell.self, forCellWithReuseIdentifier: CollectionNewsCell.identifier)
+         call.isPagingEnabled = true
+    
+         return call
+     }()
     
     
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        //view.backgroundColor = colors.color1Dark
+        collectionNews.backgroundColor = colors.color1Dark
         addSub()
         settings()
         setConstraints()

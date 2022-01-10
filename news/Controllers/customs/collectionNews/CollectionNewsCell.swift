@@ -41,6 +41,15 @@ class CollectionNewsCell: UICollectionViewCell {
         return  image
         
     }()
+    lazy var addToFavoritsButton: UIButton = {
+       let b = UIButton()
+        b.translatesAutoresizingMaskIntoConstraints = false
+        b.backgroundColor = .black
+        b.layer.cornerRadius = 17
+        b.setImage(UIImage(named: "favorites@25px"), for: .normal)
+        b.addTarget(self, action: #selector(addToFavo), for: .touchUpInside)
+        return b
+    }()
 
     
     override init(frame: CGRect) {
@@ -73,6 +82,7 @@ class CollectionNewsCell: UICollectionViewCell {
         contentView.addSubview(newsText)
         contentView.addSubview(newsLabel)
         contentView.addSubview(newsImage)
+        contentView.addSubview(addToFavoritsButton)
 
         
     }
@@ -101,8 +111,20 @@ class CollectionNewsCell: UICollectionViewCell {
             newsText.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
             newsText.bottomAnchor.constraint(equalTo: contentView.bottomAnchor)
         ])
+        NSLayoutConstraint.activate([
+            addToFavoritsButton.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -10),
+            addToFavoritsButton.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -10),
+            addToFavoritsButton.widthAnchor.constraint(equalToConstant: 34),
+            addToFavoritsButton.heightAnchor.constraint(equalToConstant: 34),
+        ])
     }
     
+    //MARK: - actions
+    
+    @objc func addToFavo() {
+        print("yes")
+        
+    }
     
     //MARK: - FETCH
     func configure(with viewModel: CollectionCellModel) {

@@ -7,8 +7,8 @@
 
 import UIKit
 
-class FavoritesVC: UIViewController {
-    let colors = MyColors()
+class FavoritesVC: FavoritesMain {
+    //let colors = MyColors()
 
     override func viewDidLoad() {
         super.viewDidLoad()

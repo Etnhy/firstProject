@@ -9,7 +9,7 @@ import UIKit
 
 class HomePageVC: CollectionNewsVC {
     
-    let colors = MyColors()
+    //let colors = MyColors()
     
     
 
@@ -17,7 +17,8 @@ class HomePageVC: CollectionNewsVC {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = colors.color1Dark
-       // self.configure()
+        navigationController?.isNavigationBarHidden = true
+
         
         fetchTop()
         

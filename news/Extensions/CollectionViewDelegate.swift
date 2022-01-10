@@ -13,9 +13,10 @@ import SafariServices
 extension CollectionNewsVC: UICollectionViewDelegateFlowLayout, UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: collectionView.frame.width , height: collectionView.frame.height / 1.5)
+        return CGSize(width: collectionView.frame.width , height: collectionView.frame.height / 2)
     }
     
+
     
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -32,6 +33,7 @@ extension CollectionNewsVC: UICollectionViewDelegateFlowLayout, UICollectionView
         let color = MyColors()
         cell.backgroundColor = color.coldColor
         cell.configure(with: viewModels[indexPath.item])
+        
         
         return cell
     }
