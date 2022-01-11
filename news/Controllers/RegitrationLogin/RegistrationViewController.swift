@@ -10,7 +10,6 @@ import Firebase
 import PMSuperButton
 
 class RegistrationViewController: UIViewController {
-    let colors = MyColors()
     
     var data = RegistrationModel()
 
@@ -20,8 +19,8 @@ class RegistrationViewController: UIViewController {
         n.delegate = self
         n.layer.borderColor = UIColor.black.cgColor
         n.attributedPlaceholder = NSAttributedString(string: " Name",
-                                                     attributes: [NSAttributedString.Key.foregroundColor : colors.coldColor.withAlphaComponent(0.5)])
-        n.backgroundColor = colors.color2leastDark
+                                                     attributes: [NSAttributedString.Key.foregroundColor : MyColors.myColor.coldColor.withAlphaComponent(0.5)])
+        n.backgroundColor = MyColors.myColor.color2leastDark
         n.layer.cornerRadius = 4
         n.keyboardType = .default
        return n
@@ -33,8 +32,8 @@ class RegistrationViewController: UIViewController {
         s.delegate = self
         s.layer.borderColor = UIColor.black.cgColor
         s.attributedPlaceholder = NSAttributedString(string: " Lastname",
-                                                     attributes: [NSAttributedString.Key.foregroundColor : colors.coldColor.withAlphaComponent(0.5)])
-        s.backgroundColor = colors.color2leastDark
+                                                     attributes: [NSAttributedString.Key.foregroundColor : MyColors.myColor.coldColor.withAlphaComponent(0.5)])
+        s.backgroundColor = MyColors.myColor.color2leastDark
         s.layer.cornerRadius = 4
         s.keyboardType = .default
         return s
@@ -46,8 +45,8 @@ class RegistrationViewController: UIViewController {
         b.delegate = self
         b.layer.borderColor = UIColor.black.cgColor
         b.attributedPlaceholder = NSAttributedString(string: " Your Birthday date",
-                                                     attributes: [NSAttributedString.Key.foregroundColor : colors.coldColor.withAlphaComponent(0.5)])
-        b.backgroundColor = colors.color2leastDark
+                                                     attributes: [NSAttributedString.Key.foregroundColor : MyColors.myColor.coldColor.withAlphaComponent(0.5)])
+        b.backgroundColor = MyColors.myColor.color2leastDark
         b.layer.cornerRadius = 4
         b.keyboardType = .default
         return b
@@ -59,8 +58,8 @@ class RegistrationViewController: UIViewController {
         e.delegate = self
         e.layer.borderColor = UIColor.black.cgColor
         e.attributedPlaceholder = NSAttributedString(string: " E-mail",
-                                                     attributes: [NSAttributedString.Key.foregroundColor : colors.coldColor.withAlphaComponent(0.5)])
-        e.backgroundColor = colors.color2leastDark
+                                                     attributes: [NSAttributedString.Key.foregroundColor : MyColors.myColor.coldColor.withAlphaComponent(0.5)])
+        e.backgroundColor = MyColors.myColor.color2leastDark
         e.layer.cornerRadius = 4
         e.keyboardType = .default
         
@@ -74,8 +73,8 @@ class RegistrationViewController: UIViewController {
         p.isSecureTextEntry = false
         p.layer.borderColor = UIColor.black.cgColor
         p.attributedPlaceholder = NSAttributedString(string: " Password",
-                                           attributes: [NSAttributedString.Key.foregroundColor : colors.coldColor.withAlphaComponent(0.5)])
-        p.backgroundColor = colors.color2leastDark
+                                           attributes: [NSAttributedString.Key.foregroundColor : MyColors.myColor.coldColor.withAlphaComponent(0.5)])
+        p.backgroundColor = MyColors.myColor.color2leastDark
         p.layer.cornerRadius = 4
         p.keyboardType = .default
         return p
@@ -87,15 +86,15 @@ class RegistrationViewController: UIViewController {
         button.addTarget(self, action: #selector(registration), for: .touchUpInside)
         button.setTitle("OK", for: .normal)
         button.layer.borderWidth = 1
-        button.layer.borderColor = colors.coldColor.withAlphaComponent(0.1).cgColor
-        button.setTitleColor(colors.coldColor, for: .normal)
-        button.gradientStartColor = colors.color1Dark
-        button.gradientEndColor = colors.color2leastDark
+        button.layer.borderColor = MyColors.myColor.coldColor.withAlphaComponent(0.1).cgColor
+        button.setTitleColor(MyColors.myColor.coldColor, for: .normal)
+        button.gradientStartColor = MyColors.myColor.color1Dark
+        button.gradientEndColor = MyColors.myColor.color2leastDark
         button.gradientEnabled = true
         button.gradientHorizontal = true
         button.backgroundColor = .gray
         button.layer.cornerRadius = 8
-        button.rippleColor = colors.color3light
+        button.rippleColor = MyColors.myColor.color3light
         button.ripple = true
         
         return button
@@ -115,7 +114,7 @@ class RegistrationViewController: UIViewController {
     }
     
     private func settings() {
-        self.view.backgroundColor = colors.color1Dark
+        self.view.backgroundColor = MyColors.myColor.color1Dark
         
     }
     

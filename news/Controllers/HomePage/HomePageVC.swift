@@ -9,28 +9,19 @@ import UIKit
 
 class HomePageVC: CollectionNewsVC {
     
-    //let colors = MyColors()
-    
-    
-
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.view.backgroundColor = colors.color1Dark
+        self.view.backgroundColor = MyColors.myColor.color1Dark
         navigationController?.isNavigationBarHidden = true
 
         
         fetchTop()
         
-
-        
+  
     }
     
-    
-    
-//    func configure() {
-//        tableView.backgroundColor = colors.color1Dark
-//    }
+
     //MARK: - FETCH
     func fetchTop() {
         APINews.share.getNews { [weak self] result in

@@ -10,6 +10,7 @@ import UIKit
 
 
 class MyColors: UIColor {
+    static var myColor = MyColors()
     
     let color1Dark = UIColor(red: 0.12, green: 0.11, blue: 0.21, alpha: 1.00)
     let color2leastDark = UIColor(red: 0.25, green: 0.20, blue: 0.32, alpha: 1.00)

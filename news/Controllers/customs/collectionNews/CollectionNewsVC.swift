@@ -9,7 +9,6 @@ import UIKit
 
 class CollectionNewsVC: UIViewController {
    static let identifier = "CollectionNewsVC"
-    let colors = MyColors()
 
     
     var viewModels = [CollectionCellModel]()
@@ -35,7 +34,7 @@ class CollectionNewsVC: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        collectionNews.backgroundColor = colors.color1Dark
+        collectionNews.backgroundColor = MyColors.myColor.color1Dark
         addSub()
         settings()
         setConstraints()

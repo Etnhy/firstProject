@@ -8,14 +8,13 @@
 import UIKit
 
 class TableViewCell: UITableViewCell {
-    let colors = MyColors()
     
     static let identifier = "TableViewCell"
     
     lazy var titleLabel: UILabel = { // title
         var label = UILabel()
         label.font = .systemFont(ofSize: 22, weight: .semibold)
-        label.textColor = colors.coldColor
+        label.textColor = MyColors.myColor.coldColor
         label.numberOfLines = 0
         return label
     }()
@@ -25,7 +24,7 @@ class TableViewCell: UITableViewCell {
         subTitle.translatesAutoresizingMaskIntoConstraints = false
         subTitle.numberOfLines = 0
         subTitle.font = .systemFont(ofSize: 15, weight: .light)
-        subTitle.textColor = colors.coldColor
+        subTitle.textColor = MyColors.myColor.coldColor
         return subTitle
         
     }()
@@ -50,7 +49,7 @@ class TableViewCell: UITableViewCell {
         contentView.addSubview(titleLabel)
         contentView.addSubview(subTitleLabel)
         contentView.addSubview(newsImageView)
-        contentView.backgroundColor = colors.color3light.withAlphaComponent(0.7)
+        contentView.backgroundColor = MyColors.myColor.color3light.withAlphaComponent(0.7)
 
     }
     

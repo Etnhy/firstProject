@@ -8,7 +8,6 @@
 import UIKit
 
 class FavoritesMain: UIViewController {
-    let colors = MyColors()
     
     lazy var favoriteTableView: UITableView = {
        var table = UITableView()
@@ -16,7 +15,7 @@ class FavoritesMain: UIViewController {
         table.delegate = self
         table.dataSource = self
         table.register(FavoriteTableViewCell.self , forCellReuseIdentifier: FavoriteTableViewCell.identifier)
-        table.backgroundColor = colors.color1Dark
+        table.backgroundColor = MyColors.myColor.color1Dark
         table.layer.cornerRadius = 12
         table.clipsToBounds = true
         return table
@@ -27,7 +26,7 @@ class FavoritesMain: UIViewController {
        var title = UILabel()
         title.translatesAutoresizingMaskIntoConstraints = false
         title.text = "Избранное:"
-        title.textColor = colors.color4easyLight
+        title.textColor = MyColors.myColor.color4easyLight
         title.font = .systemFont(ofSize: 34, weight: .bold)
         return title
         
