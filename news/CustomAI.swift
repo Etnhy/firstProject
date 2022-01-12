@@ -18,7 +18,6 @@ class CustomAI {
         return instance
     }()
     
-    
     var container = UIView(frame: CGRect(x: 0, y: 0, width: SCREEN_WIDTH, height: SCREEN_HEIGHT))
     var activityIndicatorView = UIActivityIndicatorView()
     var blurEffect = UIVisualEffectView(effect: UIBlurEffect(style: .light))
