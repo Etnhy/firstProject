@@ -21,7 +21,7 @@ class CollectionNewsCell: UICollectionViewCell {
         return lable
         
     }()
-    lazy var newsText: UILabel = {
+    lazy var newsText: UILabel = { // title
         var  tex = UILabel()
         tex.translatesAutoresizingMaskIntoConstraints = false
         tex.font = .systemFont(ofSize: 14, weight: .medium)
@@ -35,15 +35,16 @@ class CollectionNewsCell: UICollectionViewCell {
         
     }()
     
-    lazy var newsImage: UIImageView = {
+    lazy var newsImage: UIImageView = { // image
         var  image = UIImageView()
         image.translatesAutoresizingMaskIntoConstraints = false
         image.backgroundColor = .green
         image.clipsToBounds = true
+        image.layer.cornerRadius = 8
         return  image
         
     }()
-    lazy var addToFavoritsButton: UIButton = {
+    lazy var addToFavoritsButton: UIButton = { // favorite button
        let b = UIButton()
         b.translatesAutoresizingMaskIntoConstraints = false
         b.backgroundColor = .black
@@ -51,6 +52,17 @@ class CollectionNewsCell: UICollectionViewCell {
         b.setImage(UIImage(named: "favorites@25px"), for: .normal)
         b.addTarget(self, action: #selector(addToFavo), for: .touchUpInside)
         return b
+    }()
+    lazy var dateLabel: UILabel = { // date label
+        var dates = UILabel()
+        dates.translatesAutoresizingMaskIntoConstraints = false
+        dates.backgroundColor = .clear
+        dates.textAlignment = .left
+        dates.font = .systemFont(ofSize: 12, weight: .light)
+        dates.text = " Дата публикации: 10.10.2020"
+        dates.textColor = MyColors.myColor.coldColor.withAlphaComponent(0.75)
+        
+       return dates
     }()
 
     
@@ -77,6 +89,7 @@ class CollectionNewsCell: UICollectionViewCell {
         newsText.text = nil
         newsLabel.text = nil
         newsImage.image = nil
+        dateLabel.text = nil
     }
     
     //MARK: -  add subview
@@ -85,6 +98,7 @@ class CollectionNewsCell: UICollectionViewCell {
         contentView.addSubview(newsLabel)
         contentView.addSubview(newsImage)
         contentView.addSubview(addToFavoritsButton)
+        contentView.addSubview(dateLabel)
 
         
     }
@@ -97,21 +111,18 @@ class CollectionNewsCell: UICollectionViewCell {
             newsImage.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
             newsImage.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
             newsImage.heightAnchor.constraint(equalToConstant: 200)
-
-            
         ])
             NSLayoutConstraint.activate([ // article news
             newsLabel.topAnchor.constraint(equalTo: newsImage.bottomAnchor,constant: 0),
             newsLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
             newsLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
             newsLabel.heightAnchor.constraint(equalToConstant: 24),
-            
         ])
         NSLayoutConstraint.activate([ // text news
             newsText.topAnchor.constraint(equalTo: newsLabel.bottomAnchor),
             newsText.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
             newsText.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
-            newsText.bottomAnchor.constraint(equalTo: contentView.bottomAnchor)
+            newsText.bottomAnchor.constraint(equalTo: dateLabel.topAnchor)
         ])
         NSLayoutConstraint.activate([
             addToFavoritsButton.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -10),
@@ -119,19 +130,25 @@ class CollectionNewsCell: UICollectionViewCell {
             addToFavoritsButton.widthAnchor.constraint(equalToConstant: 34),
             addToFavoritsButton.heightAnchor.constraint(equalToConstant: 34),
         ])
+        NSLayoutConstraint.activate([
+            dateLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 8),
+            dateLabel.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -10),
+            dateLabel.heightAnchor.constraint(equalToConstant: 36),
+            dateLabel.trailingAnchor.constraint(equalTo: addToFavoritsButton.leadingAnchor, constant: -16)
+        ])
     }
     
     //MARK: - actions
     
     @objc func addToFavo() {
         print("yes")
-        
     }
     
     //MARK: - FETCH
     func configure(with viewModel: CollectionCellModel) {
         newsLabel.text = viewModel.title
         newsText.text = viewModel.subtitle
+        dateLabel.text = "Дата публикации: \(viewModel.publishedAt)"
         
         //image
         if let data = viewModel.imageData {

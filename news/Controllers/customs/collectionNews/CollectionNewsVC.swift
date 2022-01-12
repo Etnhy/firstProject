@@ -63,7 +63,6 @@ class CollectionNewsVC: UIViewController {
             collectionNews.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             collectionNews.trailingAnchor.constraint(equalTo: view.trailingAnchor),
             collectionNews.bottomAnchor.constraint(equalTo: view.bottomAnchor),
-            
         ])
     }
     

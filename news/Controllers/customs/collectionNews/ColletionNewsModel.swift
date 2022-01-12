@@ -13,11 +13,13 @@ class CollectionCellModel {
     let subtitle: String
     let imageURL: URL?
     var imageData: Data? = nil
+    var publishedAt: String
     
     
-    init(title:String, subtitle: String, imageURL: URL?) {
+    init(title:String, subtitle: String, imageURL: URL?,publishedAt: String) {
         self.title = title
         self.subtitle = subtitle
         self.imageURL = imageURL
+        self.publishedAt = publishedAt
     }
 }

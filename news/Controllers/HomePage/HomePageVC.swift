@@ -32,7 +32,9 @@ class HomePageVC: CollectionNewsVC {
                         CollectionCellModel(
                             title: $0.title ?? " no title",
                             subtitle: $0.description ?? " no descrtiption",
-                            imageURL: URL(string: $0.urlToImage ?? "no urlToImage")
+                            imageURL: URL(string: $0.urlToImage ?? "no urlToImage"),
+                            publishedAt: $0.publishedAt ?? "no date"
+                            
                         )
                     })
                     DispatchQueue.main.async {
