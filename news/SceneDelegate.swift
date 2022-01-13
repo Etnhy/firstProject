@@ -18,13 +18,20 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
         
         
-        guard let windowScreen = (scene as? UIWindowScene) else { return }
-        window = UIWindow(windowScene: windowScreen)
-        let reg = RegistrationViewController()
-        window?.rootViewController = MainTabBarViewController()
-        window?.makeKeyAndVisible()
+//        guard let windowScreen = (scene as? UIWindowScene) else { return }
+//        window = UIWindow(windowScene: windowScreen)
+//        let reg = RegistrationViewController()
+//        window?.rootViewController = MainTabBarController()
+//        window?.makeKeyAndVisible()
+        guard let windowScene = (scene as? UIWindowScene) else { return }
+        let window = UIWindow(windowScene: windowScene)
+        self.window = window
+        setRootViewController2()
         
-        guard let _ = (scene as? UIWindowScene) else { return }
+        NotificationCenter.default.addObserver(forName: .CurrentDidChange, object: nil, queue: OperationQueue.main) { _ in
+            self.setRootViewController2()
+        }
+        
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {
@@ -60,3 +67,38 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
 }
 
+extension SceneDelegate {
+    func setRootViewController() {
+        //            if let mainController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "MainTabBarController") as? MainTabBarController {
+        let mainController = MainTabBarController()
+        window?.rootViewController = mainController
+        window?.makeKeyAndVisible()
+//                    }
+    }
+    
+    
+    func setRootViewController2() {
+        if let _ = UserDefaults.standard.value(forKey: "currentUser") as? String {
+            let mainController = MainTabBarController()
+            window?.rootViewController = mainController
+            window?.makeKeyAndVisible()
+            UIView.transition(with: window!,
+                              duration: 0.8,
+                              options: .transitionFlipFromBottom,
+                              animations: nil,
+                              completion: nil)
+            
+        } else {
+            let mainController = loginViewController()
+            window?.rootViewController = mainController
+            window?.makeKeyAndVisible()
+            UIView.transition(with: window!,
+                              duration: 0.8,
+                              options: .transitionFlipFromBottom,
+                              animations: nil,
+                              completion: nil)
+            
+        }
+    }
+
+}

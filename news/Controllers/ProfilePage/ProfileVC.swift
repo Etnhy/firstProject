@@ -8,7 +8,7 @@
 import UIKit
 import PMSuperButton
 
-class ProfileVC: UIViewController {
+class ProfileVC: ProfileMainViewController {
     let colors = MyColors()
     
     
@@ -30,6 +30,18 @@ class ProfileVC: UIViewController {
         
         return but
     }()
+    
+    lazy var exitButton: UIButton = {
+            let view = UIButton()
+            view.translatesAutoresizingMaskIntoConstraints = false
+            view.setTitle("Next VC", for: .normal)
+            view.setAttributedTitle(NSAttributedString(string: "exit", attributes: [NSAttributedString.Key.foregroundColor : UIColor.brown, .font : UIFont.systemFont(ofSize: 16)]), for: .normal)
+            view.setAttributedTitle(NSAttributedString(string: "EXIT", attributes: [NSAttributedString.Key.foregroundColor : UIColor.brown.withAlphaComponent(0.5), .font : UIFont.systemFont(ofSize: 16)]), for: .highlighted)
+            view.addTarget(self, action: #selector(didTapActionButton), for: .touchUpInside)
+            return view
+        }()
+    
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,6 +50,13 @@ class ProfileVC: UIViewController {
         settingsVC()
         addSubviews()
         setConstraints()
+        
+        view.addSubview(exitButton)
+        
+        exitButton.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
+        exitButton.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        
+        
 
         
 
@@ -56,10 +75,19 @@ class ProfileVC: UIViewController {
             buttonRegistration.centerXAnchor.constraint(equalTo: self.view.centerXAnchor)
         ])
     }
-    
+    //MARK: - Actions
   @objc  func buttonTarget() {
         let regVC = RegistrationViewController()
       present(regVC, animated: true, completion: nil)
     }
+    @objc func didTapActionButton() {
+    //            let nextVC = MainTabBarController()
+    //            self.navigationController?.pushViewController(nextVC, animated: true)
+        UserDefaults.standard.setValue(nil, forKey: "currentUser")
+        NotificationCenter.default.post(name: .CurrentDidChange, object: nil)
+    }
 
 }
+
+
+

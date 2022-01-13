@@ -101,6 +101,9 @@ class RegistrationViewController: UIViewController {
         
     }()
     
+
+    
+    
     
     
 
@@ -110,6 +113,7 @@ class RegistrationViewController: UIViewController {
         settings()
         addSubviews()
         setConstraints()
+
 
     }
     

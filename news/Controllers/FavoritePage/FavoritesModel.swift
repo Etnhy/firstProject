@@ -14,7 +14,7 @@ struct FavoritesModel: Codable {
     let name: String
     //let image: String?
     
-    init(url: String?, name: String) {
+    init(url: String, name: String) {
         self.url = url
         self.name = name
     }

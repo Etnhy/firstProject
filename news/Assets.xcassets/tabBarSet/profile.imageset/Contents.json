@@ -6,12 +6,12 @@
       "scale" : "1x"
     },
     {
-      "filename" : "account@50px.png",
+      "filename" : "account@75px.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "account@75px.png",
+      "filename" : "account@50px.png",
       "idiom" : "universal",
       "scale" : "3x"
     }
