@@ -100,12 +100,6 @@ class RegistrationViewController: UIViewController {
         return button
         
     }()
-    
-
-    
-    
-    
-    
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -113,8 +107,6 @@ class RegistrationViewController: UIViewController {
         settings()
         addSubviews()
         setConstraints()
-
-
     }
     
     private func settings() {
@@ -129,7 +121,6 @@ class RegistrationViewController: UIViewController {
         self.view.addSubview(emailTextField)
         self.view.addSubview(passwordTextField)
         self.view.addSubview(continueButton)
-
     }
     
     private func setConstraints() {
@@ -171,8 +162,6 @@ class RegistrationViewController: UIViewController {
         ])
 
     }
-    
-    
     @objc func registration() {
         signUpUser()
         

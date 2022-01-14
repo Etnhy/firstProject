@@ -19,8 +19,6 @@ extension FavoritesMain: UITableViewDelegate, UITableViewDataSource {
             fatalError()
         }
         cell.backgroundColor = MyColors.myColor.color1Dark.withAlphaComponent(0.5)
-        
-        
         return cell
     }
     

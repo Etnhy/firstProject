@@ -8,68 +8,44 @@
 import UIKit
 
 class ScrollViewCategories: UIScrollView {
+
+    let namesArray = ["Все" : ".all","Технологии" : ".technology",
+                      "Животные" : ".animals",
+                      "Бизнес" : ".bisness",
+                      "Наука" : ".science"]
     
 
-    lazy var stackButtonsCategories: UIStackView = {
-     var stack = UIStackView()
-        stack.translatesAutoresizingMaskIntoConstraints = false
-        stack.axis = .horizontal
-        stack.distribution = .fillEqually
-        stack.alignment = .fill
-        stack.spacing = 16
-        stack.addArrangedSubview(techButton)
-        return stack
-    }()
-    
-    lazy var techButton: UIButton = {
-       var tech = UIButton()
-        tech.setTitle("tech", for: .normal)
-        tech.backgroundColor = .black
-        return tech
-    }()
-    lazy var bissnButton: UIButton = {
-       var tech = UIButton()
-        tech.setTitle("tech", for: .normal)
-
-        return tech
-    }()
-    lazy var animalButton: UIButton = {
-       var tech = UIButton()
-        tech.setTitle("tech", for: .normal)
-
-        return tech
-    }()
-    
     override init(frame: CGRect) {
         super.init(frame: frame)
-        addStack()
-        settingsScrollView()
-        
+
+
     }
-    
+
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func addSub() {
-        
+    private func newButton(withName name: String,title: String) -> UIButton {
+        let newButton = UIButton(type: .system)
+        newButton.setTitle(title, for: .normal)
+        newButton.setTitleColor(MyColors.myColor.coldColor, for: .normal)
+        return newButton
     }
-    
-    
 
-    
-    func settingsScrollView (){
-        stackButtonsCategories.addSubview(techButton)
-        stackButtonsCategories.addSubview(bissnButton)
-        stackButtonsCategories.addArrangedSubview(animalButton)
-        
+    func displayed() {
+        var buttonArray = [UIButton]()
+        for (myKey, myValue) in namesArray {
+            buttonArray += [newButton(withName: myValue, title: myKey )]
+            let stack = UIStackView(arrangedSubviews: buttonArray)
+            stack.axis = .horizontal
+            stack.distribution = .fillEqually
+            stack.alignment = .fill
+            stack.spacing = 8
+            stack.translatesAutoresizingMaskIntoConstraints = false
+                                      
+        }
     }
-    
-    func addStack() {
-        stackButtonsCategories.addArrangedSubview(techButton)
-        stackButtonsCategories.addArrangedSubview(bissnButton)
-        stackButtonsCategories.addArrangedSubview(animalButton)
-    }
-    
+
+
 
 }

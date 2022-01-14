@@ -30,12 +30,7 @@ class MainHomeViewController: MainViewController {
         return call
     }()
     
-    lazy var stackCategories: ScrollViewCategories = {
-       var stack = ScrollViewCategories()
-        stack.translatesAutoresizingMaskIntoConstraints = false
-        
-        return stack
-    }()
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -48,7 +43,6 @@ class MainHomeViewController: MainViewController {
     //MARK: - add subviews
     private func addSub() {
         view.addSubview(collectionNews)
-//        view.addSubview(stackCategories)
 
     }
     
@@ -68,10 +62,7 @@ class MainHomeViewController: MainViewController {
             collectionNews.trailingAnchor.constraint(equalTo: view.trailingAnchor),
             collectionNews.bottomAnchor.constraint(equalTo: view.bottomAnchor,constant: -94),
         ])
-//        stackCategories.topAnchor.constraint(equalTo: headerView.bottomAnchor).isActive = true
-//        stackCategories.leadingAnchor.constraint(equalTo: self.view.leadingAnchor).isActive = true
-//        stackCategories.trailingAnchor.constraint(equalTo: self.view.trailingAnchor).isActive = true
-//        stackCategories.heightAnchor.constraint(equalToConstant: 40).isActive = true
+
     }
     //FIXME: reload button
     //MARK: -  actions
