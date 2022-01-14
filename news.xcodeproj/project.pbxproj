@@ -48,6 +48,7 @@
 		60B8F28F278F391D00716C0A /* ProfileMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60B8F28E278F391D00716C0A /* ProfileMainViewController.swift */; };
 		60BF62EA2779C1DD00ABD962 /* RegistrationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60BF62E92779C1DD00ABD962 /* RegistrationModel.swift */; };
 		60BF62F12779C50B00ABD962 /* CustomAI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60BF62F02779C50B00ABD962 /* CustomAI.swift */; };
+		60C1516C2791A65800DF197F /* RegLoginButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60C1516B2791A65800DF197F /* RegLoginButton.swift */; };
 		60E586E3277A111400C6DA2F /* TextFieldExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60E586E2277A111400C6DA2F /* TextFieldExtension.swift */; };
 		60FB70C827820EBA00570C98 /* gt-walsheim-bold.woff in Resources */ = {isa = PBXBuildFile; fileRef = 60FB70C327820EB900570C98 /* gt-walsheim-bold.woff */; };
 		60FB70C927820EBA00570C98 /* gt-walsheim-medium.woff in Resources */ = {isa = PBXBuildFile; fileRef = 60FB70C427820EBA00570C98 /* gt-walsheim-medium.woff */; };
@@ -100,6 +101,7 @@
 		60B8F28E278F391D00716C0A /* ProfileMainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileMainViewController.swift; sourceTree = "<group>"; };
 		60BF62E92779C1DD00ABD962 /* RegistrationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationModel.swift; sourceTree = "<group>"; };
 		60BF62F02779C50B00ABD962 /* CustomAI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomAI.swift; sourceTree = "<group>"; };
+		60C1516B2791A65800DF197F /* RegLoginButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegLoginButton.swift; sourceTree = "<group>"; };
 		60E586E2277A111400C6DA2F /* TextFieldExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldExtension.swift; sourceTree = "<group>"; };
 		60FB70C327820EB900570C98 /* gt-walsheim-bold.woff */ = {isa = PBXFileReference; lastKnownFileType = file; path = "gt-walsheim-bold.woff"; sourceTree = "<group>"; };
 		60FB70C427820EBA00570C98 /* gt-walsheim-medium.woff */ = {isa = PBXFileReference; lastKnownFileType = file; path = "gt-walsheim-medium.woff"; sourceTree = "<group>"; };
@@ -122,16 +124,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		60108C08278A43DB00A90825 /* collectionNews */ = {
-			isa = PBXGroup;
-			children = (
-				60108C06278A2E3900A90825 /* CollectionNewsVC.swift */,
-				60108C02278A293800A90825 /* CollectionNewsCell.swift */,
-				60108C04278A294400A90825 /* ColletionNewsModel.swift */,
-			);
-			path = collectionNews;
-			sourceTree = "<group>";
-		};
 		605B77E6277E030C00CC11C8 /* tabBar */ = {
 			isa = PBXGroup;
 			children = (
@@ -156,7 +148,7 @@
 			isa = PBXGroup;
 			children = (
 				6054FC9427908FD10090C763 /* MainHeaderView.swift */,
-				60108C08278A43DB00A90825 /* collectionNews */,
+				60C1516A2791A5D300DF197F /* MyCustomsButton */,
 				605B77E6277E030C00CC11C8 /* tabBar */,
 				60803800277BB10A006D931D /* TableView - not used */,
 			);
@@ -293,10 +285,21 @@
 			path = "Support Files";
 			sourceTree = "<group>";
 		};
+		60C1516A2791A5D300DF197F /* MyCustomsButton */ = {
+			isa = PBXGroup;
+			children = (
+				60C1516B2791A65800DF197F /* RegLoginButton.swift */,
+			);
+			path = MyCustomsButton;
+			sourceTree = "<group>";
+		};
 		60DF288D277F39E100EB055E /* HomePage */ = {
 			isa = PBXGroup;
 			children = (
 				60462746277A3DF7004FFAAD /* HomePageVC.swift */,
+				60108C06278A2E3900A90825 /* CollectionNewsVC.swift */,
+				60108C02278A293800A90825 /* CollectionNewsCell.swift */,
+				60108C04278A294400A90825 /* ColletionNewsModel.swift */,
 			);
 			path = HomePage;
 			sourceTree = "<group>";
@@ -496,6 +499,7 @@
 				608037FD277B9444006D931D /* MainTableViewViewController.swift in Sources */,
 				60877D38277C97E000852793 /* NewsAPI.swift in Sources */,
 				60893E0B2778796000072576 /* SceneDelegate.swift in Sources */,
+				60C1516C2791A65800DF197F /* RegLoginButton.swift in Sources */,
 				601517C6278C9D8C00812BCF /* FavoriteTableViewCell.swift in Sources */,
 				60108C05278A294400A90825 /* ColletionNewsModel.swift in Sources */,
 				601517C4278C9D0D00812BCF /* FavoritesMain.swift in Sources */,
