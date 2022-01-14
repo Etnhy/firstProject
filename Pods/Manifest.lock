@@ -338,7 +338,6 @@ PODS:
     - abseil/base/base_internal
     - abseil/base/config
     - abseil/meta/type_traits
-  - Alamofire (5.5.0)
   - BoringSSL-GRPC (0.0.7):
     - BoringSSL-GRPC/Implementation (= 0.0.7)
     - BoringSSL-GRPC/Interface (= 0.0.7)
@@ -431,20 +430,20 @@ PODS:
   - nanopb/decode (2.30908.0)
   - nanopb/encode (2.30908.0)
   - NewsAPISwift (2.0)
+  - Nuke (9.5.0)
   - PMSuperButton (3.0.2)
   - PromisesObjC (2.0.0)
 
 DEPENDENCIES:
-  - Alamofire (~> 5.5)
   - Firebase/Auth
   - Firebase/Firestore
   - NewsAPISwift
+  - Nuke (~> 9.0)
   - PMSuperButton
 
 SPEC REPOS:
   trunk:
     - abseil
-    - Alamofire
     - BoringSSL-GRPC
     - Firebase
     - FirebaseAuth
@@ -459,12 +458,12 @@ SPEC REPOS:
     - leveldb-library
     - nanopb
     - NewsAPISwift
+    - Nuke
     - PMSuperButton
     - PromisesObjC
 
 SPEC CHECKSUMS:
   abseil: 6c8eb7892aefa08d929b39f9bb108e5367e3228f
-  Alamofire: 1c4fb5369c3fe93d2857c780d8bbe09f06f97e7c
   BoringSSL-GRPC: 8edf627ee524575e2f8d19d56f068b448eea3879
   Firebase: 44213362f1dcc52555b935dc925ed35ac55f1b20
   FirebaseAuth: 59a2d2b933b5b79e18fb1e6ad230c6abdaa73d26
@@ -479,9 +478,10 @@ SPEC CHECKSUMS:
   leveldb-library: 50c7b45cbd7bf543c81a468fe557a16ae3db8729
   nanopb: a0ba3315591a9ae0a16a309ee504766e90db0c96
   NewsAPISwift: 61b069546b0170b48ee3ef7a0158b294e125d7b7
+  Nuke: 6f400a4ea957e09149ec335a3c6acdcc814d89e4
   PMSuperButton: 72105fef415890c8792a9e5a784f75c461066f8b
   PromisesObjC: 68159ce6952d93e17b2dfe273b8c40907db5ba58
 
-PODFILE CHECKSUM: f759384bddc92cf336891a7a2edf0b5e8960af14
+PODFILE CHECKSUM: 2677ea548623fae40cc497983bb72ce8f552b9ca
 
 COCOAPODS: 1.11.2

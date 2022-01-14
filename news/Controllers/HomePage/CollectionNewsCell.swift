@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Nuke
 
 class CollectionNewsCell: UICollectionViewCell {
     

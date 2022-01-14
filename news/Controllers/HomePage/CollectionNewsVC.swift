@@ -39,10 +39,6 @@ class CollectionNewsVC: UIViewController {
         settings()
         setConstraints()
 
-        
-
-        
-
     }
     //MARK: - add subviews
     private func addSub() {
