@@ -37,6 +37,7 @@ class MainHomeViewController: MainViewController {
         settings()
         setConstraints()
         fetchTop()
+        reloadButton()
         
     }
     //MARK: - add subviews
@@ -60,8 +61,24 @@ class MainHomeViewController: MainViewController {
             collectionNews.bottomAnchor.constraint(equalTo: view.bottomAnchor),
         ])
     }
+    //FIXME: reload button
+    //MARK: -  actions
+    func reloadButton() {
+        let reloaded = headerView.reloadButton
+        reloaded.addTarget(self, action: #selector(reloadCollectionView), for: .touchUpOutside)
+    }
+    @objc func reloadCollectionView() {
+        print(" data is reloaded")
+        CustomAI.showAI()
+        DispatchQueue.main.async {
+            self.collectionNews.reloadData()
+        }
+        CustomAI.hide()
+        
+    }
     
     func fetchTop() {
+        
         APINews.share.getNews { [weak self] result in
             switch result {
                 case .success(let article):

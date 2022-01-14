@@ -13,8 +13,8 @@ class BackButtonView: UIButton {
         didSet {
             guard let imageNamed = imageNamed else {return}
             
-            setImage(UIImage(named: imageNamed)?.withTintColor(.brown), for: .normal)
-            setImage(UIImage(named: imageNamed)?.withTintColor(UIColor.brown.withAlphaComponent(0.5)), for: .highlighted)
+            setImage(UIImage(named: imageNamed)?.withTintColor(MyColors.myColor.color4easyLight), for: .normal)
+            setImage(UIImage(named: imageNamed)?.withTintColor(MyColors.myColor.color4easyLight.withAlphaComponent(0.5)), for: .highlighted)
         }
     }
     

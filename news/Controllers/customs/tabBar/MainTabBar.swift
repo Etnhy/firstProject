@@ -20,8 +20,8 @@ class MainTabBar: UIView {
         for (index, imageNamed) in imagesNamed.enumerated() {
             let view = MainTabBarItem()
             view.index = index
-//            view.imageView.image = UIImage(named: imageNamed)?.withTintColor(UIColor.brown.withAlphaComponent(0.2))
             view.imageView.image = UIImage(named: imageNamed)?.withTintColor(UIColor.brown.withAlphaComponent(0.2))
+//            view.imageView.image = UIImage(named: imageNamed)?.withTintColor(UIColor.brown.withAlphaComponent(0.2))
             view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(didTapItem(_:))))
             views.append(view)
         }

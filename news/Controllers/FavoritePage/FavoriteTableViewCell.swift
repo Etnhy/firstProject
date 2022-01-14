@@ -27,7 +27,8 @@ class FavoriteTableViewCell: UITableViewCell {
         v.clipsToBounds = true
         v.textAlignment = .left
         v.contentMode = .top
-        v.font = .systemFont(ofSize: 16, weight: .medium)
+        v.font = .GTWalsheimProMedium(ofSize: 16)
+//        v.font = .systemFont(ofSize: 16, weight: .medium)
         v.textColor = MyColors.myColor.coldColor
         v.text = " тут будет какой то текст - это для теста"
         return v

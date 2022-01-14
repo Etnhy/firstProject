@@ -16,6 +16,14 @@ class MainHeaderView: UIView {
         return button
     }()
     
+    lazy var reloadButton: BackButtonView = {
+       var button = BackButtonView()
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.imageNamed = "reload"
+        
+        return button
+    }()
+    
     private lazy var separatorView: UIView = {
         let view = UIView()
         view.translatesAutoresizingMaskIntoConstraints = false
@@ -61,6 +69,7 @@ class MainHeaderView: UIView {
         addSubview(backButton)
         addSubview(separatorView)
         addSubview(titleLabel)
+        addSubview(reloadButton)
     }
     
     private func activateConstraints() {
@@ -77,6 +86,11 @@ class MainHeaderView: UIView {
             
             titleLabel.centerYAnchor.constraint(equalTo: self.safeAreaLayoutGuide.centerYAnchor),
             titleLabel.centerXAnchor.constraint(equalTo: self.centerXAnchor),
+            
+            reloadButton.trailingAnchor.constraint(equalTo: self.safeAreaLayoutGuide.trailingAnchor,constant: -24),
+            reloadButton.centerYAnchor.constraint(equalTo: self.safeAreaLayoutGuide.centerYAnchor),
+            reloadButton.heightAnchor.constraint(equalToConstant: 24),
+            reloadButton.widthAnchor.constraint(equalToConstant: 24)
         ])
     }
 }

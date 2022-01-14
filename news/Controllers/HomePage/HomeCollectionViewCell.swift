@@ -15,7 +15,8 @@ class HomeCollectionViewCell: UICollectionViewCell {
     lazy var newsLabel: UILabel = { // lable
        var lable = UILabel()
         lable.translatesAutoresizingMaskIntoConstraints = false
-        lable.font = .systemFont(ofSize: 16, weight: .bold)
+//        lable.font = .systemFont(ofSize: 16, weight: .bold)
+        lable.font = .GTWalsheimProBold(ofSize: 16)
         lable.textColor = MyColors.myColor.coldColor
         lable.numberOfLines = 0
         return lable
@@ -24,7 +25,8 @@ class HomeCollectionViewCell: UICollectionViewCell {
     lazy var newsText: UILabel = { // title
         var  tex = UILabel()
         tex.translatesAutoresizingMaskIntoConstraints = false
-        tex.font = .systemFont(ofSize: 14, weight: .medium)
+//        tex.font = .systemFont(ofSize: 14, weight: .medium)
+        tex.font = .GTWalsheimProMedium(ofSize: 14)
         tex.textColor = MyColors.myColor.coldColor
         tex.numberOfLines = 0
         tex.contentMode = .scaleAspectFill

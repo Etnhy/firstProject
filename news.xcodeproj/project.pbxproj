@@ -43,6 +43,7 @@
 		60C151722791B61300DF197F /* MainHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60C151712791B61300DF197F /* MainHomeViewController.swift */; };
 		60C151742791B64B00DF197F /* HomeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60C151732791B64B00DF197F /* HomeCollectionViewCell.swift */; };
 		60C151762791B66000DF197F /* HomeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60C151752791B66000DF197F /* HomeModel.swift */; };
+		60DE9C172791CB4300EA44A9 /* extensionFonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60DE9C162791CB4300EA44A9 /* extensionFonts.swift */; };
 		60E586E3277A111400C6DA2F /* TextFieldExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60E586E2277A111400C6DA2F /* TextFieldExtension.swift */; };
 		60FB70C827820EBA00570C98 /* gt-walsheim-bold.woff in Resources */ = {isa = PBXBuildFile; fileRef = 60FB70C327820EB900570C98 /* gt-walsheim-bold.woff */; };
 		60FB70C927820EBA00570C98 /* gt-walsheim-medium.woff in Resources */ = {isa = PBXBuildFile; fileRef = 60FB70C427820EBA00570C98 /* gt-walsheim-medium.woff */; };
@@ -90,6 +91,7 @@
 		60C151712791B61300DF197F /* MainHomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainHomeViewController.swift; sourceTree = "<group>"; };
 		60C151732791B64B00DF197F /* HomeCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCollectionViewCell.swift; sourceTree = "<group>"; };
 		60C151752791B66000DF197F /* HomeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeModel.swift; sourceTree = "<group>"; };
+		60DE9C162791CB4300EA44A9 /* extensionFonts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = extensionFonts.swift; sourceTree = "<group>"; };
 		60E586E2277A111400C6DA2F /* TextFieldExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldExtension.swift; sourceTree = "<group>"; };
 		60FB70C327820EB900570C98 /* gt-walsheim-bold.woff */ = {isa = PBXFileReference; lastKnownFileType = file; path = "gt-walsheim-bold.woff"; sourceTree = "<group>"; };
 		60FB70C427820EBA00570C98 /* gt-walsheim-medium.woff */ = {isa = PBXFileReference; lastKnownFileType = file; path = "gt-walsheim-medium.woff"; sourceTree = "<group>"; };
@@ -156,6 +158,7 @@
 				60FB70C427820EBA00570C98 /* gt-walsheim-medium.woff */,
 				60FB70C627820EBA00570C98 /* gt-walsheim-regular.woff */,
 				60FB70C727820EBA00570C98 /* gt-walsheim-thin.woff */,
+				60DE9C162791CB4300EA44A9 /* extensionFonts.swift */,
 			);
 			path = Fonts;
 			sourceTree = "<group>";
@@ -466,6 +469,7 @@
 				605B77E3277DF22600CC11C8 /* Colors.swift in Sources */,
 				604432CC277B6D670076EBD9 /* ErrorViewController.swift in Sources */,
 				60877D38277C97E000852793 /* NewsAPI.swift in Sources */,
+				60DE9C172791CB4300EA44A9 /* extensionFonts.swift in Sources */,
 				60893E0B2778796000072576 /* SceneDelegate.swift in Sources */,
 				60C151722791B61300DF197F /* MainHomeViewController.swift in Sources */,
 				60C1516C2791A65800DF197F /* RegLoginButton.swift in Sources */,

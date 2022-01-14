@@ -25,9 +25,10 @@ class FavoritesMain: MainViewController {
     lazy var titleFavorite: UILabel = {
        var title = UILabel()
         title.translatesAutoresizingMaskIntoConstraints = false
+        title.font = .GTWalsheimProBold(ofSize: 34)
         title.text = "Избранное:"
         title.textColor = MyColors.myColor.color4easyLight
-        title.font = .systemFont(ofSize: 34, weight: .bold)
+//        title.font = .systemFont(ofSize: 34, weight: .bold)
         return title
         
     }()
