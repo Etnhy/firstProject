@@ -15,7 +15,7 @@ class FavoritesMain: MainViewController {
         table.delegate = self
         table.dataSource = self
         table.register(FavoriteTableViewCell.self , forCellReuseIdentifier: FavoriteTableViewCell.identifier)
-        table.backgroundColor = MyColors.myColor.color1Dark
+        table.backgroundColor = MyColors.myColor.color2leastDark
         table.layer.cornerRadius = 12
         table.clipsToBounds = true
         return table
@@ -55,7 +55,7 @@ class FavoritesMain: MainViewController {
     //MARK: - set constraints
     private func setupConstraints() {
         NSLayoutConstraint.activate([
-            favoriteTableView.topAnchor.constraint(equalTo: view.topAnchor, constant: 120),
+            favoriteTableView.topAnchor.constraint(equalTo: headerView.bottomAnchor, constant: 80),
             favoriteTableView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             favoriteTableView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
             favoriteTableView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
@@ -65,7 +65,7 @@ class FavoritesMain: MainViewController {
             //titleFavorite.bottomAnchor.constraint(equalTo: favoriteTableView.topAnchor, constant: 24),
             titleFavorite.leadingAnchor.constraint(equalTo: view.leadingAnchor,constant: 16),
             titleFavorite.widthAnchor.constraint(equalToConstant: view.frame.width),
-            titleFavorite.topAnchor.constraint(equalTo: view.topAnchor, constant: 76)
+            titleFavorite.topAnchor.constraint(equalTo: headerView.bottomAnchor, constant: 24)
         ])
         
     }

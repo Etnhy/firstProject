@@ -49,7 +49,7 @@ class HomeCollectionViewCell: UICollectionViewCell {
         b.translatesAutoresizingMaskIntoConstraints = false
         b.backgroundColor = .black
         b.layer.cornerRadius = 17
-        b.setImage(UIImage(named: "favorites@25px"), for: .normal)
+        b.setImage(UIImage(named: "favorites"), for: .normal)
         b.addTarget(self, action: #selector(addToFavo), for: .touchUpInside)
         return b
     }()

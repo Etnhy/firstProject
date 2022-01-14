@@ -18,7 +18,7 @@ class loginViewController: MainViewController {
         view.layer.borderColor = UIColor.black.cgColor
         view.attributedPlaceholder = NSAttributedString(string: " E-mail",
                                                      attributes: [NSAttributedString.Key.foregroundColor : MyColors.myColor.coldColor.withAlphaComponent(0.5)])
-        view.backgroundColor = MyColors.myColor.color2leastDark
+        view.backgroundColor = MyColors.myColor.color1Dark
         view.layer.cornerRadius = 4
         view.keyboardType = .default
         
@@ -32,7 +32,7 @@ class loginViewController: MainViewController {
         view.layer.borderColor = UIColor.black.cgColor
         view.attributedPlaceholder = NSAttributedString(string: " Password",
                                                      attributes: [NSAttributedString.Key.foregroundColor : MyColors.myColor.coldColor.withAlphaComponent(0.5)])
-        view.backgroundColor = MyColors.myColor.color2leastDark
+        view.backgroundColor = MyColors.myColor.color1Dark
         view.layer.cornerRadius = 4
         view.keyboardType = .default
         
@@ -64,6 +64,7 @@ class loginViewController: MainViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 //        configure()
+        self.view.backgroundColor = MyColors.myColor.color2leastDark
         view.addSubview(button)
         addButton()
         

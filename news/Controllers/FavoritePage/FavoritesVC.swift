@@ -11,7 +11,6 @@ class FavoritesVC: FavoritesMain {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        navigationController?.isNavigationBarHidden = true
         settingsVC()
         
     }
@@ -19,7 +18,7 @@ class FavoritesVC: FavoritesMain {
     
     private func settingsVC() {
         
-        self.view.backgroundColor = MyColors.myColor.color1Dark
+        self.view.backgroundColor = MyColors.myColor.color2leastDark
     }
 
 

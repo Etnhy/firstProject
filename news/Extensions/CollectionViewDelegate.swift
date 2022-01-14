@@ -31,7 +31,7 @@ extension MainHomeViewController: UICollectionViewDelegateFlowLayout, UICollecti
             fatalError()
         }
         let color = MyColors()
-        cell.backgroundColor = color.color1Dark
+        cell.backgroundColor = color.color2leastDark
         cell.configure(with: viewModels[indexPath.item])
         
         

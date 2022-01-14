@@ -77,10 +77,10 @@ class MainTabBar: UIView {
         ])
     }
     
-    private func addShape() {
+    private func addShape() { // вьюха
         let shapeLayer = CAShapeLayer()
         shapeLayer.path = createPath()
-        shapeLayer.fillColor = UIColor.white.cgColor//UIColor.init(netHex: 0xAFAFED).cgColor
+        shapeLayer.fillColor = MyColors.myColor.color1Dark.cgColor //UIColor.white.cgColor//UIColor.init(netHex: 0xAFAFED).cgColor
         shapeLayer.shadowColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.1).cgColor
         shapeLayer.shadowOffset = CGSize(width: 0.0, height: -1.0)
         shapeLayer.shadowRadius = 8.0
@@ -174,7 +174,7 @@ class MainTabBarItem: UIView {
         lazy var view: UIView = { // полосочка у кнопок
             let view = UIView()
             view.translatesAutoresizingMaskIntoConstraints = false
-            view.backgroundColor = .red
+            view.backgroundColor = MyColors.myColor.color4easyLight
             view.isHidden = true
             view.layer.cornerRadius = 2
             return view

@@ -19,7 +19,7 @@ class MainHeaderView: UIView {
     private lazy var separatorView: UIView = {
         let view = UIView()
         view.translatesAutoresizingMaskIntoConstraints = false
-        view.backgroundColor = .brown
+        view.backgroundColor = MyColors.myColor.color4easyLight
         return view
     }()
     
@@ -50,7 +50,7 @@ class MainHeaderView: UIView {
     
     //MARK: - setup view
     private func setupView() {
-        backgroundColor = .white
+        backgroundColor = MyColors.myColor.color1Dark
         layer.shadowColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.1).cgColor
         layer.shadowOffset = CGSize(width: 0.0, height: 1.0)
         layer.shadowRadius = 8.0

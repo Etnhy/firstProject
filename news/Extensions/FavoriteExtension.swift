@@ -18,7 +18,7 @@ extension FavoritesMain: UITableViewDelegate, UITableViewDataSource {
       guard  let cell = tableView.dequeueReusableCell(withIdentifier: FavoriteTableViewCell.identifier, for: indexPath) as? FavoriteTableViewCell else {
             fatalError()
         }
-        cell.backgroundColor = MyColors.myColor.color2leastDark
+        cell.backgroundColor = MyColors.myColor.color1Dark.withAlphaComponent(0.5)
         
         
         return cell

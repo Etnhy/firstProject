@@ -32,8 +32,7 @@ class MainHomeViewController: MainViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        headerView.isHidden = true
-        collectionNews.backgroundColor = MyColors.myColor.color1Dark
+        collectionNews.backgroundColor = MyColors.myColor.color2leastDark.withAlphaComponent(0.7)
         addSub()
         settings()
         setConstraints()
