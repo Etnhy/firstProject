@@ -1,16 +1,15 @@
 //
-//  CollectionNewsCell.swift
+//  HomeCollectionViewCell.swift
 //  news
 //
-//  Created by Евгений Маглена on 08.01.2022.
+//  Created by Евгений Маглена on 14.01.2022.
 //
 
 import UIKit
-import Nuke
 
-class CollectionNewsCell: UICollectionViewCell {
+class HomeCollectionViewCell: UICollectionViewCell {
     
-    static let identifier = "CollectionNewsCell"
+    static let identifier = "HomeCollectionViewCell"
     
     
     lazy var newsLabel: UILabel = { // lable
@@ -169,3 +168,5 @@ class CollectionNewsCell: UICollectionViewCell {
         }
     }
 }
+    
+

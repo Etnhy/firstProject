@@ -10,7 +10,7 @@ import UIKit
 import SafariServices
 
 
-extension CollectionNewsVC: UICollectionViewDelegateFlowLayout, UICollectionViewDataSource {
+extension MainHomeViewController: UICollectionViewDelegateFlowLayout, UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: collectionView.frame.width , height: collectionView.frame.height / 2)
@@ -27,7 +27,7 @@ extension CollectionNewsVC: UICollectionViewDelegateFlowLayout, UICollectionView
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
-       guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CollectionNewsCell.identifier, for: indexPath) as? CollectionNewsCell else {
+       guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: HomeCollectionViewCell.identifier, for: indexPath) as? HomeCollectionViewCell else {
             fatalError()
         }
         let color = MyColors()

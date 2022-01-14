@@ -33,7 +33,7 @@ class MainTabBarController: UITabBarController {
         self.mainTabBar.isHidden = false
     }
     private func addVCs() {
-        let home = HomePageVC()
+        let home = MainHomeViewController()
         let favorites = FavoritesVC()
         let profile = ProfileVC()
         viewControllers = [createNavigationControllerFor(home),

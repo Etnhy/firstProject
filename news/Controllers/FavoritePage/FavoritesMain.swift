@@ -7,7 +7,7 @@
 
 import UIKit
 
-class FavoritesMain: UIViewController {
+class FavoritesMain: MainViewController {
     
     lazy var favoriteTableView: UITableView = {
        var table = UITableView()
@@ -70,7 +70,6 @@ class FavoritesMain: UIViewController {
         
     }
     
-    //MARK: - <#name#>
     
 
 

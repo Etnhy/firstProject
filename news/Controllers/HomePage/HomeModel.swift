@@ -1,12 +1,11 @@
 //
-//  ColletionNewsModel.swift
+//  HomeModel.swift
 //  news
 //
-//  Created by Евгений Маглена on 08.01.2022.
+//  Created by Евгений Маглена on 14.01.2022.
 //
 
 import Foundation
-
 
 class CollectionCellModel {
     let title: String
