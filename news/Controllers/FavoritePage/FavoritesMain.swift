@@ -9,6 +9,18 @@ import UIKit
 
 class FavoritesMain: MainViewController {
     
+    
+    var favo = [FavoritesModel]() {
+        didSet {
+            DispatchQueue.main.async {
+                self.favoriteTableView.reloadData()
+                print("data reloaded")
+            }
+        }
+    }
+    
+
+    
     lazy var favoriteTableView: UITableView = {
        var table = UITableView()
         table.translatesAutoresizingMaskIntoConstraints = false
@@ -36,9 +48,18 @@ class FavoritesMain: MainViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         addSub()
+
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+
+        
         
 
     }
+    
     //MARK: - LayoutSub
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
@@ -76,3 +97,4 @@ class FavoritesMain: MainViewController {
 
 
 }
+

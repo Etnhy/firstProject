@@ -11,7 +11,7 @@ import UIKit
 
 extension FavoritesMain: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 3
+        return favo.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -19,6 +19,7 @@ extension FavoritesMain: UITableViewDelegate, UITableViewDataSource {
             fatalError()
         }
         cell.backgroundColor = MyColors.myColor.color1Dark.withAlphaComponent(0.5)
+        cell.config(with: favo[indexPath.row])
         return cell
     }
     

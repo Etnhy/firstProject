@@ -8,15 +8,12 @@
 import Foundation
 
 
-struct FavoritesModel: Codable {
+struct FavoritesModel {
+    var title: String
     
-    let url: String
-    let name: String
-    //let image: String?
-    
-    init(url: String, name: String) {
-        self.url = url
-        self.name = name
+    init(title: String) {
+        self.title = title
     }
+
     
 }

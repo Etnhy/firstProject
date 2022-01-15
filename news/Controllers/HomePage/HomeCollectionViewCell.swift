@@ -114,25 +114,25 @@ class HomeCollectionViewCell: UICollectionViewCell {
             newsImage.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
             newsImage.heightAnchor.constraint(equalToConstant: 200)
         ])
-            NSLayoutConstraint.activate([ // article news
-            newsLabel.topAnchor.constraint(equalTo: newsImage.bottomAnchor,constant: 0),
-            newsLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
-            newsLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
-            newsLabel.heightAnchor.constraint(equalToConstant: 24),
-        ])
+        NSLayoutConstraint.activate([ // article news
+        newsLabel.topAnchor.constraint(equalTo: newsImage.bottomAnchor,constant: 0),
+        newsLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
+        newsLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
+        newsLabel.heightAnchor.constraint(equalToConstant: 24),
+    ])
         NSLayoutConstraint.activate([ // text news
             newsText.topAnchor.constraint(equalTo: newsLabel.bottomAnchor),
             newsText.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
             newsText.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
             newsText.bottomAnchor.constraint(equalTo: dateLabel.topAnchor)
         ])
-        NSLayoutConstraint.activate([
+        NSLayoutConstraint.activate([ // кнопка добавления в избранное
             addToFavoritsButton.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -10),
             addToFavoritsButton.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -10),
             addToFavoritsButton.widthAnchor.constraint(equalToConstant: 34),
             addToFavoritsButton.heightAnchor.constraint(equalToConstant: 34),
         ])
-        NSLayoutConstraint.activate([
+        NSLayoutConstraint.activate([ // отображение даты публикации
             dateLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 8),
             dateLabel.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -10),
             dateLabel.heightAnchor.constraint(equalToConstant: 36),
@@ -144,14 +144,20 @@ class HomeCollectionViewCell: UICollectionViewCell {
     
     @objc func addToFavo() {
         print("yes")
+        let title = FavoritesModel(title: newsLabel.text ?? "zalupa" )
+        print(title)
+        
     }
+    
+    
     
     //MARK: - FETCH
     func configure(with viewModel: CollectionCellModel) {
+
         newsLabel.text = viewModel.title
         newsText.text = viewModel.subtitle
         dateLabel.text = "Дата публикации: \(viewModel.publishedAt)"
-        
+
         //image
         if let data = viewModel.imageData {
             newsImage.image = UIImage(data: data)
@@ -164,9 +170,11 @@ class HomeCollectionViewCell: UICollectionViewCell {
                 viewModel.imageData = data
                 DispatchQueue.main.async {
                     self?.newsImage.image = UIImage(data: data)
+
                 }
+
             }.resume()
-            
+
         }
     }
 }

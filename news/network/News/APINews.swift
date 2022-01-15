@@ -10,14 +10,15 @@ import Foundation
 
 class APINews {
     
-    let urlBase = "https://newsapi.org/v2"
-    let urlMiddle = "/top-headlines?country=us"
+    let urlBase = "everything?q=bitcoin"
+    let urlMiddle = "https://newsapi.org/v2/everything?q=animal&language=ru&apiKey=3b7a57f2d0e3400e9193cd86f1ba0fb5"
     let urlTwo = "https://newsapi.org/v2/top-headlines?country=ua&apiKey=3b7a57f2d0e3400e9193cd86f1ba0fb5"
+    let url3 = "https://newsapi.org/v2/top-headlines/sources?category=businessapiKey=3b7a57f2d0e3400e9193cd86f1ba0fb5"
     
     static let share = APINews()
     
     func getNews(comletion:@escaping (Result<[Article], Error>) -> Void) {
-        let urlString = urlTwo
+        let urlString = urlMiddle
         guard let url = URL(string: urlString) else { return }
         URLSession.shared.dataTask(with: url) { data, response, error in
             if let error = error {

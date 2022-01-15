@@ -15,15 +15,7 @@ class ScrollViewCategories: UIScrollView {
                       "Наука" : ".science"]
     
 
-    override init(frame: CGRect) {
-        super.init(frame: frame)
 
-
-    }
-
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
     
     private func newButton(withName name: String,title: String) -> UIButton {
         let newButton = UIButton(type: .system)
@@ -45,7 +37,15 @@ class ScrollViewCategories: UIScrollView {
                                       
         }
     }
+    override init(frame: CGRect) {
+        super.init(frame: frame)
 
+
+    }
+
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
 
 
 }

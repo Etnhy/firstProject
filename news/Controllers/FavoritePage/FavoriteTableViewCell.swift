@@ -10,6 +10,8 @@ import UIKit
 class FavoriteTableViewCell: UITableViewCell {
     let colors = MyColors()
     
+
+    
     static let identifier = "FavoriteTableViewCell"
     
     lazy var favImage:UIImageView = {
@@ -53,6 +55,9 @@ class FavoriteTableViewCell: UITableViewCell {
     }
     required init?(coder: NSCoder) {
         super.init(coder: coder)
+        
+        
+        
     }
 
     
@@ -82,6 +87,12 @@ class FavoriteTableViewCell: UITableViewCell {
     }
     
     
+    func config(with model: FavoritesModel) {
+        favTextNews.text = model.title
+
+    }
     
 
 }
+
+
