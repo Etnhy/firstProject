@@ -87,10 +87,10 @@ class FavoriteTableViewCell: UITableViewCell {
     }
     
     
-    func config(with model: FavoritesModel) {
-        favTextNews.text = model.title
-
-    }
+//    func config(with model: FavoritesModel) {
+//        favTextNews.text = model.title[IndexPath]
+//
+//    }
     
 
 }

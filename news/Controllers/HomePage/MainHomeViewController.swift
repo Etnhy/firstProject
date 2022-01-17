@@ -86,7 +86,6 @@ class MainHomeViewController: MainViewController {
     }
     
  
-    //FIXME: reload button
     //MARK: -  actions
     func reloadButton() {
         let reloaded = headerView.reloadButton
@@ -105,21 +104,18 @@ class MainHomeViewController: MainViewController {
     @objc override func didTapReloadButton() {
         CustomAI.showAI()
         DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
-            self.fetchTop()
             CustomAI.hide()
+            self.fetchTop()
         }
+
     }
     @objc func refreshToControl() {
         DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
             self.fetchTop()
-            self.refreshControl.endRefreshing()
         }
+        self.refreshControl.endRefreshing()
+
     }
- 
-    
-
-    
-
 }
 extension MainHomeViewController {
     func fetchTop() {

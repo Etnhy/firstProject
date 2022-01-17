@@ -10,14 +10,7 @@ import UIKit
 class FavoritesMain: MainViewController {
     
     
-    var favo = [FavoritesModel]() {
-        didSet {
-            DispatchQueue.main.async {
-                self.favoriteTableView.reloadData()
-                print("data reloaded")
-            }
-        }
-    }
+    var favo = FavoritesModel().title
     
 
     
@@ -55,10 +48,10 @@ class FavoritesMain: MainViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-
-        
-        
-
+        DispatchQueue.main.async {
+            self.favoriteTableView.reloadData()
+            print("reloaded")
+        }
     }
     
     //MARK: - LayoutSub

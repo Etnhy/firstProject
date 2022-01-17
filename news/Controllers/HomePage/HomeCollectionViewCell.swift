@@ -15,7 +15,6 @@ class HomeCollectionViewCell: UICollectionViewCell {
     lazy var newsLabel: UILabel = { // lable
        var lable = UILabel()
         lable.translatesAutoresizingMaskIntoConstraints = false
-//        lable.font = .systemFont(ofSize: 16, weight: .bold)
         lable.font = .GTWalsheimProBold(ofSize: 16)
         lable.textColor = MyColors.myColor.coldColor
         lable.numberOfLines = 0
@@ -25,7 +24,6 @@ class HomeCollectionViewCell: UICollectionViewCell {
     lazy var newsText: UILabel = { // title
         var  tex = UILabel()
         tex.translatesAutoresizingMaskIntoConstraints = false
-//        tex.font = .systemFont(ofSize: 14, weight: .medium)
         tex.font = .GTWalsheimProMedium(ofSize: 14)
         tex.textColor = MyColors.myColor.coldColor
         tex.numberOfLines = 0
@@ -114,12 +112,13 @@ class HomeCollectionViewCell: UICollectionViewCell {
             newsImage.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
             newsImage.heightAnchor.constraint(equalToConstant: 200)
         ])
+        
         NSLayoutConstraint.activate([ // article news
-        newsLabel.topAnchor.constraint(equalTo: newsImage.bottomAnchor,constant: 0),
-        newsLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
-        newsLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
-        newsLabel.heightAnchor.constraint(equalToConstant: 24),
-    ])
+                newsLabel.topAnchor.constraint(equalTo: newsImage.bottomAnchor,constant: 0),
+                newsLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
+                newsLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
+                newsLabel.heightAnchor.constraint(equalToConstant: 24),
+        ])
         NSLayoutConstraint.activate([ // text news
             newsText.topAnchor.constraint(equalTo: newsLabel.bottomAnchor),
             newsText.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
@@ -143,10 +142,11 @@ class HomeCollectionViewCell: UICollectionViewCell {
     //MARK: - actions
     
     @objc func addToFavo() {
-        print("yes")
-        let title = FavoritesModel(title: newsLabel.text ?? "zalupa" )
-        print(title)
+        var title = FavoritesModel()
+        var element = newsLabel.text
+        title.title.append(element!)
         
+        print(title.title.count)
     }
     
     

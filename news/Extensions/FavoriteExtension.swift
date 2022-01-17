@@ -19,7 +19,8 @@ extension FavoritesMain: UITableViewDelegate, UITableViewDataSource {
             fatalError()
         }
         cell.backgroundColor = MyColors.myColor.color1Dark.withAlphaComponent(0.5)
-        cell.config(with: favo[indexPath.row])
+
+        cell.favTextNews.text = favo[indexPath.row]
         return cell
     }
     

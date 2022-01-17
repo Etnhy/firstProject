@@ -35,8 +35,6 @@ class loginViewController: MainViewController {
         view.backgroundColor = MyColors.myColor.color1Dark
         view.layer.cornerRadius = 4
         view.keyboardType = .default
-        
-        
         return view
     }()
     
@@ -54,22 +52,14 @@ class loginViewController: MainViewController {
         view.clipsToBounds = true
         view.ripple = true
         view.rippleColor = MyColors.myColor.color3light
-
-        
         return view
     }()
-    
-    
-
     override func viewDidLoad() {
         super.viewDidLoad()
 //        configure()
         self.view.backgroundColor = MyColors.myColor.color2leastDark
         view.addSubview(button)
         addButton()
-        
-
-
     }
     private func configure() {
             headerView.backButton.isHidden = true
@@ -82,7 +72,6 @@ class loginViewController: MainViewController {
             emailField.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16),
             emailField.trailingAnchor.constraint(equalTo: view.trailingAnchor,constant: -16),
             emailField.heightAnchor.constraint(equalToConstant: 34)
-
         ])
         view.addSubview(passwordField)
         NSLayoutConstraint.activate([ // password
@@ -90,8 +79,6 @@ class loginViewController: MainViewController {
             passwordField.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16),
             passwordField.trailingAnchor.constraint(equalTo: view.trailingAnchor,constant: -16),
             passwordField.heightAnchor.constraint(equalToConstant: 34)
-
-            
         ])
         view.addSubview(button)
         NSLayoutConstraint.activate([ // button

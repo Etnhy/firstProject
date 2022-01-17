@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import UIKit
 
 enum MainCategories {
     
@@ -60,7 +61,7 @@ class APINews {
         }.resume()
     }
     
-    func switcherNews(categories: MainCategories, language: changeLanguage) {
+    func switcherNews(categories: MainCategories) {
         switch categories {
             case .technology:
                 secondUrl = "everything?q=technology"
@@ -76,18 +77,11 @@ class APINews {
                 secondUrl = "everything?"
                 
         }
-        switch language {
-            case .ru:
-                languageUrl = "&language=ru"
-            case .us:
-                languageUrl = "&language=us"
-
-        }
+ 
     }
 }
 
 
-// create urls
     
 
     

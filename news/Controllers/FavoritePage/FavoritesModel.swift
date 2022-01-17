@@ -9,11 +9,11 @@ import Foundation
 
 
 struct FavoritesModel {
-    var title: String
+    var title:[String] =  ["что то","что то","что то","что то"]
     
-    init(title: String) {
-        self.title = title
-    }
+//    init(title: String) {
+//        self.title = [title]
+//    }
 
     
 }
