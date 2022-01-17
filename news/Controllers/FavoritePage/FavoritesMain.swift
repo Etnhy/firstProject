@@ -48,6 +48,7 @@ class FavoritesMain: MainViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         addSub()
+        headerView.reloadButton.isHidden = true
 
     }
     

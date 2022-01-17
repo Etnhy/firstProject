@@ -14,6 +14,8 @@ class ScrollViewCategories: UIScrollView {
                       "Бизнес" : ".bisness",
                       "Наука" : ".science"]
     
+    
+    
 
 
     

@@ -15,6 +15,7 @@ class MainViewController: UIViewController {
         let view = MainHeaderView()
         view.translatesAutoresizingMaskIntoConstraints = false
         view.backButton.addTarget(self, action: #selector(didTapBackButton), for: .touchUpInside)
+        view.reloadButton.addTarget(nil, action: #selector(didTapReloadButton), for: .touchUpInside)
         return view
     }()
     
@@ -59,6 +60,10 @@ class MainViewController: UIViewController {
     //MARK: Actions
     @objc func didTapBackButton() {
         self.navigationController?.popViewController(animated: true)
+    }
+    
+    @objc func didTapReloadButton() {
+        print("test ")
     }
     
 }

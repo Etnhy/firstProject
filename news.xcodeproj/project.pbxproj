@@ -139,8 +139,10 @@
 		608037FB277B9424006D931D /* customs */ = {
 			isa = PBXGroup;
 			children = (
-				600939F82793266E003387E5 /* BackButtonView.swift */,
 				600939F6279323ED003387E5 /* customStackButton.swift */,
+				604432CB277B6D670076EBD9 /* ErrorViewController.swift */,
+				60BF62F02779C50B00ABD962 /* CustomAI.swift */,
+				600939F82793266E003387E5 /* BackButtonView.swift */,
 				6054FC9427908FD10090C763 /* MainHeaderView.swift */,
 				60C1516A2791A5D300DF197F /* MyCustomsButton */,
 				605B77E6277E030C00CC11C8 /* tabBar */,
@@ -207,8 +209,6 @@
 				60893E1C2778796A00072576 /* Views */,
 				60893E082778796000072576 /* AppDelegate.swift */,
 				60893E0A2778796000072576 /* SceneDelegate.swift */,
-				60BF62F02779C50B00ABD962 /* CustomAI.swift */,
-				604432CB277B6D670076EBD9 /* ErrorViewController.swift */,
 				60893E112778796100072576 /* Assets.xcassets */,
 				60462742277A1D3D004FFAAD /* GoogleService-Info.plist */,
 				60893E162778796100072576 /* Info.plist */,

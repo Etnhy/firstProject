@@ -52,6 +52,7 @@ class ProfileVC: MainViewController {
     }
     private func settingsVC() {
         self.view.backgroundColor = MyColors.myColor.color2leastDark
+        self.headerView.reloadButton.isHidden = true
     }
     
     func addSubviews() {

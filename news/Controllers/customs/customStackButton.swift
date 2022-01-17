@@ -9,8 +9,23 @@ import UIKit
 
 class customStackButton: UIButton {
     
-    let nameButtons = ["Animal":"Животные", "Business":"Бизнес",
-                       "Technology":"Технологии","Music":"Музыка"]
+    let nameButtons = ["Животные": "Животные", "Бизнес": "Бизнес",
+                       "Технологии": "Технологии", "Музыка": "Музыка"]
+    
+
+    
+    
+    lazy var scroller: UIScrollView = {
+       var scroll = UIScrollView()
+        scroll.translatesAutoresizingMaskIntoConstraints = false
+        scroll.isScrollEnabled = true
+        scroll.isDirectionalLockEnabled = true
+        scroll.contentSize = CGSize(width: 670, height: 0)
+        scroll.backgroundColor = MyColors.myColor.color2leastDark
+        scroll.addSubview(stackBut)
+        
+        return scroll
+    }()
     
     
     lazy var stackBut: UIStackView = {
@@ -19,56 +34,13 @@ class customStackButton: UIButton {
         stack.alignment = .fill
         stack.distribution = .fillEqually
         stack.spacing = 8
-        stack.layer.borderWidth = 0.3
-        stack.layer.borderColor = MyColors.myColor.color4easyLight.cgColor
-        stack.addArrangedSubview(createButtonsCategories(with: "Все"))
-        stack.addArrangedSubview(createButtonsCategories(with: "Животные"))
-        stack.addArrangedSubview(createButtonsCategories(with: "Музыка"))
-        stack.addArrangedSubview(createButtonsCategories(with: "Технологии"))
-        stack.addArrangedSubview(createButtonsCategories(with: "Политика"))
-        stack.addArrangedSubview(createButtonsCategories(with: "чот еще"))
-        stack.addArrangedSubview(createButtonsCategories(with: "чот еще"))
-
         stack.translatesAutoresizingMaskIntoConstraints = false
-
         return stack
     }()
-    
-    lazy var button1: UIButton = {
-       var but = UIButton()
-        but.translatesAutoresizingMaskIntoConstraints = false
-        but.setTitle("first", for: .normal)
-        but.setTitleColor(.yellow, for: .normal)
-        but.backgroundColor = .clear
-        
-        return but
-    }()
-    lazy var button2: UIButton = {
-       var but = UIButton()
-        but.translatesAutoresizingMaskIntoConstraints = false
-        but.setTitle("Second", for: .normal)
-        but.setTitleColor(.yellow, for: .normal)
-        but.backgroundColor = .clear
-        
-        return but
-    }()
-    lazy var button3: UIButton = {
-       var but = UIButton()
-        but.translatesAutoresizingMaskIntoConstraints = false
-        but.setTitle("Third", for: .normal)
-        but.setTitleColor(.yellow, for: .normal)
-        but.backgroundColor = .clear
-        
-        return but
-    }()
-
-
     
     override init(frame: CGRect) {
         super.init(frame: frame)
         setupView()
-        created()
-        
     }
     
     required init?(coder: NSCoder) {
@@ -77,30 +49,19 @@ class customStackButton: UIButton {
     
     override func layoutSubviews() {
         super.layoutSubviews()
-        created()
     }
     
     private func setupView() {
+        addSubview(scroller)
         addSubview(stackBut)
-//        addSubview(button1)
-//        addSubview(button2)
-//        addSubview(button3)
-
     }
     
     func createButtonsCategories(with title: String) -> UIButton {
         let newButton = UIButton(type: .system)
         newButton.backgroundColor = .clear
-        newButton.setTitle(title, for: .normal)
+        newButton.setAttributedTitle(NSAttributedString(string: title,attributes: [NSAttributedString.Key.font : UIFont.GTWalsheimProBold(ofSize: 16)]), for: .normal)
+        newButton.setTitleColor(MyColors.myColor.color4easyLight, for: .normal)
         newButton.translatesAutoresizingMaskIntoConstraints = false
-        newButton.setTitleColor(.yellow, for: .normal)
         return newButton
     }
-    func created() {
-        var buttonArray = [UIButton]()
-        for (_, myValue) in nameButtons {
-            buttonArray += [createButtonsCategories(with: myValue)]
-        }
-    }
-    
 }

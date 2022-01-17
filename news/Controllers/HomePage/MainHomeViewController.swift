@@ -10,20 +10,18 @@ import UIKit
 class MainHomeViewController: MainViewController {
     static let identifier = "CollectionNewsVC"
     
-    let namesButton:[String] = ["First", "Second", "third"]
     
     
     var viewModels = [CollectionCellModel]()
     var articles = [Article]()
+    
+    let refreshControl = UIRefreshControl()
     
     
     lazy var collectionNews: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .vertical
         layout.minimumLineSpacing = 0
-        //layout.minimumInteritemSpacing = 220
-        //layout.sectionInset.top = 40
-        //layout.sectionInset.bottom = 320
         let call = UICollectionView(frame: CGRect.zero, collectionViewLayout: layout)
         call.translatesAutoresizingMaskIntoConstraints = false
         call.register(HomeCollectionViewCell.self, forCellWithReuseIdentifier: HomeCollectionViewCell.identifier)
@@ -32,23 +30,9 @@ class MainHomeViewController: MainViewController {
         return call
     }()
 
-    lazy var stackView = customStackButton()
-    
-    lazy var scroller: UIScrollView = {
-       var scroll = UIScrollView()
-        scroll.translatesAutoresizingMaskIntoConstraints = false
-        scroll.isScrollEnabled = true
-        scroll.isDirectionalLockEnabled = true
-        scroll.contentSize = CGSize(width: 670, height: 0)
-        scroll.backgroundColor = MyColors.myColor.color2leastDark
-        scroll.addSubview(stackView)
-        
-        return scroll
-    }()
-    
+    lazy var stackView = customStackButton().scroller  // добавление самого стека с кнопками и скроллом
     
 
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = MyColors.myColor.color2leastDark.withAlphaComponent(0.7)
@@ -62,9 +46,8 @@ class MainHomeViewController: MainViewController {
     //MARK: - add subviews
     private func addSub() {
         view.addSubview(collectionNews)
-//        view.addSubview(stackView)    // ---- STACK
-        view.addSubview(scroller)
-
+        view.addSubview(stackView)
+        refreshControllCollectionView()
     }
     
     //MARK: - setting
@@ -78,42 +61,67 @@ class MainHomeViewController: MainViewController {
     //MARK: - set constraints
     func setConstraints() {
         NSLayoutConstraint.activate([
-            collectionNews.topAnchor.constraint(equalTo: scroller.bottomAnchor),
+            collectionNews.topAnchor.constraint(equalTo: stackView.bottomAnchor),
             collectionNews.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             collectionNews.trailingAnchor.constraint(equalTo: view.trailingAnchor),
             collectionNews.bottomAnchor.constraint(equalTo: view.bottomAnchor,constant: -94),
         ])
-        
+
         NSLayoutConstraint.activate([
-//            stackView.topAnchor.constraint(equalTo: view.topAnchor, constant: 34),
-//            stackView.leadingAnchor.constraint(equalTo: self.view.leadingAnchor),
-//            stackView.trailingAnchor.constraint(equalTo: self.view.trailingAnchor),
-//            stackView.bottomAnchor.constraint(equalTo: collectionNews.topAnchor)
-//            stackView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
-//            stackView.heightAnchor.constraint(equalToConstant: 77),
-//            stackView.widthAnchor.constraint(equalToConstant: 44)
-        ])
-        
-        NSLayoutConstraint.activate([
-            scroller.topAnchor.constraint(equalTo: headerView.bottomAnchor),
-            scroller.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-            scroller.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-            scroller.heightAnchor.constraint(equalToConstant: 40)
+            stackView.topAnchor.constraint(equalTo: headerView.bottomAnchor),
+            stackView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            stackView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            stackView.heightAnchor.constraint(equalToConstant: 40)
         ])
         
 
     }
+    func createButtonsCategories(with title: String) -> UIButton {
+        let newButton = UIButton(type: .system)
+        newButton.backgroundColor = .clear
+        newButton.setAttributedTitle(NSAttributedString(string: title,attributes: [NSAttributedString.Key.font : UIFont.GTWalsheimProBold(ofSize: 16)]), for: .normal)
+        newButton.setTitleColor(MyColors.myColor.color4easyLight, for: .normal)
+        newButton.translatesAutoresizingMaskIntoConstraints = false
+        return newButton
+    }
+    
+ 
     //FIXME: reload button
     //MARK: -  actions
     func reloadButton() {
         let reloaded = headerView.reloadButton
-        reloaded.addTarget(self, action: #selector(reloadCollectionView), for: .touchUpOutside)
-    }
-    @objc func reloadCollectionView() {
-//        fetchTop()
-        
+        reloaded.addTarget(self, action: #selector(didTapReloadButton), for: .touchUpOutside)
     }
     
+    func refreshControllCollectionView() {
+        refreshControl.attributedTitle = NSAttributedString(string: "Потяните чтобы обновить",
+                                                            attributes: [NSAttributedString.Key.font : UIFont.GTWalsheimProBold(ofSize: 12),
+                                                                         NSAttributedString.Key.foregroundColor : MyColors.myColor.coldColor])
+        refreshControl.addTarget(self, action: #selector(refreshToControl), for: UIControl.Event.valueChanged)
+        collectionNews.addSubview(refreshControl)
+        
+    }
+    //MARK: reload collection view
+    @objc override func didTapReloadButton() {
+        CustomAI.showAI()
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+            self.fetchTop()
+            CustomAI.hide()
+        }
+    }
+    @objc func refreshToControl() {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+            self.fetchTop()
+            self.refreshControl.endRefreshing()
+        }
+    }
+ 
+    
+
+    
+
+}
+extension MainHomeViewController {
     func fetchTop() {
         APINews.share.getNews { [weak self] result in
             switch result {
@@ -127,7 +135,7 @@ class MainHomeViewController: MainViewController {
                             publishedAt: $0.publishedAt ?? "no date"
                         )
                     })
-                    DispatchQueue.main.async {
+                    DispatchQueue.main.async() {
                         self?.collectionNews.reloadData()
                     }
                 case .failure(let error):
