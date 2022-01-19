@@ -7,13 +7,17 @@
 
 import UIKit
 
-class customStackButton: UIButton {
-    
-    let nameButtons = ["Животные": "Животные", "Бизнес": "Бизнес",
-                       "Технологии": "Технологии", "Музыка": "Музыка"]
-    
+
+
+class customStackButton: UIView {
+    weak var delegate: CategoriesButtonDelegate?
+
 
     
+    let namesButtons = ["Все","Животные","Технологии","Бизнес","Музыка"]
+    let tagsNames = ["all": "Все" ,"animals": "Животные" ,
+                     "tech": "Технологии" ,"biss": "Бизнес" ,"music": "Музыка" ]
+
     
     lazy var scroller: UIScrollView = {
        var scroll = UIScrollView()
@@ -29,13 +33,30 @@ class customStackButton: UIButton {
     
     
     lazy var stackBut: UIStackView = {
-     var stack = UIStackView()
+     var stack = UIStackView(arrangedSubviews: buttons)
         stack.axis = .horizontal
         stack.alignment = .fill
         stack.distribution = .fillEqually
-        stack.spacing = 8
+        stack.spacing = 12
         stack.translatesAutoresizingMaskIntoConstraints = false
         return stack
+    }()
+    
+    lazy var buttons: [UIButton] = {
+        var views = [UIButton]()
+        for (tag,myTitile) in namesButtons.enumerated() {
+            let view = UIButton()
+            view.tag = tag
+            view.layer.borderWidth = 1
+            view.layer.borderColor = UIColor.yellow.cgColor
+            view.setAttributedTitle(NSAttributedString(string: myTitile,attributes: [NSAttributedString.Key.font : UIFont.GTWalsheimProBold(ofSize: 14),
+                                                                                     NSAttributedString.Key.foregroundColor : MyColors.myColor.color4easyLight]), for: .normal)
+//                        view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(didTapAction(_:))))
+            view.addTarget(nil, action: #selector(didTapAction), for: .touchUpInside)
+            views.append(view)
+            //            views.sorted(by: { $0.tag < $1.tag })
+        }
+        return views
     }()
     
     override init(frame: CGRect) {
@@ -45,15 +66,25 @@ class customStackButton: UIButton {
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+        
     }
     
     override func layoutSubviews() {
         super.layoutSubviews()
     }
+    //MARK: -  actions
+    @objc func didTapAction() {
+        
+    
+    }
+        
+
+    
     
     private func setupView() {
         addSubview(scroller)
-        addSubview(stackBut)
+//        addSubview(stackBut)
+        
     }
     
     func createButtonsCategories(with title: String) -> UIButton {
@@ -65,3 +96,7 @@ class customStackButton: UIButton {
         return newButton
     }
 }
+
+
+
+

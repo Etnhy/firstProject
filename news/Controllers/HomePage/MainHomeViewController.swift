@@ -31,7 +31,8 @@ class MainHomeViewController: MainViewController {
     }()
 
     lazy var stackView = customStackButton().scroller  // добавление самого стека с кнопками и скроллом
-    
+    let buttons = customStackButton().stackBut
+
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -40,6 +41,9 @@ class MainHomeViewController: MainViewController {
         setConstraints()
         settings()
         fetchTop()
+        
+        
+        
         
 
     }
@@ -76,14 +80,7 @@ class MainHomeViewController: MainViewController {
         
 
     }
-    func createButtonsCategories(with title: String) -> UIButton {
-        let newButton = UIButton(type: .system)
-        newButton.backgroundColor = .clear
-        newButton.setAttributedTitle(NSAttributedString(string: title,attributes: [NSAttributedString.Key.font : UIFont.GTWalsheimProBold(ofSize: 16)]), for: .normal)
-        newButton.setTitleColor(MyColors.myColor.color4easyLight, for: .normal)
-        newButton.translatesAutoresizingMaskIntoConstraints = false
-        return newButton
-    }
+ 
     
  
     //MARK: -  actions
@@ -91,6 +88,9 @@ class MainHomeViewController: MainViewController {
         let reloaded = headerView.reloadButton
         reloaded.addTarget(self, action: #selector(didTapReloadButton), for: .touchUpOutside)
     }
+    
+
+ 
     
     func refreshControllCollectionView() {
         refreshControl.attributedTitle = NSAttributedString(string: "Потяните чтобы обновить",
