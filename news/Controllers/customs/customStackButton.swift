@@ -7,13 +7,15 @@
 
 import UIKit
 protocol CustomStackButtonDelegate: AnyObject {
-    func customStackButtonDelegate(_ selectedIndex: String )
+    func customStackButtonDelegate(_ selectedIndex: Int )
 }
-class customStackButton: UIScrollView, UIScrollViewDelegate {
+class CustomStackButton: UIScrollView, UIScrollViewDelegate {
     
     weak var myDelegate: CustomStackButtonDelegate?
 
-    let namesButtons = ["Все","Животные","Технологии","Бизнес","Музыка", "что то"]
+    let namesButtons = ["Все","Животные",
+                        "Технологии","Бизнес",
+                        "Музыка", "что то"]
     
     
 
@@ -21,21 +23,19 @@ class customStackButton: UIScrollView, UIScrollViewDelegate {
         var stack = UIStackView(arrangedSubviews: buttons)
         stack.axis = .horizontal
         stack.alignment = .fill
+        stack.contentMode = .center
         stack.distribution = .equalSpacing
         stack.spacing = 20
         stack.translatesAutoresizingMaskIntoConstraints = false
         return stack
     }()
-//    private lazy var items: [UIButton] = {
-//        var views: [UIButton] = []
-//        for itemTitle in itemTitles {
-//            let button = UIButton()
 
     lazy var buttons: [UIButton] = {
         var buttons:[UIButton] = []
         for buttonTitle in namesButtons {
             let view = UIButton()
-            view.setAttributedTitle(NSAttributedString(string: buttonTitle,attributes: [NSAttributedString.Key.font : UIFont.GTWalsheimProBold(ofSize: 14),                                                                    NSAttributedString.Key.foregroundColor : MyColors.myColor.color4easyLight.withAlphaComponent(0.85)]), for: .normal)
+            view.layer.cornerRadius = 8
+            view.setAttributedTitle(NSAttributedString(string: buttonTitle,attributes: [NSAttributedString.Key.font : UIFont.GTWalsheimProBold(ofSize: 14),                                                                    NSAttributedString.Key.foregroundColor : MyColors.myColor.color4easyLight.withAlphaComponent(0.9)]), for: .normal)
             view.addTarget(self, action: #selector(didTapAction(_:)), for: .touchUpInside)
             buttons.append(view)
         }
@@ -49,8 +49,6 @@ class customStackButton: UIScrollView, UIScrollViewDelegate {
         super.init(frame: frame)
         setupView()
     }
-    
-    
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
@@ -77,8 +75,8 @@ class customStackButton: UIScrollView, UIScrollViewDelegate {
         NSLayoutConstraint.activate([
             stackBut.topAnchor.constraint(equalTo: self.topAnchor),
             stackBut.bottomAnchor.constraint(equalTo: self.bottomAnchor),
-            stackBut.leadingAnchor.constraint(equalTo: self.leadingAnchor),
-            stackBut.trailingAnchor.constraint(equalTo: self.trailingAnchor),
+            stackBut.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 8),
+            stackBut.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -8),
 
         ])
     }
@@ -87,22 +85,22 @@ class customStackButton: UIScrollView, UIScrollViewDelegate {
         for (index,button) in self.buttons.enumerated() {
             if button == sender {
                 button.isSelected = true
-                myDelegate?.customStackButtonDelegate("yes")
-                button.setAttributedTitle(NSAttributedString(string: namesButtons[index],attributes: [NSAttributedString.Key.font : UIFont.GTWalsheimProBold(ofSize: 14),NSAttributedString.Key.foregroundColor : MyColors.myColor.color4easyLight]), for: .normal)
+                myDelegate?.customStackButtonDelegate(index)
+                button.setAttributedTitle(NSAttributedString(string: namesButtons[index],attributes: [NSAttributedString.Key.font : UIFont.GTWalsheimProBold(ofSize: 16),NSAttributedString.Key.foregroundColor : MyColors.myColor.color4easyLight]), for: .normal)
+                button.backgroundColor = MyColors.myColor.color2leastDark.withAlphaComponent(0.3)
+            
             } else  {
-                button.setAttributedTitle(NSAttributedString(string: namesButtons[index],attributes: [NSAttributedString.Key.font : UIFont.GTWalsheimProBold(ofSize: 14),NSAttributedString.Key.foregroundColor : MyColors.myColor.color4easyLight.withAlphaComponent(0.85)]), for: .normal)
+                button.setAttributedTitle(NSAttributedString(string: namesButtons[index],attributes: [NSAttributedString.Key.font : UIFont.GTWalsheimProBold(ofSize: 14),NSAttributedString.Key.foregroundColor : MyColors.myColor.color4easyLight.withAlphaComponent(0.9)]), for: .normal)
+                button.backgroundColor = .clear
+
                 
             }
         }
     }
 }
-extension MainViewController: CustomStackButtonDelegate {
-    func customStackButtonDelegate(_ selectedIndex: String) {
-        print("selected \(selectedIndex)")
-    }
+
     
 
-}
 
 
 

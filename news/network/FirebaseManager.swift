@@ -41,19 +41,8 @@ class FirebaseManager {
         let favorites = favorites
         db.collection("newss").document(id).collection("favorites").document().setData(favorites)
     }
-        
-//    func getUserFavorites(_ data: [String: Any] = [:]) {
-//        guard let id = Auth.auth().currentUser?.uid else {return}
-//
-//        db.collection("newss").document(id).collection("favorites").document().getDocument { result, error in
-//            switch result {
-//                case .
-//            }
-//        }
-//
-//    }
-        
-    }
+    
+}
     
 //    private func saveOtherDataToFirestore(_ data: [String:Any] = [:]) {
 //        var ref: DocumentReference? = nil

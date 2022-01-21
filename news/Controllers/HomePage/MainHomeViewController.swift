@@ -17,8 +17,8 @@ class MainHomeViewController: MainViewController {
     
     let refreshControl = UIRefreshControl()
     
-    lazy var customScroll:customStackButton = {
-        let view = customStackButton()
+    lazy var customScroll:CustomStackButton = {
+        let view = CustomStackButton()
         view.myDelegate = self
      return view
     }()
@@ -46,7 +46,7 @@ class MainHomeViewController: MainViewController {
         addSub()
         setConstraints()
         settings()
-        fetchTop()
+        changeFetch()
 
     }
     
@@ -72,7 +72,7 @@ class MainHomeViewController: MainViewController {
             customScroll.topAnchor.constraint(equalTo: headerView.bottomAnchor.self),
             customScroll.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             customScroll.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-            customScroll.heightAnchor.constraint(equalToConstant: 40),
+            customScroll.heightAnchor.constraint(equalToConstant: 48),
         ])
         NSLayoutConstraint.activate([
             collectionNews.topAnchor.constraint(equalTo: self.customScroll.bottomAnchor),
@@ -87,7 +87,9 @@ class MainHomeViewController: MainViewController {
         reloaded.addTarget(self, action: #selector(didTapReloadButton), for: .touchUpOutside)
     }
 
- 
+    func changeCategory() {
+        
+    }
     
     
     func refreshControllCollectionView() {
@@ -103,33 +105,32 @@ class MainHomeViewController: MainViewController {
         CustomAI.showAI()
         DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
             CustomAI.hide()
-            self.fetchTop()
+            self.changeFetch()
         }
 
     }
     @objc func refreshToControl() {
         DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
-            self.fetchTop()
+            self.changeFetch()
         }
         self.refreshControl.endRefreshing()
 
     }
 }
 extension MainHomeViewController {
-    func fetchTop() {
-        APINews.share.getNews { [weak self] result in
+    func changeFetch() {
+        APINews.share.getNews(cat: .technology) { [weak self] result  in
             switch result {
                 case .success(let article):
                     self?.articles = article
                     self?.viewModels = article.compactMap({
-                        CollectionCellModel(
-                            title: $0.title ?? " no title",
-                            subtitle: $0.description ?? " no descrtiption",
-                            imageURL: URL(string: $0.urlToImage ?? "no urlToImage"),
-                            publishedAt: $0.publishedAt ?? "no date"
+                        CollectionCellModel(title: $0.title ?? "hz",
+                                            subtitle: $0.description ?? "hz",
+                                            imageURL: URL(string: $0.urlToImage ?? "hz image"),
+                                            publishedAt: $0.publishedAt ?? "hz pub"
                         )
                     })
-                    DispatchQueue.main.async() {
+                    DispatchQueue.main.async {
                         self?.collectionNews.reloadData()
                     }
                 case .failure(let error):

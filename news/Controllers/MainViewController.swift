@@ -77,3 +77,11 @@ extension MainViewController: UIGestureRecognizerDelegate {
         return false
     }
 }
+extension MainViewController: CustomStackButtonDelegate {
+    func customStackButtonDelegate(_ selectedIndex: Int) {
+        print("selected \(selectedIndex)")
+        if selectedIndex == 1 {
+            print("zslupa")
+        }
+    }
+}
