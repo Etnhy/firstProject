@@ -17,6 +17,12 @@ class MainHomeViewController: MainViewController {
     
     let refreshControl = UIRefreshControl()
     
+    lazy var customScroll:customStackButton = {
+        let view = customStackButton()
+        view.myDelegate = self
+     return view
+    }()
+
     
     lazy var collectionNews: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
@@ -31,7 +37,6 @@ class MainHomeViewController: MainViewController {
     }()
 
     
-    var buttons = customStackButton()
 
 
     override func viewDidLoad() {
@@ -49,7 +54,7 @@ class MainHomeViewController: MainViewController {
     //MARK: - add subviews
     private func addSub() {
         view.addSubview(collectionNews)
-        view.addSubview(buttons)
+        view.addSubview(customScroll)
         refreshControllCollectionView()
     }
     
@@ -64,13 +69,13 @@ class MainHomeViewController: MainViewController {
     //MARK: - set constraints
     func setConstraints() {
         NSLayoutConstraint.activate([
-            buttons.topAnchor.constraint(equalTo: headerView.bottomAnchor.self),
-            buttons.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-            buttons.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-            buttons.heightAnchor.constraint(equalToConstant: 40),
+            customScroll.topAnchor.constraint(equalTo: headerView.bottomAnchor.self),
+            customScroll.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            customScroll.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            customScroll.heightAnchor.constraint(equalToConstant: 40),
         ])
         NSLayoutConstraint.activate([
-            collectionNews.topAnchor.constraint(equalTo: self.buttons.bottomAnchor),
+            collectionNews.topAnchor.constraint(equalTo: self.customScroll.bottomAnchor),
             collectionNews.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             collectionNews.trailingAnchor.constraint(equalTo: view.trailingAnchor),
             collectionNews.bottomAnchor.constraint(equalTo: view.bottomAnchor,constant: -94),
