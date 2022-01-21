@@ -8,6 +8,7 @@
 import Foundation
 import UIKit
 import SafariServices
+import Nuke
 
 
 extension MainHomeViewController: UICollectionViewDelegateFlowLayout, UICollectionViewDataSource {
@@ -30,6 +31,8 @@ extension MainHomeViewController: UICollectionViewDelegateFlowLayout, UICollecti
        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: HomeCollectionViewCell.identifier, for: indexPath) as? HomeCollectionViewCell else {
             fatalError()
         }
+//        let favData = cell.newsLabel.text
+        
         let color = MyColors()
         cell.backgroundColor = color.color2leastDark
         cell.configure(with: viewModels[indexPath.item])

@@ -171,14 +171,14 @@ class MainTabBarItem: UIView {
 //        return view
 //    }()
     
-        lazy var view: UIView = { // полосочка у кнопок
-            let view = UIView()
-            view.translatesAutoresizingMaskIntoConstraints = false
-            view.backgroundColor = MyColors.myColor.color4easyLight
-            view.isHidden = true
-            view.layer.cornerRadius = 2
-            return view
-        }()
+    lazy var view: UIView = { // полосочка у кнопок
+        let view = UIView()
+        view.translatesAutoresizingMaskIntoConstraints = false
+        view.backgroundColor = MyColors.myColor.color4easyLight
+        view.isHidden = true
+        view.layer.cornerRadius = 2
+        return view
+    }()
     
     lazy var imageView: UIImageView = {
         let view = UIImageView()

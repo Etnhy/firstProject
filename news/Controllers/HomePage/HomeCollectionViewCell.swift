@@ -50,7 +50,7 @@ class HomeCollectionViewCell: UICollectionViewCell {
         b.backgroundColor = .black
         b.layer.cornerRadius = 17
         b.setImage(UIImage(named: "favorites"), for: .normal)
-        b.addTarget(self, action: #selector(addToFavo), for: .touchUpInside)
+        b.addTarget(nil, action: #selector(addToFavo), for: .touchUpInside)
         return b
     }()
     lazy var dateLabel: UILabel = { // date label
@@ -142,15 +142,15 @@ class HomeCollectionViewCell: UICollectionViewCell {
     //MARK: - actions
     
     @objc func addToFavo() {
-        var title = FavoritesModel()
-        var element = newsLabel.text
-        title.title.append(element!)
-        
-        print(title.title.count)
-    }
+//        var favo = newsLabel.text ?? "error"
+//        var setFavo:[String:String] = [:]
+//        setFavo["favorites"] = favo
+//
+//        FirebaseManager.shared.saveUserFavorites(setFavo)
+//
+        }
     
-    
-    
+
     //MARK: - FETCH
     func configure(with viewModel: CollectionCellModel) {
 
@@ -162,7 +162,8 @@ class HomeCollectionViewCell: UICollectionViewCell {
         if let data = viewModel.imageData {
             newsImage.image = UIImage(data: data)
         } else if let url = viewModel.imageURL {
-            //fetch
+            
+//            fetch
             URLSession.shared.dataTask(with: url) {[weak self] data, _, error in
                 guard let data = data, error == nil  else {
                     return

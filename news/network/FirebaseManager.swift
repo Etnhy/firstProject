@@ -22,7 +22,7 @@ class FirebaseManager {
             completion(error)
             if authDataResult != nil {
                 self.saveUserToFirestoreWith(data)
-                self.saveOtherDataToFirestore(data)
+//                self.saveOtherDataToFirestore(data)
             }else {
                 print("nil")
             }
@@ -36,17 +36,36 @@ class FirebaseManager {
         Firestore.firestore().collection("newss").document(id).setData(copyData)
     }
     
-    private func saveOtherDataToFirestore(_ data: [String:Any] = [:]) {
-        var ref: DocumentReference? = nil
-        guard let _ = data["name"] as? String,
-              let _ = data["surname"] as? String,
-              let _ = data["birthday"] as? String else { return }
-        ref = db.collection("newss").addDocument(data: data, completion: { error in
-            if let error = error {
-                print("Error adding document: \(error)")
-            } else {
-                print("Document added with ID: \(ref!.documentID)")
-            }
-        })
+    func saveUserFavorites(_ favorites: [String : Any] = [:]) {
+        guard let id = Auth.auth().currentUser?.uid else {return}
+        let favorites = favorites
+        db.collection("newss").document(id).collection("favorites").document().setData(favorites)
     }
-}
+        
+//    func getUserFavorites(_ data: [String: Any] = [:]) {
+//        guard let id = Auth.auth().currentUser?.uid else {return}
+//
+//        db.collection("newss").document(id).collection("favorites").document().getDocument { result, error in
+//            switch result {
+//                case .
+//            }
+//        }
+//
+//    }
+        
+    }
+    
+//    private func saveOtherDataToFirestore(_ data: [String:Any] = [:]) {
+//        var ref: DocumentReference? = nil
+//        guard let _ = data["name"] as? String,
+//              let _ = data["surname"] as? String,
+//              let _ = data["birthday"] as? String else { return }
+//        ref = db.collection("newss").addDocument(data: data, completion: { error in
+//            if let error = error {
+//                print("Error adding document: \(error)")
+//            } else {
+//                print("Document added with ID: \(ref!.documentID)")
+//            }
+//        })
+//    }
+

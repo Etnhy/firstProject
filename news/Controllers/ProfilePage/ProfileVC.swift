@@ -7,6 +7,7 @@
 
 import UIKit
 import PMSuperButton
+import Firebase
 
 class ProfileVC: MainViewController {
     
@@ -82,6 +83,7 @@ class ProfileVC: MainViewController {
         //            self.navigationController?.pushViewController(nextVC, animated: true)
         UserDefaults.standard.setValue(nil, forKey: "currentUser")
         NotificationCenter.default.post(name: .CurrentDidChange, object: nil)
+
     }
 }
 

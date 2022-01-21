@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Firebase
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
@@ -26,13 +27,15 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let windowScene = (scene as? UIWindowScene) else { return }
         let window = UIWindow(windowScene: windowScene)
         self.window = window
+        
         setRootViewController2()
         
         NotificationCenter.default.addObserver(forName: .CurrentDidChange, object: nil, queue: OperationQueue.main) { _ in
             self.setRootViewController2()
         }
-        
     }
+}
+
 
     func sceneDidDisconnect(_ scene: UIScene) {
         // Called as the scene is being released by the system.
@@ -65,7 +68,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     }
 
 
-}
+
 
 extension SceneDelegate {
     func setRootViewController() {
@@ -79,6 +82,7 @@ extension SceneDelegate {
     
     func setRootViewController2() {
         if let _ = UserDefaults.standard.value(forKey: "currentUser") as? String {
+//        if Auth.auth().currentUser?.uid != nil {
             let mainController = MainTabBarController()
             window?.rootViewController = mainController
             window?.makeKeyAndVisible()

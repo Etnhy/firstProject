@@ -30,27 +30,26 @@ class MainHomeViewController: MainViewController {
         return call
     }()
 
-    lazy var stackView = customStackButton().scroller  // добавление самого стека с кнопками и скроллом
-    let buttons = customStackButton().stackBut
+    
+    var buttons = customStackButton()
 
 
     override func viewDidLoad() {
         super.viewDidLoad()
+
         self.view.backgroundColor = MyColors.myColor.color2leastDark.withAlphaComponent(0.7)
         addSub()
         setConstraints()
         settings()
         fetchTop()
-        
-        
-        
-        
 
     }
+    
+    
     //MARK: - add subviews
     private func addSub() {
         view.addSubview(collectionNews)
-        view.addSubview(stackView)
+        view.addSubview(buttons)
         refreshControllCollectionView()
     }
     
@@ -65,32 +64,26 @@ class MainHomeViewController: MainViewController {
     //MARK: - set constraints
     func setConstraints() {
         NSLayoutConstraint.activate([
-            collectionNews.topAnchor.constraint(equalTo: stackView.bottomAnchor),
+            buttons.topAnchor.constraint(equalTo: headerView.bottomAnchor.self),
+            buttons.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            buttons.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            buttons.heightAnchor.constraint(equalToConstant: 40),
+        ])
+        NSLayoutConstraint.activate([
+            collectionNews.topAnchor.constraint(equalTo: self.buttons.bottomAnchor),
             collectionNews.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             collectionNews.trailingAnchor.constraint(equalTo: view.trailingAnchor),
             collectionNews.bottomAnchor.constraint(equalTo: view.bottomAnchor,constant: -94),
         ])
-
-        NSLayoutConstraint.activate([
-            stackView.topAnchor.constraint(equalTo: headerView.bottomAnchor),
-            stackView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-            stackView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-            stackView.heightAnchor.constraint(equalToConstant: 40)
-        ])
-        
-
     }
- 
-    
- 
     //MARK: -  actions
     func reloadButton() {
         let reloaded = headerView.reloadButton
         reloaded.addTarget(self, action: #selector(didTapReloadButton), for: .touchUpOutside)
     }
-    
 
  
+    
     
     func refreshControllCollectionView() {
         refreshControl.attributedTitle = NSAttributedString(string: "Потяните чтобы обновить",
