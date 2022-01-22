@@ -10,12 +10,12 @@ import UIKit
 
 enum MainCategories {
     
+    case  alls
     case technology
     case animals
+    case topHeadline
     case music
     case business
-    case topHeadline
-    case alls
     
 }
 enum changeLanguage {
@@ -40,25 +40,38 @@ class APINews {
     let apiKey = "&apiKey=3b7a57f2d0e3400e9193cd86f1ba0fb5"
 //    "https://newsapi.org/v2/everything?q=animal&language=ru&apiKey=3b7a57f2d0e3400e9193cd86f1ba0fb5"
 
-    func getNews(cat: MainCategories,comletion:@escaping (Result<[Article], Error>) -> Void) {
-        switch cat {
+    func getNews(_ categories:MainCategories,comletion:@escaping (Result<[Article], Error>) -> Void) {
+        switch categories {
             case .alls:
-                secondUrl = "everything?"
+                secondUrl = "everything?q=interesting"
             case .technology:
                 secondUrl = "everything?q=technology"
             case .animals:
                 secondUrl = "everything?q=animal"
+            case .topHeadline:
+                secondUrl = "top-headlines?country=ua&"
             case .music:
                 secondUrl = "everything?q=music"
             case .business:
                 secondUrl = "everything?q=business"
-            case .topHeadline:
-                secondUrl = "top-headlines?country=ua&"
-           
-                
         }
+//        switch categories {
+//            case .alls:
+//                secondUrl = "everything?"
+//            case .technology:
+//                secondUrl = "everything?q=technology"
+//            case .animals:
+//                secondUrl = "everything?q=animal"
+//            case .music:
+//                secondUrl = "everything?q=music"
+//            case .business:
+//                secondUrl = "everything?q=business"
+//            case .topHeadline:
+//                secondUrl = "top-headlines?country=ua&"
+//        }
+        let urlString = "\(firstUrl)\(secondUrl)&language=ru\(apiKey)"
+
 //        let urlString = "\(firstUrl)\(secondUrl)\(languageUrl)\(apiKey)"
-        let urlString = "\(firstUrl)\(secondUrl)\(languageUrl)\(apiKey)"
         guard let url = URL(string: urlString) else { return }
         URLSession.shared.dataTask(with: url) { data, response, error in
             if let error = error {
@@ -77,16 +90,16 @@ class APINews {
         }.resume()
     }
     
-    enum MainCategories {
-        
-        case technology
-        case animals
-        case music
-        case business
-        case topHeadline
-        case alls
-        
-    }
+//    enum MainCategories {
+//
+//        case technology
+//        case animals
+//        case music
+//        case business
+//        case topHeadline
+//        case alls
+//
+//    }
     
 //    func switcherNews(categories: MainCategories) {
 //        switch categories {

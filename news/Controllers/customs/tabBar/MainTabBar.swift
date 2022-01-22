@@ -85,6 +85,8 @@ class MainTabBar: UIView {
         shapeLayer.shadowOffset = CGSize(width: 0.0, height: -1.0)
         shapeLayer.shadowRadius = 8.0
         shapeLayer.shadowOpacity = 1.0
+        shapeLayer.shadowPath = UIBezierPath(rect: self.bounds).cgPath
+
         
         if let oldShapeLayer = self.shapeLayer {
             self.layer.replaceSublayer(oldShapeLayer, with: shapeLayer)

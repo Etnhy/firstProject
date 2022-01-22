@@ -63,6 +63,8 @@ class MainHeaderView: UIView {
         layer.shadowOffset = CGSize(width: 0.0, height: 1.0)
         layer.shadowRadius = 8.0
         layer.shadowOpacity = 1.0
+        layer.shadowPath = UIBezierPath(rect: self.bounds).cgPath
+
     }
     
     private func addSubViews() {

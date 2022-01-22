@@ -93,7 +93,7 @@ class MainHomeViewController: MainViewController {
     
     
     func refreshControllCollectionView() {
-        refreshControl.attributedTitle = NSAttributedString(string: "Потяните чтобы обновить",
+        refreshControl.attributedTitle = NSAttributedString(string: "Потяните чтобы обновить.",
                                                             attributes: [NSAttributedString.Key.font : UIFont.GTWalsheimProBold(ofSize: 12),
                                                                          NSAttributedString.Key.foregroundColor : MyColors.myColor.coldColor])
         refreshControl.addTarget(self, action: #selector(refreshToControl), for: UIControl.Event.valueChanged)
@@ -114,16 +114,15 @@ class MainHomeViewController: MainViewController {
             self.changeFetch()
         }
         self.refreshControl.endRefreshing()
-
     }
 }
 extension MainHomeViewController {
-    func changeFetch() {
-        APINews.share.getNews(cat: .technology) { [weak self] result  in
+    func changeFetch(_ categories: MainCategories = .alls) {   // [weak self]
+        APINews.share.getNews( categories) { result  in
             switch result {
                 case .success(let article):
-                    self?.articles = article
-                    self?.viewModels = article.compactMap({
+                    self.articles = article
+                    self.viewModels = article.compactMap({
                         CollectionCellModel(title: $0.title ?? "hz",
                                             subtitle: $0.description ?? "hz",
                                             imageURL: URL(string: $0.urlToImage ?? "hz image"),
@@ -131,11 +130,36 @@ extension MainHomeViewController {
                         )
                     })
                     DispatchQueue.main.async {
-                        self?.collectionNews.reloadData()
+                        self.collectionNews.reloadData()
                     }
                 case .failure(let error):
                     print(error.localizedDescription)
             }
         }
     }
+    @objc override func customStackButtonDelegate(_ selectedIndex: Int) {
+       switch selectedIndex {
+           case 0:
+               changeFetch(.alls)
+           case 1:
+               changeFetch(.technology)
+           case 2:
+               changeFetch(.animals)
+           case 3:
+               changeFetch(.topHeadline)
+           case 4:
+               changeFetch(.music)
+           case 5:
+               changeFetch(.business)
+           default:
+               
+               print("ads")
+       }
+    }
 }
+//case  alls
+//case technology
+//case animals
+//case topHeadline
+//case music
+//case business

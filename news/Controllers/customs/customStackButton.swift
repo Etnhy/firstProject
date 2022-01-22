@@ -13,10 +13,9 @@ class CustomStackButton: UIScrollView, UIScrollViewDelegate {
     
     weak var myDelegate: CustomStackButtonDelegate?
 
-    let namesButtons = ["Все","Животные",
-                        "Технологии","Бизнес",
-                        "Музыка", "что то"]
-    
+    let namesButtons = ["Все","Технологии",
+                        "Животные","ТОП",
+                        "Музыка", "Бизнес"]
     
 
     lazy var stackBut: UIStackView = {
@@ -40,6 +39,8 @@ class CustomStackButton: UIScrollView, UIScrollViewDelegate {
             buttons.append(view)
         }
         buttons[0].isSelected = true
+        buttons[0].setAttributedTitle(NSAttributedString(string: "Все",attributes: [NSAttributedString.Key.font : UIFont.GTWalsheimProBold(ofSize: 16),NSAttributedString.Key.foregroundColor : MyColors.myColor.color4easyLight]), for: .normal)
+        buttons[0].backgroundColor = MyColors.myColor.color2leastDark.withAlphaComponent(0.3)
         return buttons
     }()
     
@@ -99,7 +100,11 @@ class CustomStackButton: UIScrollView, UIScrollViewDelegate {
     }
 }
 
-    
+extension MainViewController: CustomStackButtonDelegate {
+   @objc func customStackButtonDelegate(_ selectedIndex: Int){
+        
+    }
+}
 
 
 
