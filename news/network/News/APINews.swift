@@ -47,7 +47,7 @@ class APINews {
             case .technology:
                 secondUrl = "everything?q=technology"
             case .animals:
-                secondUrl = "everything?q=animal"
+                secondUrl = "everything?q=animals"
             case .topHeadline:
                 secondUrl = "top-headlines?country=ua&"
             case .music:

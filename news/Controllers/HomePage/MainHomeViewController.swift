@@ -110,15 +110,21 @@ class MainHomeViewController: MainViewController {
 
     }
     @objc func refreshToControl() {
-        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+        DispatchQueue.main.async {
             self.changeFetch()
+            self.refreshControl.endRefreshing()
+
         }
-        self.refreshControl.endRefreshing()
     }
 }
 extension MainHomeViewController {
     func changeFetch(_ categories: MainCategories = .alls) {   // [weak self]
+        collectionNews.reloadData()
+        CustomAI.showAI()
         APINews.share.getNews( categories) { result  in
+            DispatchQueue.main.async {
+                CustomAI.hide()
+            }
             switch result {
                 case .success(let article):
                     self.articles = article
@@ -157,9 +163,4 @@ extension MainHomeViewController {
        }
     }
 }
-//case  alls
-//case technology
-//case animals
-//case topHeadline
-//case music
-//case business
+

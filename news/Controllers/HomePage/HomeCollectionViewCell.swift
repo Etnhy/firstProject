@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Nuke
 
 class HomeCollectionViewCell: UICollectionViewCell {
     
@@ -38,7 +39,7 @@ class HomeCollectionViewCell: UICollectionViewCell {
     lazy var newsImage: UIImageView = { // image
         var  image = UIImageView()
         image.translatesAutoresizingMaskIntoConstraints = false
-        image.backgroundColor = .green
+//        image.backgroundColor = .green
         image.clipsToBounds = true
         image.layer.cornerRadius = 8
         return  image
@@ -157,26 +158,34 @@ class HomeCollectionViewCell: UICollectionViewCell {
         newsLabel.text = viewModel.title
         newsText.text = viewModel.subtitle
         dateLabel.text = "Дата публикации: \(viewModel.publishedAt)"
+        
+        
+        if let imageUrl = viewModel.imageURL {
+            Nuke.loadImage(with: imageUrl, into: newsImage )
 
-        //image
-        if let data = viewModel.imageData {
-            newsImage.image = UIImage(data: data)
-        } else if let url = viewModel.imageURL {
-            
-//            fetch
-            URLSession.shared.dataTask(with: url) {[weak self] data, _, error in
-                guard let data = data, error == nil  else {
-                    return
-                }
-                viewModel.imageData = data
-                DispatchQueue.main.async {
-                    self?.newsImage.image = UIImage(data: data)
-
-                }
-
-            }.resume()
-
+//            DispatchQueue.main.async {
+//                self.newsImage.image = UIImage()
+//            }
         }
+//        //image
+//        if let data = viewModel.imageData {
+//            newsImage.image = UIImage(data: data)
+//        } else if let url = viewModel.imageURL {
+//            
+////            fetch
+//            URLSession.shared.dataTask(with: url) {[weak self] data, _, error in
+//                guard let data = data, error == nil  else {
+//                    return
+//                }
+//                viewModel.imageData = data
+//                DispatchQueue.main.async {
+//                    self?.newsImage.image = UIImage(data: data)
+//
+//                }
+//
+//            }.resume()
+//
+//        }
     }
 }
     
