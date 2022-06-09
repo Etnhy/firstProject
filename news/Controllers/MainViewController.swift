@@ -68,13 +68,8 @@ class MainViewController: UIViewController {
     
 }
 
-//MARK: - UIGestureRecognizerDelegate
-extension MainViewController: UIGestureRecognizerDelegate {
-    func gestureRecognizerShouldBegin(_ gestureRecognizer: UIGestureRecognizer) -> Bool {
-        if(navigationController!.viewControllers.count > 1){
-            return true
-        }
-        return false
-    }
-}
 
+
+extension MainViewController: UIGestureRecognizerDelegate {
+    
+}

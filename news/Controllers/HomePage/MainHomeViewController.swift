@@ -143,7 +143,9 @@ extension MainHomeViewController {
             }
         }
     }
-    @objc override func customStackButtonDelegate(_ selectedIndex: Int) {
+}
+extension MainHomeViewController : CustomStackButtonDelegate {
+    @objc  func customStackButtonDelegate(_ selectedIndex: Int) {
        switch selectedIndex {
            case 0:
                changeFetch(.alls)
@@ -162,5 +164,5 @@ extension MainHomeViewController {
                print("ads")
        }
     }
-}
 
+}

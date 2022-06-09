@@ -94,17 +94,16 @@ class CustomStackButton: UIScrollView, UIScrollViewDelegate {
                 button.setAttributedTitle(NSAttributedString(string: namesButtons[index],attributes: [NSAttributedString.Key.font : UIFont.GTWalsheimProBold(ofSize: 14),NSAttributedString.Key.foregroundColor : MyColors.myColor.color4easyLight.withAlphaComponent(0.9)]), for: .normal)
                 button.backgroundColor = .clear
 
-                
             }
         }
     }
 }
 
-extension MainViewController: CustomStackButtonDelegate {
-   @objc func customStackButtonDelegate(_ selectedIndex: Int){
-        
-    }
-}
+//extension MainViewController: CustomStackButtonDelegate {
+//   @objc func customStackButtonDelegate(_ selectedIndex: Int){
+//        
+//    }
+//}
 
 
 

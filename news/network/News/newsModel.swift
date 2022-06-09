@@ -8,7 +8,6 @@
 import Foundation
 
 
-
 struct Article: Codable {
     
     var author: String?
@@ -28,4 +27,24 @@ struct APIResponse: Codable {
 
 enum CodingKeys: String, CodingKey {
     case author, title, description, url, urlToImage, publishedAt, content
+}
+
+
+
+
+
+struct ResponseData: Decodable {
+    
+    var data:[Person]
+}
+
+struct Person: Decodable {
+    var photo: String
+}
+
+class GetImage {
+    
+    static let shared = GetImage()
+    
+    
 }

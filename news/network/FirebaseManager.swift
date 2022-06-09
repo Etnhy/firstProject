@@ -22,8 +22,7 @@ class FirebaseManager {
             completion(error)
             if authDataResult != nil {
                 self.saveUserToFirestoreWith(data)
-//                self.saveOtherDataToFirestore(data)
-            }else {
+            } else {
                 print("nil")
             }
         }
@@ -41,6 +40,7 @@ class FirebaseManager {
         let favorites = favorites
         db.collection("newss").document(id).collection("favorites").document().setData(favorites)
     }
+    
     
 }
     

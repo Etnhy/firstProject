@@ -21,7 +21,6 @@ class MainTabBar: UIView {
             let view = MainTabBarItem()
             view.index = index
             view.imageView.image = UIImage(named: imageNamed)?.withTintColor(UIColor.brown.withAlphaComponent(0.2))
-//            view.imageView.image = UIImage(named: imageNamed)?.withTintColor(UIColor.brown.withAlphaComponent(0.2))
             view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(didTapItem(_:))))
             views.append(view)
         }
@@ -104,6 +103,7 @@ class MainTabBar: UIView {
         path.move(to: CGPoint(x: 0, y: radius)) // start top left
         path.addArc(withCenter: CGPoint(x: radius, y: radius), radius: radius, startAngle: angle(180), endAngle: angle(270), clockwise: true)
         path.addLine(to: CGPoint(x: self.frame.width - radius, y: 0))
+        
         path.addArc(withCenter: CGPoint(x: self.frame.width - radius, y: radius), radius: radius, startAngle: angle(270), endAngle: angle(0), clockwise: true)
         path.addLine(to: CGPoint(x: self.frame.width, y: self.frame.height))
         path.addLine(to: CGPoint(x: 0, y: self.frame.height))
@@ -227,6 +227,7 @@ class MainTabBarItem: UIView {
 //            view.trailingAnchor.constraint(lessThanOrEqualTo: self.trailingAnchor, constant: 0),
 //            view.heightAnchor.constraint(equalToConstant: 28),
 //            view.widthAnchor.constraint(equalToConstant: 28),
+    
 //            imageView.topAnchor.constraint(equalTo: self.topAnchor, constant: 12),
 //            imageView.centerXAnchor.constraint(equalTo: self.centerXAnchor, constant: 0),
 //            imageView.leadingAnchor.constraint(greaterThanOrEqualTo: self.leadingAnchor, constant: 0),

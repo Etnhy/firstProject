@@ -13,6 +13,7 @@ class HomeCollectionViewCell: UICollectionViewCell {
     static let identifier = "HomeCollectionViewCell"
     
     
+    
     lazy var newsLabel: UILabel = { // lable
        var lable = UILabel()
         lable.translatesAutoresizingMaskIntoConstraints = false
@@ -148,7 +149,8 @@ class HomeCollectionViewCell: UICollectionViewCell {
 //        setFavo["favorites"] = favo
 //
 //        FirebaseManager.shared.saveUserFavorites(setFavo)
-//
+        
+        
         }
     
 
@@ -163,29 +165,8 @@ class HomeCollectionViewCell: UICollectionViewCell {
         if let imageUrl = viewModel.imageURL {
             Nuke.loadImage(with: imageUrl, into: newsImage )
 
-//            DispatchQueue.main.async {
-//                self.newsImage.image = UIImage()
-//            }
         }
-//        //image
-//        if let data = viewModel.imageData {
-//            newsImage.image = UIImage(data: data)
-//        } else if let url = viewModel.imageURL {
-//            
-////            fetch
-//            URLSession.shared.dataTask(with: url) {[weak self] data, _, error in
-//                guard let data = data, error == nil  else {
-//                    return
-//                }
-//                viewModel.imageData = data
-//                DispatchQueue.main.async {
-//                    self?.newsImage.image = UIImage(data: data)
-//
-//                }
-//
-//            }.resume()
-//
-//        }
+
     }
 }
     

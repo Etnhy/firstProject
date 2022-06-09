@@ -35,6 +35,7 @@ extension MainHomeViewController: UICollectionViewDelegateFlowLayout, UICollecti
         let color = MyColors()
         cell.backgroundColor = color.color2leastDark
         cell.configure(with: viewModels[indexPath.item])
+        cell.newsImage
         
         
         return cell

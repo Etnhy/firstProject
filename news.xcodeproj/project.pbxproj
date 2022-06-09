@@ -37,6 +37,7 @@
 		60893E122778796100072576 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 60893E112778796100072576 /* Assets.xcassets */; };
 		60893E152778796100072576 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 60893E132778796100072576 /* LaunchScreen.storyboard */; };
 		60893E2327787E8800072576 /* RegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60893E2227787E8800072576 /* RegistrationViewController.swift */; };
+		60A5EF49279FF5CC0055D0A5 /* EnumNewsCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60A5EF48279FF5CC0055D0A5 /* EnumNewsCategory.swift */; };
 		60B8F28F278F391D00716C0A /* ProfileMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60B8F28E278F391D00716C0A /* ProfileMainViewController.swift */; };
 		60BF62EA2779C1DD00ABD962 /* RegistrationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60BF62E92779C1DD00ABD962 /* RegistrationModel.swift */; };
 		60BF62F12779C50B00ABD962 /* CustomAI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60BF62F02779C50B00ABD962 /* CustomAI.swift */; };
@@ -86,6 +87,7 @@
 		60893E142778796100072576 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		60893E162778796100072576 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		60893E2227787E8800072576 /* RegistrationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewController.swift; sourceTree = "<group>"; };
+		60A5EF48279FF5CC0055D0A5 /* EnumNewsCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnumNewsCategory.swift; sourceTree = "<group>"; };
 		60B8F28E278F391D00716C0A /* ProfileMainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileMainViewController.swift; sourceTree = "<group>"; };
 		60BF62E92779C1DD00ABD962 /* RegistrationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationModel.swift; sourceTree = "<group>"; };
 		60BF62F02779C50B00ABD962 /* CustomAI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomAI.swift; sourceTree = "<group>"; };
@@ -130,6 +132,7 @@
 			children = (
 				60795C1B2780887100520F9D /* newsModel.swift */,
 				6005DCBB27833D9F00490E61 /* APINews.swift */,
+				60A5EF48279FF5CC0055D0A5 /* EnumNewsCategory.swift */,
 			);
 			path = News;
 			sourceTree = "<group>";
@@ -462,6 +465,7 @@
 				6054FC9127908F3F0090C763 /* MainTabBarController.swift in Sources */,
 				60462741277A19F3004FFAAD /* FirebaseManager.swift in Sources */,
 				6005DCBC27833D9F00490E61 /* APINews.swift in Sources */,
+				60A5EF49279FF5CC0055D0A5 /* EnumNewsCategory.swift in Sources */,
 				60E586E3277A111400C6DA2F /* TextFieldExtension.swift in Sources */,
 				60893E092778796000072576 /* AppDelegate.swift in Sources */,
 				6054FC9D279097CD0090C763 /* Notification.swift in Sources */,
